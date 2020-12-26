@@ -1,0 +1,132 @@
+*{
+  box-sizing: boder-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  background-image: url(https://wallpaperaccess.com/full/39631.jpg);
+
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+#Master{
+  text-align: center;
+  color: white;
+  font-family: 'Garamond', serif;
+  font-size: 30px;
+}
+
+#Name{
+  font-size: 40px;
+}
+
+#greet_buttons{
+  margin: 50px 0px;
+}
+
+#greet_box{
+  margin: 300px auto;
+  top: -1000px;
+  transition: opacity 1s;
+}
+
+.Button{
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.2);
+  padding: 11px;
+  border-radius: 5px;
+  transition: border 0.5s;
+  transition: background 0.5s;
+}
+.Button:hover {
+  border: 2px solid rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.6);
+}
+.Button:active {
+  border: 2px solid rgba(255,255,255,0.9);
+  background: rgba(100,100,100,0.9);
+}
+
+#aboutme{
+  position: absolute;
+  text-align: center;
+  line-height: 35px;
+  top: -1000vh;
+  font-size: 24px;
+  opacity: 0;
+  margin: 30px auto 0px auto;
+  width: 70%;
+  max-width: 750px;
+  padding: 50px;
+  background: #222222;
+  border: 2px solid #121212;
+  border-radius: 5px;
+  transition: opacity 1s;
+}
+#aboutme p {
+  text-align: left;
+  text-indent: 50px;
+}
+#gobackbutton_1{
+  margin: auto;
+  position: relative;
+  top: 200px;
+}
+
+#projects{
+  margin: 0px auto 0px auto;
+  position: absolute;
+  opacity: 0;
+  top: -1000vh;
+ 
+  transition: opacity 1s;
+}
+#proj_cont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#proj_cont > div{
+  display: flex;
+  text-align: left;
+  background: #222222;
+  margin: 10px auto 10px auto;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 800px;
+  min-width: 500px;
+  height: 250px;
+}
+.proj_piece{
+ text-align: center;
+  font-size: 3vw;
+  margin: 15px;
+  width: 70%;
+}
+.proj_image{
+ min-width: 250px;
+}
+#proj_cont > div > .Button{
+ border-radius: 0px;
+}
+#proj_cont > div p{
+ margin: 25px;
+}
+
+/*Standard monitor size and above*/
+@media screen and (min-width: 800px){
+  .proj_piece{
+  font-size: 23px;    
+  }
+}
+
+@media screen and (max-width: 800px){
+}
