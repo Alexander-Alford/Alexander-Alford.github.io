@@ -2,8 +2,9 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>My Website</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>CodePen - pr</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet"> <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
@@ -14,7 +15,7 @@
   Passionate software developer from UCSD
     <div id="greet_buttons">
     <button class="Button" id="but_1" onclick="openAboutMe()">About Me</button>
-    <a href="https://www.maa.org/external_archive/devlin/LockhartsLament.pdf" target="_blank"><button class="Button" id="but_2" >Resume</button></a>
+    <a href="Resume.pdf" target="_blank"><button class="Button" id="but_2" >Resume</button></a>
     <button class="Button" id="but_3" onclick="openProjects()">Projects</button>
     <a href="https://github.com/Pagup" target="_blank"><button class="Button" id="but_4">Github</button></a>
     <a href="https://www.linkedin.com/in/alexander-alford-8b92621b0/" target="_blank"><button class="Button" id="but_5">LinkedIn</button></a>
@@ -24,7 +25,7 @@
   <div id="aboutme">
     <b style="font-size:30px">About Me</b><br>
     <p>My name is Alexander and I am a junior software developer on leave from UCSD that is currently looking for some entry level work. I began developing software as a hobby while I was pursuing my Bachelor's degree. What started off as a simple passion project in C became a fascination for how software is made and shared.</p>
-    <p>I like to program to explore a language's potential and to solve problems. At the moment I'm learning Python to start experimenting with scientific computing. Thanks for stopping by, if you're interested, feel free to reach out and contact me below:</p><br>
+    <p>I see programming as a way to explore a language's potential to solve problems simple and complex. At the moment, I'm currently experimenting with python while trying to create simulation programs. Thanks for stopping by, if you're interested, feel free to reach out and contact me below:</p><br>
     <b style="font-size:30px">Contact</b><br>
     alexalford14@yahoo.com<br>
     (949)202-9536<br>
@@ -35,21 +36,32 @@
     <div id="proj_cont">
        <div>
           <img class="proj_image" src="images/Game_250px.png" alt=""></img>
-          <div class="proj_piece"><b>Game</b><p>A 2D platforming game with custom assets and an engine built from scratch in C with the SDL2 library.</p></div>         
-          <button class="Button">Read More</button>
+          <div class="proj_piece"><b>Game Engine</b><p>A 2D platforming game engine with custom assets. Built from scratch in C with the SDL2 library.</p></div>         
+          <button class="Button" onclick="openSpecificProject('game_proj')">Read More</button>
        </div>
-       <div>
-          <img class="proj_image" src="https://via.placeholder.com/250" alt=""></img>
+      <!-- <div>
+          <img class="proj_image" src="https://www.webfx.com/blog/images/cdn.designinstruct.com/files/582-how-to-image-placeholders/generic-image-placeholder.png" alt=""></img>
           <div class="proj_piece"><b>Website</b><p>A secondary article website based on my experience from game development that involves extensive usage of javascript.</p></div>
           <button class="Button">Read More</button>
        </div>
        <div>
-          <img class="proj_image" src="https://via.placeholder.com/250" alt=""></img>
+          <img class="proj_image" src="https://www.webfx.com/blog/images/cdn.designinstruct.com/files/582-how-to-image-placeholders/generic-image-placeholder.png" alt=""></img>
           <div class="proj_piece"><b>Atomic Simulation</b><p>A scientific modeling program made with python.</p></div>
           <button class="Button">Read More</button>
-       </div>
+       </div> -->
     </div>
     <button class="Button" id="gobackbutton_2" onclick="closeProjects()">Back</button>
+  </div>
+
+  <div id="game_proj">
+    <div id="game_grid_cont">
+      <div class="game_show_cont" id="game_header"><h1>A 2D Game Engine</h1><p>This project was one of my first major software development projects. The goal of the project was to improve my general programming skill and gain a better understanding of the C language.  </p></div>
+      <div class="game_show_cont"><img src="images/game_2.png" class="img_game_l" alt=""></img><h1>Collision Detection and Resolution</h1><br><p>One of the first parts of the engine developed was the collision detection and resolution system. Over time the system was revised several tiems to more accurately resolve collisions and to detect non-rectangular collisions. </p></div>
+      <div class="game_show_cont"><img src="images/game_1.png" alt="" class="img_game_r"></img><h1>Tiling and Graphics</h1><br><p>Alongside the collision detection and resolution, a grid-based tiling system was developed to create the platforms in the game engine. These tiles were drawn with hardware accelerated rendering of select sections of .png images.</p></div>
+      <div class="game_show_cont"><img src="images/game_3.png" class="img_game_l" alt=""></img><h1>Object System</h1><br><p>The object system allowed for the creation of objects that could interact with the platforms and eachother according to their AI or their controls. Objects can store data that is unique to each individual member as well as data that is shared among all of them.</p></div>
+      <div class="game_show_cont"><img src="images/game_4.png" alt="" class="img_game_r"></img><h1>Sounds and Timing</h1><br><p>One of the last elements added was a sound system that would take a stack of queued sounds and play them in order, in addition to the background music. The timing system was also made to carefully control the game speed.</p></div>
+    </div>
+  <button class="Button" onclick="closeSpecificProject('game_proj')">Back</button>
   </div>
 
 </div>
