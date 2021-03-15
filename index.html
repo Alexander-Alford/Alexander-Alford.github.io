@@ -14,9 +14,9 @@
   <b id="Name">Alexander Alford</b><br>
   Passionate software developer from UCSD
     <div id="greet_buttons">
-    <button class="Button" id="but_1" onclick="openAboutMe()">About Me</button>
+      <button class="Button" id="but_1" onclick="openAndClose('aboutme', 'greet_box')">About Me</button>
     <a href="Resume.pdf" target="_blank"><button class="Button" id="but_2" >Resume</button></a>
-    <button class="Button" id="but_3" onclick="openProjects()">Projects</button>
+    <button class="Button" id="but_3" onclick="openAndClose('projects', 'greet_box')">Projects</button>
     <a href="https://github.com/Pagup" target="_blank"><button class="Button" id="but_4">Github</button></a>
     <a href="https://www.linkedin.com/in/alexanderralford/" target="_blank"><button class="Button" id="but_5">LinkedIn</button></a>
     </div>
@@ -29,7 +29,7 @@
     <b style="font-size:30px">Contact</b><br>
     alexalford14@yahoo.com<br>
     (949)202-9536<br>
-  <button class="Button" id="gobackbutton_1" onclick="closeAboutMe()">Back</button>
+    <button class="Button" id="gobackbutton_1" onclick="openAndClose('greet_box', 'aboutme')">Back</button>
   </div>
 
   <div id="projects">
@@ -37,20 +37,20 @@
        <div>
           <img class="proj_image" src="images/Game_250px.png" alt=""></img>
           <div class="proj_piece"><b>Game Engine</b><p>A 2D platforming game engine with custom assets. Built from scratch in C with the SDL2 library.</p></div>         
-          <button class="Button" onclick="openSpecificProject('game_proj')">Read More</button>
+          <button class="Button" onclick="openAndClose('game_proj', 'projects')">Read More</button>
        </div>
       <!-- <div>
           <img class="proj_image" src="https://www.webfx.com/blog/images/cdn.designinstruct.com/files/582-how-to-image-placeholders/generic-image-placeholder.png" alt=""></img>
           <div class="proj_piece"><b>Website</b><p>A secondary article website based on my experience from game development that involves extensive usage of javascript.</p></div>
           <button class="Button">Read More</button>
-       </div>
+       </div>-->
        <div>
-          <img class="proj_image" src="https://www.webfx.com/blog/images/cdn.designinstruct.com/files/582-how-to-image-placeholders/generic-image-placeholder.png" alt=""></img>
-          <div class="proj_piece"><b>Atomic Simulation</b><p>A scientific modeling program made with python.</p></div>
-          <button class="Button">Read More</button>
-       </div> -->
+        <img class="proj_image" src="images/AtomSim_1.png" alt=""></img>
+        <div class="proj_piece"><b>Atomic Simulation</b><p>A scientific modeling program for particle physics made in Python with VPython.</p></div>
+        <button class="Button" onclick="openAndClose('atom_sim', 'projects')">Read More</button>
+       </div> 
     </div>
-    <button class="Button" id="gobackbutton_2" onclick="closeProjects()">Back</button>
+    <button class="Button" id="gobackbutton_2" onclick="openAndClose('greet_box', 'projects')">Back</button>
   </div>
 
   <div id="game_proj">
@@ -61,7 +61,15 @@
       <div class="game_show_cont"><img src="images/game_3.png" class="img_game_l" alt=""></img><h1>Object System</h1><br><p>The object system allowed for the creation of objects that could interact with the platforms and eachother according to their AI or their controls. Objects can store data that is unique to each individual member as well as data that is shared among all of them.</p></div>
       <div class="game_show_cont"><img src="images/game_4.png" alt="" class="img_game_r"></img><h1>Sounds and Timing</h1><br><p>One of the last elements added was a sound system that would take a stack of queued sounds and play them in order, in addition to the background music. The timing system was also made to carefully control the game speed.</p></div>
     </div>
-  <button class="Button" onclick="closeSpecificProject('game_proj')">Back</button>
+    <button class="Button" onclick="openAndClose('projects', 'game_proj')">Back</button>
+  </div>
+
+  <div id="atom_sim">
+    <div id="atom_summary">
+    Among Python's plethora of libraries, there is a substantial number of libraries dedicated to scientific computation. VPython is one of them that allows for simple implementation of 3D graphics and graphing capabilities. This program is an atomic physics simulator designed to simulate a series of sub-atomic particles and the forces that they interact with by using VPython's API. 
+    <img src="images/AtomSim_2.png" alt=""></img>
+    </div>
+    <button class="Button" style="margin-top: 20px" onclick="openAndClose('projects', 'atom_sim')">Back</button>
   </div>
 
 </div>
