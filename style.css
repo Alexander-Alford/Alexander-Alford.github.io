@@ -113,8 +113,8 @@ body{
   width: 70%;
 }
 .proj_image{
- min-width: 250px;
-  
+ width: 250px;
+ /* max-width: 100%;  */
 }
 #proj_cont > div > .Button{
  border-radius: 0px;
@@ -131,7 +131,8 @@ body{
 }
 #game_header{
   grid-area: header;
-  margin: 25px;
+  padding: 10px;
+  margin: 25px 30%;
 }
 #game_grid_cont{
   display: grid;
