@@ -6,7 +6,6 @@
 
 body{
   background-image: url(images/background.jpg);
-
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -56,12 +55,9 @@ body{
 }
 
 #aboutme{
-  position: absolute;
   text-align: center;
   line-height: 35px;
-  top: -1000vh;
   font-size: 3vw;
-  opacity: 0;
   margin: 30px auto 0px auto;
   width: 70%;
   max-width: 750px;
@@ -69,7 +65,6 @@ body{
   background: #222222;
   border: 2px solid #121212;
   border-radius: 5px;
-  transition: opacity 1s;
 }
 #aboutme p {
   text-align: left;
@@ -83,10 +78,6 @@ body{
 
 #projects{
   margin: 0px auto 0px auto;
-  position: absolute;
-  opacity: 0;
-  top: -1000vh;
-  transition: opacity 1s;
 }
 #proj_cont{
   display: flex;
@@ -114,7 +105,6 @@ body{
 }
 .proj_image{
  width: 250px;
- /* max-width: 100%;  */
 }
 #proj_cont > div > .Button{
  border-radius: 0px;
@@ -123,7 +113,7 @@ body{
  margin: 25px;
 }
 
-#game_proj{
+#game_proj, #atom_sim, #fordington_proj, #projects, #aboutme{
   position: absolute;
   top: -1000vh;
   transition: opacity 1s;
@@ -159,19 +149,10 @@ body{
   height: 300px;
 }
 
-#atom_sim{
-position: absolute;
-top: -1000vh;
-transition: opacity 1s;
-opacity: 0;  
-}
-
 #atom_summary{
 text-align: center;
 line-height: 35px;
-/*top: -1000vh;*/
 font-size: 22px;
-/*opacity: 0;*/
 margin: 30px auto 0px auto;
 width: 70%;
 max-width: 500px;
@@ -179,10 +160,21 @@ padding: 40px;
 background: #222222;
 border: 2px solid #121212;
 border-radius: 5px;
-/*transition: opacity 1s;  */
 }
 
+#fordington_proj{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
 
+.ford-container{
+	font-size: 20px;
+  padding: 40px;
+  background: #222222;
+  border: 2px solid #121212;
+  border-radius: 5px;	
+}
 
 
 /*Standard monitor size and above*/
