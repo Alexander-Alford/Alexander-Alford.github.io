@@ -162,20 +162,50 @@ border: 2px solid #121212;
 border-radius: 5px;
 }
 
+#ford-bootstrap{ grid-area: bootstrap; }
+#ford-react{ grid-area: react; }
+#ford-express{ grid-area: express;}
+#ford-mongo{ grid-area: mongo;}
+#ford-main
+{ 
+  position: relative;
+  grid-area: main;
+}
+
 #fordington_proj{
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "mongo main react"
+    "express . bootstrap";
+  /*grid-auto-flow: column;
+  grid-auto-columns: 1fr;*/
 }
 
 .ford-container{
 	font-size: 20px;
-  padding: 40px;
+  padding: 20px 40px;
   background: #222222;
   border: 2px solid #121212;
   border-radius: 5px;	
 }
 
+.ford-image{
+  display: block;
+  margin: 0px auto;
+  max-height: 200px;
+  max-width: 100%;
+  border-color: red;
+  border-width: 1px;
+}
+
+.ford-image-main{
+  display: block;
+  margin: 0px auto;
+  max-height: 300px;
+  max-width: 100%;
+}
 
 /*Standard monitor size and above*/
 @media screen and (min-width: 800px){

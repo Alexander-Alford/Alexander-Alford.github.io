@@ -131,24 +131,36 @@
   </div>
 
   <div id="fordington_proj">
-	<div class="ford-container" id="ford-mongo-info">
+
+	<div class="ford-container" id="ford-mongo">
+    <img src="images/MongoDB_logo.png" class="ford-image" />
 	This web app uses MongoDB Atlas to store its product data. 
 	The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
 	Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
 	The client can also post a request to the server to load filtered data from the database based on given criteria.
-	</div>
+	</div> 
 	<div class="ford-container" id="ford-main">
+    <img src="images/Fordington_Full.png" class="ford-image-main" />
 	Fordington is an imaginary online retailer that sells animals and animal products.
 	
-	<a href="" target="_blank"><button class="Button">Live Demo</button></a>
+	<a href="https://fordington.herokuapp.com" target="_blank"><button class="Button">Live Demo</button></a>
 	<button class="Button" style="margin-top: 20px" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
 	</div>
-	<div class="ford-container" id="ford-react-info">
+	<div class="ford-container" id="ford-react">
+    <img src="images/React_logo.png" class="ford-image" />
 	The client-side part of this web app is rendered dynamically with React.
 	The website is composed of nested react components that use a mixture of hooks and plain javascript for interactivity.
 	Data from the api endpoint is loaded for the home page by use of a state variable whose hook sets the state every time it's called. 
 	JSX allows for easy incorporation of javascript functionality into html giving a dynamic user interface.
-	</div>
+  </div>
+  <div class="ford-container" id="ford-bootstrap">
+    <img src="images/Bootstrap_logo.png" class="ford-image" />
+    Bootstrap 5 is used to style the website along with with custom edits. 
+  </div>
+  <div class="ford-container" id="ford-express">
+    <img src="images/Express_logo.png" class="ford-image" />
+    Server routing and the RESTful api is controlled with Express. 
+  </div>
   </div>
 
 </div>
