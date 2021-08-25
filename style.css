@@ -3,7 +3,11 @@
   padding: 0px;
   margin: 0px;
 }
-
+:root{
+  --panel_back: rgba(18, 19, 36, 0.9);
+  --panel_border: 2px solid rgba(87, 83, 83, 0.9);
+  --panel_text: white;
+}
 body{
   background-image: url(images/background.jpg);
   background-size: cover;
@@ -12,10 +16,19 @@ body{
   height: 100%;
 }
 
+a{
+  text-decoration: none;
+}
+
+.panel{
+  background: var(--panel_back);
+  border: var(--panel_border);
+  color: var(--panel_text);
+}
+
 
 #Master{
   text-align: center;
-  color: white;
   font-family: 'Gudea', sans-serif;
   font-size: 30px;
 }
@@ -62,8 +75,6 @@ body{
   width: 70%;
   max-width: 750px;
   padding: 40px;
-  background: #222222;
-  border: 2px solid #121212;
   border-radius: 5px;
 }
 #aboutme p {
@@ -87,9 +98,7 @@ body{
 #proj_cont > div{
   display: flex;
   text-align: left;
-  background: #222222;
   margin: 10px auto 10px auto;
-  border: 1px solid #DDDDDD;
   border-radius: 5px;
   width: 90%;
   max-width: 800px;
@@ -119,6 +128,7 @@ body{
   transition: opacity 1s;
   opacity: 0;
 }
+
 #game_header{
   grid-area: header;
   padding: 10px;
@@ -126,11 +136,11 @@ body{
 }
 #game_grid_cont{
   display: grid;
+  max-width: 1800px;
+  margin: auto;
   grid-template-areas: 'header header';
 }
 .game_show_cont{
-  background: #222222;
-  border: solid 1px black;
   border-radius: 5px;
   margin: 7px;
 }
@@ -157,38 +167,52 @@ margin: 30px auto 0px auto;
 width: 70%;
 max-width: 500px;
 padding: 40px;
-background: #222222;
-border: 2px solid #121212;
 border-radius: 5px;
 }
 
-#ford-bootstrap{ grid-area: bootstrap; }
-#ford-react{ grid-area: react; }
-#ford-express{ grid-area: express;}
-#ford-mongo{ grid-area: mongo;}
+#ford-react{
+  position: relative;
+  top: 70px;
+  font-size: 18px;
+  grid-area: react; 
+  }
+#ford-mongo
+{ 
+  position: relative;
+  top: 70px;
+  font-size: 18px;
+  grid-area: mongo;
+}
 #ford-main
 { 
   position: relative;
+  top: 20px;
+  font-size: 18px;
   grid-area: main;
 }
 
 #fordington_proj{
+  max-width: 1600px;
+  margin: auto;
+  text-indent: 50px;
   display: grid;
+  grid-gap: 15px 15px;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto;
   grid-template-areas:
-    "mongo main react"
-    "express . bootstrap";
+    "mongo main react";
   /*grid-auto-flow: column;
   grid-auto-columns: 1fr;*/
 }
 
 .ford-container{
+  text-align: left;
 	font-size: 20px;
-  padding: 20px 40px;
-  background: #222222;
-  border: 2px solid #121212;
+  padding: 10px 20px;
   border-radius: 5px;	
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .ford-image{

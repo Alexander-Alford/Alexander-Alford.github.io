@@ -17,14 +17,14 @@
     Passionate Web Developer
     <div id="greet_buttons">
       <button class="Button" id="but_1" onclick="openAndClose('aboutme', 'greet_box')">About Me</button>
-      <a href="Resume.pdf" target="_blank"><button class="Button" id="but_2" >Resume</button></a>
       <button class="Button" id="but_3" onclick="openAndClose('projects', 'greet_box')">Projects</button>
+      <a href="Resume.pdf" target="_blank"><button class="Button" id="but_2" >Resume</button></a>
       <a href="https://github.com/Alexander-Alford" target="_blank"><button class="Button" id="but_4">Github</button></a>
       <a href="https://www.linkedin.com/in/alexanderralford/" target="_blank"><button class="Button" id="but_5">LinkedIn</button></a>
     </div>
   </div>
   
-  <div id="aboutme">
+  <div id="aboutme" class="panel">
     <b style="font-size:30px">About Me</b><br>
     <p>My name is Alexander and I am a junior web developer currently looking for web development work. 
       I began developing software as a hobby while I was pursuing my Bachelor's degree. 
@@ -40,7 +40,7 @@
 
   <div id="projects">
     <div id="proj_cont">
-       <div>
+       <div class="panel">
           <img class="proj_image" src="images/Fordington_250px.png" alt="">
             <div class="proj_piece">
               <b>Mock Retailer Website</b>
@@ -48,7 +48,7 @@
             </div>         
           <button class="Button" onclick="openAndClose('fordington_proj', 'projects')">Read More</button>
        </div>
-	   <div>
+	   <div class="panel">
           <img class="proj_image" src="images/Game_250px.png" alt="">
             <div class="proj_piece">
               <b>Game Engine</b>
@@ -61,7 +61,7 @@
           <div class="proj_piece"><b>Website</b><p>A secondary article website based on my experience from game development that involves extensive usage of javascript.</p></div>
           <button class="Button">Read More</button>
        </div>-->
-       <div>
+       <div class="panel">
         <img class="proj_image" src="images/AtomSim_1.png" alt="">
           <div class="proj_piece">
             <b>Atomic Simulation</b>
@@ -75,30 +75,30 @@
 
   <div id="game_proj">
     <div id="game_grid_cont">
-      <div class="game_show_cont" id="game_header">
+      <div class="game_show_cont panel" id="game_header">
         <h1>A 2D Game Engine</h1>
         <p>This project was one of my first major software development projects. 
           The goal of the project was to improve my general programming skill and gain a better understanding of the C language.</p>
       </div>
-      <div class="game_show_cont">
+      <div class="game_show_cont panel">
         <img src="images/game_2.png" class="img_game_l" alt="">
-        <h1>Collision Detection and Resolution</h1>
-        <br>
-        <p>One of the first parts of the engine developed was the collision detection and resolution system.
+          <h1>Collision Detection and Resolution</h1>
+          <br>
+          <p>One of the first parts of the engine developed was the collision detection and resolution system.
           This system allowed moving objects to collied with terrain and be ejected reliably and efficiently.
           Over time the system was revised several times to more accurately resolve collisions and to detect non-rectangular collisions. 
-        </p>
+          </p>
       </div>
-      <div class="game_show_cont">
+      <div class="game_show_cont panel">
         <img src="images/game_1.png" alt="" class="img_game_r">
         <h1>Tiling and Graphics</h1>
         <br>
-        <p>Alongside the collision detection and resolution, a grid-based tiling system was developed to create the platforms in the game engine.
+        <p style="text-align: left">Alongside the collision detection and resolution, a grid-based tiling system was developed to create the platforms in the game engine.
            These tiles were drawn with hardware accelerated rendering of select sections of source images.
            Grid based tiling allows for platforms that are highly optimized in memory and performance.
         </p>
       </div>
-      <div class="game_show_cont">
+      <div class="game_show_cont panel">
         <img src="images/game_3.png" class="img_game_l" alt="">
         <h1>Object System</h1>
         <br>
@@ -106,7 +106,7 @@
           Objects can store data that is unique to each individual member as well as data that is shared among all of the instances of a kind of object.
         </p>
       </div>
-      <div class="game_show_cont">
+      <div class="game_show_cont panel">
         <img src="images/game_4.png" alt="" class="img_game_r">
         <h1>Sounds and Timing</h1>
         <br>
@@ -116,11 +116,11 @@
         </p>
       </div>
     </div>
-    <button class="Button" onclick="openAndClose('projects', 'game_proj')">Back</button>
+    <button class="Button" style="width: 200px" onclick="openAndClose('projects', 'game_proj')">Back</button>
   </div>
 
   <div id="atom_sim">
-    <div id="atom_summary">
+    <div id="atom_summary" class="panel">
     This program is an atomic physics simulator designed to simulate a number of sub-atomic particles and the forces that they interact with by using VPython's API.
     The VPython module provides a simple implementation of 3D graphics, vector math, and graphing capabilities that can easily be implemented. 
     The simulation can be paused at any time. 
@@ -132,35 +132,56 @@
 
   <div id="fordington_proj">
 
-	<div class="ford-container" id="ford-mongo">
+	<div class="ford-container panel" id="ford-mongo">
     <img src="images/MongoDB_logo.png" class="ford-image" />
-	This web app uses MongoDB Atlas to store its product data. 
-	The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
-	Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
-	The client can also post a request to the server to load filtered data from the database based on given criteria.
-	</div> 
-	<div class="ford-container" id="ford-main">
-    <img src="images/Fordington_Full.png" class="ford-image-main" />
-	Fordington is an imaginary online retailer that sells animals and animal products.
-	
-	<a href="https://fordington.herokuapp.com" target="_blank"><button class="Button">Live Demo</button></a>
-	<button class="Button" style="margin-top: 20px" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
-	</div>
-	<div class="ford-container" id="ford-react">
-    <img src="images/React_logo.png" class="ford-image" />
-	The client-side part of this web app is rendered dynamically with React.
-	The website is composed of nested react components that use a mixture of hooks and plain javascript for interactivity.
-	Data from the api endpoint is loaded for the home page by use of a state variable whose hook sets the state every time it's called. 
-	JSX allows for easy incorporation of javascript functionality into html giving a dynamic user interface.
-  </div>
-  <div class="ford-container" id="ford-bootstrap">
-    <img src="images/Bootstrap_logo.png" class="ford-image" />
-    Bootstrap 5 is used to style the website along with with custom edits. 
-  </div>
-  <div class="ford-container" id="ford-express">
+      <p>This web app uses MongoDB Atlas to store and provide its product data. 
+      By using a read-only access key, the server can access the document collection for the prop products and perform read operations on them.
+	    The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
+	    Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
+      The client can also post a request to the server to load filtered data from the database based on given criteria.
+
+      Server routing and the RESTful api is controlled with Express. 
+      </p>
     <img src="images/Express_logo.png" class="ford-image" />
-    Server routing and the RESTful api is controlled with Express. 
+	</div> 
+	<div class="ford-container panel" id="ford-main">
+    <img src="images/Fordington_Full.png" class="ford-image-main" />
+    <div style="margin: 20px 0px">  
+      <p>
+      Fordington is an imaginary online retailer that sells animals and animal products. The purpose of this project was
+      to experiment, develop, and deploy a web app that uses React and MongoDB to create a dynamic UI that allows the user
+      to interact with a cloud database in ways that mimic popular online retailers like Amazon. Data for the website was
+      generated and is accessed with MongoDB Atlas while content is rendered with individual react components that respond
+      to state changes. I used Heroku to deploy the app as a live demo that anybody can try.
+      </p>
+      <br /> 
+      <p>The demo provides a functional product
+      page allowing the user to inspect items, add them to their carts, go to checkout, modify their order, and then send it out.
+      In addition, the user can query for a specific kind of item and adjust how many items are displayed. A nonfunctional sign in and register 
+      page are provided to complete the environment.
+      </p>
+    </div>
+    <div style="display: flex">
+    <a href="https://fordington.herokuapp.com" style="display: flex; flex-basis: 50%" target="_blank"><button class="Button" style="flex-grow: 10">Live Demo</button></a>
+    <button class="Button" style="flex-basis: 50%" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
+    </div>
+	</div>
+	<div class="ford-container panel" id="ford-react">
+    <img src="images/React_logo.png" class="ford-image" />
+    <p>
+	  The client-side part of this web app is rendered dynamically with React.
+	  The website is composed of nested react components that use a mixture of hooks, props, and plain javascript for interactivity.
+	  Data from the api endpoint is loaded for the home page by use of a state variable whose hook sets the state and re-renders every time it's called. 
+    JSX allows for easy incorporation of javascript functionality into html giving a dynamic user interface for the user's cart that allows items to be added
+    and removed while the page is visibly updated.
+
+    Bootstrap 5 is used to style the website along with with custom edits. The Bootstrap classes provide a styling that adjusts
+    with screen dimensions for platform independent websites.
+    </p>
+  <img src="images/Bootstrap_logo.png" class="ford-image" />
   </div>
+  
+  
   </div>
 
 </div>
