@@ -1,19 +1,23 @@
+/** Global rules/Setup **/
 *{
-  box-sizing: boder-box;
-  padding: 0px;
-  margin: 0px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 :root{
   --panel_back: rgba(18, 19, 36, 0.9);
   --panel_border: 2px solid rgba(87, 83, 83, 0.9);
   --panel_text: white;
 }
+
 body{
   background-image: url(images/background.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 a{
@@ -24,27 +28,6 @@ a{
   background: var(--panel_back);
   border: var(--panel_border);
   color: var(--panel_text);
-}
-
-
-#Master{
-  text-align: center;
-  font-family: 'Gudea', sans-serif;
-  font-size: 30px;
-}
-
-#Name{
-  font-size: 40px;
-}
-
-#greet_buttons{
-  margin: 50px 0px;
-}
-
-#greet_box{
-  margin: 300px auto;
-  top: -1000px;
-  transition: opacity 1s;
 }
 
 .Button{
@@ -66,25 +49,59 @@ a{
   border: 2px solid rgba(255,255,255,0.9);
   background: rgba(100,100,100,0.9);
 }
+/**********************/
+
+.back-but{
+  width: 200px;
+}
+
+.greet-but{
+  width: 120px;
+}
+
+#Master{
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gudea', sans-serif;
+  font-size: 30px;
+}
+
+#Name{
+  font-size: 40px;
+}
+
+#greet_buttons{
+  margin: 50px 0px;
+}
+
+#greet_box{
+  margin: 0px auto;
+  top: -1000px;
+  transition: opacity 1s;
+}
 
 #aboutme{
   text-align: center;
-  line-height: 35px;
+  line-height: auto;
   font-size: 3vw;
-  margin: 30px auto 0px auto;
+  margin: 0px auto;
   width: 70%;
   max-width: 750px;
   padding: 40px;
   border-radius: 5px;
 }
-#aboutme p {
+#aboutme p{
   text-align: left;
-  text-indent: 50px;
+  text-indent: 8%;
 }
 #gobackbutton_1{
-  margin: auto;
+  margin: 0px auto;
   position: relative;
-  top: 200px;
+  top: 115px;
 }
 
 #projects{
@@ -125,6 +142,7 @@ a{
 #game_proj, #atom_sim, #fordington_proj, #projects, #aboutme{
   position: absolute;
   top: -1000vh;
+  left: -1000vw;
   transition: opacity 1s;
   opacity: 0;
 }
@@ -132,7 +150,8 @@ a{
 #game_header{
   grid-area: header;
   padding: 10px;
-  margin: 25px 30%;
+  max-width: 1000px;
+  margin: 25px auto;
 }
 #game_grid_cont{
   display: grid;
@@ -146,9 +165,11 @@ a{
 }
 .game_show_cont > h1{
   font-size: 29px;
+  padding: 15px;
 }
 .game_show_cont > p{
   font-size: 20px;
+  min-width: 200px;
 }
 .img_game_l{
   float: left;
@@ -163,30 +184,35 @@ a{
 text-align: center;
 line-height: 35px;
 font-size: 22px;
-margin: 30px auto 0px auto;
-width: 70%;
+margin: 0px 0px;
+
 max-width: 500px;
 padding: 40px;
 border-radius: 5px;
 }
 
+#atom_sim{
+  padding-top: 20px;
+  display: flex;
+}
+
 #ford-react{
   position: relative;
-  top: 70px;
+  top: 30px;
   font-size: 18px;
   grid-area: react; 
   }
 #ford-mongo
 { 
   position: relative;
-  top: 70px;
+  top: 30px;
   font-size: 18px;
   grid-area: mongo;
 }
 #ford-main
 { 
   position: relative;
-  top: 20px;
+  bottom: 20px;
   font-size: 18px;
   grid-area: main;
 }
@@ -198,7 +224,7 @@ border-radius: 5px;
   display: grid;
   grid-gap: 15px 15px;
   grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto;
   grid-template-areas:
     "mongo main react";
   /*grid-auto-flow: column;
@@ -241,14 +267,52 @@ border-radius: 5px;
   font-size: 23px;    
   }
 }
+
+@media screen and (max-width: 1100px){
+  .game_show_cont > h1{
+  clear: both;
+  }
+  .game_show_cont > p{
+  clear: both;
+  }
+}
+
 /*Phone/tablet size*/
+@media screen and (max-width: 850px){
+
+  #aboutme{
+    width: 85%;
+    } 
+
+  #fordington_proj{
+  grid-template-areas: 
+  "main"
+  "mongo"
+  "react";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  }
+  #ford-main, #ford-mongo, #ford-react{
+  position: static;
+  }
+
+  #game_grid_cont{
+    grid-template-areas: 'header';
+    }
+  .game_show_cont > h1{
+    clear: none;
+    }
+    .game_show_cont > p{
+    clear: none;
+    }  
+}
+
 @media screen and (max-width: 600px){
    #aboutme{
-  font-size: 18px;
-  } 
-  #game_grid_cont{
-  grid-template-areas: 'header';
-}
+    width: 100%;
+    font-size: 18px;
+    } 
+  
 }
 
 

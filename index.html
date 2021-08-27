@@ -16,11 +16,11 @@
   <b id="Name">Alexander Alford</b><br>
     Passionate Web Developer
     <div id="greet_buttons">
-      <button class="Button" id="but_1" onclick="openAndClose('aboutme', 'greet_box')">About Me</button>
-      <button class="Button" id="but_3" onclick="openAndClose('projects', 'greet_box')">Projects</button>
-      <a href="Resume.pdf" target="_blank"><button class="Button" id="but_2" >Resume</button></a>
-      <a href="https://github.com/Alexander-Alford" target="_blank"><button class="Button" id="but_4">Github</button></a>
-      <a href="https://www.linkedin.com/in/alexanderralford/" target="_blank"><button class="Button" id="but_5">LinkedIn</button></a>
+      <button class="Button greet-but" id="but_1" onclick="openAndClose('aboutme', 'greet_box')">About Me</button>
+      <button class="Button greet-but" id="but_3" onclick="openAndClose('projects', 'greet_box')">Projects</button>
+      <a class="greet-but" href="Resume.pdf" target="_blank"><button class="Button greet-but" id="but_2" >Resume</button></a>
+      <a class="greet-but" href="https://github.com/Alexander-Alford" target="_blank"><button class="Button greet-but" id="but_4">Github</button></a>
+      <a class="greet-but" href="https://www.linkedin.com/in/alexanderralford/" target="_blank"><button class="Button greet-but" id="but_5">LinkedIn</button></a>
     </div>
   </div>
   
@@ -35,7 +35,7 @@
     <b style="font-size:30px">Contact</b><br>
     alexalford@runbox.ch<br>
     (949)202-9536<br>
-    <button class="Button" id="gobackbutton_1" onclick="openAndClose('greet_box', 'aboutme')">Back</button>
+    <button class="Button back-but" id="gobackbutton_1" onclick="openAndClose('greet_box', 'aboutme')">Back</button>
   </div>
 
   <div id="projects">
@@ -70,7 +70,7 @@
         <button class="Button" onclick="openAndClose('atom_sim', 'projects')">Read More</button>
        </div> 
     </div>
-    <button class="Button" id="gobackbutton_2" onclick="openAndClose('greet_box', 'projects')">Back</button>
+    <button class="Button back-but" id="gobackbutton_2" onclick="openAndClose('greet_box', 'projects')">Back</button>
   </div>
 
   <div id="game_proj">
@@ -116,7 +116,7 @@
         </p>
       </div>
     </div>
-    <button class="Button" style="width: 200px" onclick="openAndClose('projects', 'game_proj')">Back</button>
+    <button class="Button back-but" onclick="openAndClose('projects', 'game_proj')">Back</button>
   </div>
 
   <div id="atom_sim">
@@ -126,8 +126,12 @@
     The simulation can be paused at any time. 
     While running, the average electron radius is graphed in real time and the electrostatic force can be disabled at any time by the user.
     <img style="max-width:100%" src="images/AtomSim_2.png" alt="">
+     <!-- <div style="width: 400px">
+        <iframe src="atomSim.html" width="620" height="640" style="transform: scale(0.5); transform-origin: 0 0;"></iframe>
+      </div> --->
+      <button class="Button back-but" style="margin-top: 20px" onclick="openAndClose('projects', 'atom_sim')">Back</button>
     </div>
-    <button class="Button" style="margin-top: 20px" onclick="openAndClose('projects', 'atom_sim')">Back</button>
+    
   </div>
 
   <div id="fordington_proj">
@@ -135,12 +139,13 @@
 	<div class="ford-container panel" id="ford-mongo">
     <img src="images/MongoDB_logo.png" class="ford-image" />
       <p>This web app uses MongoDB Atlas to store and provide its product data. 
-      By using a read-only access key, the server can access the document collection for the prop products and perform read operations on them.
+      By using a access key to a read-only data cluster, the server can access the document collection for the prop products and perform read operations on them.
 	    The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
-	    Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
-      The client can also post a request to the server to load filtered data from the database based on given criteria.
+      Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
+      Server routing and the RESTful api is controlled with using Express functionality. 
+      The client can post a request to the server to load filtered response data from the database based on given criteria.
 
-      Server routing and the RESTful api is controlled with Express. 
+      
       </p>
     <img src="images/Express_logo.png" class="ford-image" />
 	</div> 
