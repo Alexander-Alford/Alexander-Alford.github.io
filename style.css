@@ -94,9 +94,12 @@ a{
   padding: 40px;
   border-radius: 5px;
 }
-#aboutme p{
+#aboutme > p{
   text-align: left;
   text-indent: 8%;
+}
+#aboutme > b{
+  font-size: 30px;
 }
 #gobackbutton_1{
   margin: 0px auto;
@@ -181,19 +184,31 @@ a{
 }
 
 #atom_summary{
+text-indent: 8%;
 text-align: center;
-line-height: 35px;
-font-size: 22px;
-margin: 0px 0px;
-
-max-width: 500px;
-padding: 40px;
+line-height: 27px;
+font-size: 20px;
+margin: 10px;
+width: 100%;
+max-width: 540px;
+padding: 15px 30px;
 border-radius: 5px;
+}
+#atom_summary > p{
+  text-align: left;
 }
 
 #atom_sim{
   padding-top: 20px;
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+#atom_embed > iframe{
+height: 900px;
+max-width: 540px;
 }
 
 #ford-react{
@@ -261,6 +276,7 @@ border-radius: 5px;
 @media screen and (min-width: 800px){
   #aboutme{
   font-size: 24px;
+  line-height: 32px;
   }
   
   .proj_piece{
@@ -312,7 +328,10 @@ border-radius: 5px;
     width: 100%;
     font-size: 18px;
     } 
-  
+    #atom_embed{
+    transform-origin: center;
+    transform: scale(0.8);
+    }
 }
 
 
