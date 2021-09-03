@@ -1,658 +1,684 @@
 <div id="glowscript" class="glowscript">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
-    <link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
-    <script type="text/javascript" src="https://www.glowscript.org/package/glow.3.1.min.js"></script>
-    <script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.1.min.js"></script>
-    <script type="text/javascript"><!--//--><![CDATA[//><!--
-    
-    // START JAVASCRIPT
-    ;(function() {;
-    var ρσ_modules = {};
-    var electro_flag, selfinteractflag, run_flag;
-    ρσ_modules.pythonize = {};
-    ρσ_modules.random = {};
-    
-    (function(){
-        function strings() {
-            var string_funcs, exclude, name;
-            string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
-            if (!arguments.length) {
-                exclude = (function(){
-                    var s = ρσ_set();
-                    s.jsset.add("split");
-                    s.jsset.add("replace");
-                    return s;
-                })();
-            } else if (arguments[0]) {
-                exclude = Array.prototype.slice.call(arguments);
-            } else {
-                exclude = null;
-            }
-            if (exclude) {
-                string_funcs = string_funcs.difference(set(exclude));
-            }
-            var ρσ_Iter0 = string_funcs;
-            ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
-            for (var ρσ_Index0 of ρσ_Iter0) {
-                name = ρσ_Index0;
-                (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
-            }
-        };
-        if (!strings.__module__) Object.defineProperties(strings, {
-            __module__ : {value: "pythonize"}
-        });
-    
-        ρσ_modules.pythonize.strings = strings;
-    })();
-    
-    (function(){
-        var ρσ_seed_state, ρσ_get_random_byte;
-        ρσ_seed_state = (function(){
-            var ρσ_d = {};
-            ρσ_d["key"] = ρσ_list_decorate([]);
-            ρσ_d["key_i"] = 0;
-            ρσ_d["key_j"] = 0;
-            return ρσ_d;
-        }).call(this);
-        ρσ_get_random_byte = (function() {
-            var ρσ_anonfunc = function () {
-                var ρσ_unpack;
-                ρσ_seed_state.key_i = (ρσ_seed_state.key_i + 1) % 256;
-                ρσ_seed_state.key_j = (ρσ_seed_state.key_j + (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_i, ρσ_expr_temp)]) % 256;
-                ρσ_unpack = [(ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_j, ρσ_expr_temp)], 
-                (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_i, ρσ_expr_temp)]];
-                (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_i, ρσ_expr_temp)] = ρσ_unpack[0];
-                (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_j, ρσ_expr_temp)] = ρσ_unpack[1];
-                return (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(((ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_i, ρσ_expr_temp)] + (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_j, ρσ_expr_temp)]) % 256, ρσ_expr_temp)];
-            };
-            if (!ρσ_anonfunc.__module__) Object.defineProperties(ρσ_anonfunc, {
-                __module__ : {value: "random"}
-            });
-            return ρσ_anonfunc;
-        })();
-        function seed() {
-            var x = (arguments[0] === undefined || ( 0 === arguments.length-1 && arguments[arguments.length-1] !== null && typeof arguments[arguments.length-1] === "object" && arguments[arguments.length-1] [ρσ_kwargs_symbol] === true)) ? seed.__defaults__.x : arguments[0];
-            var ρσ_kwargs_obj = arguments[arguments.length-1];
-            if (ρσ_kwargs_obj === null || typeof ρσ_kwargs_obj !== "object" || ρσ_kwargs_obj [ρσ_kwargs_symbol] !== true) ρσ_kwargs_obj = {};
-            if (Object.prototype.hasOwnProperty.call(ρσ_kwargs_obj, "x")){
-                x = ρσ_kwargs_obj.x;
-            }
-            var i, j, ρσ_unpack;
-            ρσ_seed_state.key_i = ρσ_seed_state.key_j = 0;
-            if (typeof x === "number") {
-                x = x.toString();
-            } else if (typeof x !== "string") {
-                throw new TypeError("unhashable type: '" + typeof x + "'");
-            }
-            for (var ρσ_Index1 = 0; ρσ_Index1 < 256; ρσ_Index1++) {
-                i = ρσ_Index1;
-                (ρσ_expr_temp = ρσ_seed_state.key)[(typeof i === "number" && i < 0) ? ρσ_expr_temp.length + i : i] = i;
-            }
-            j = 0;
-            for (var ρσ_Index2 = 0; ρσ_Index2 < 256; ρσ_Index2++) {
-                i = ρσ_Index2;
-                j = (j + (ρσ_expr_temp = ρσ_seed_state.key)[(typeof i === "number" && i < 0) ? ρσ_expr_temp.length + i : i] + x.charCodeAt(i % x.length)) % 256;
-                ρσ_unpack = [(ρσ_expr_temp = ρσ_seed_state.key)[(typeof j === "number" && j < 0) ? ρσ_expr_temp.length + j : j], 
-                (ρσ_expr_temp = ρσ_seed_state.key)[(typeof i === "number" && i < 0) ? ρσ_expr_temp.length + i : i]];
-                (ρσ_expr_temp = ρσ_seed_state.key)[(typeof i === "number" && i < 0) ? ρσ_expr_temp.length + i : i] = ρσ_unpack[0];
-                (ρσ_expr_temp = ρσ_seed_state.key)[(typeof j === "number" && j < 0) ? ρσ_expr_temp.length + j : j] = ρσ_unpack[1];
-            }
-        };
-        if (!seed.__defaults__) Object.defineProperties(seed, {
-            __defaults__ : {value: {x:(new Date).getTime()}},
-            __handles_kwarg_interpolation__ : {value: true},
-            __argnames__ : {value: ["x"]},
-            __module__ : {value: "random"}
-        });
-    
-        seed();
-        function random() {
-            var n, m, i;
-            n = 0;
-            m = 1;
-            for (var ρσ_Index3 = 0; ρσ_Index3 < 8; ρσ_Index3++) {
-                i = ρσ_Index3;
-                n += ρσ_get_random_byte() * m;
-                m *= 256;
-            }
-            return n / 0x10000000000000000;
-        };
-        if (!random.__module__) Object.defineProperties(random, {
-            __module__ : {value: "random"}
-        });
-    
-        function randrange() {
-            return choice(range.apply(this, arguments));
-        };
-        if (!randrange.__module__) Object.defineProperties(randrange, {
-            __module__ : {value: "random"}
-        });
-    
-        function randint(a, b) {
-            return int(random() * (b - a + 1) + a);
-        };
-        if (!randint.__argnames__) Object.defineProperties(randint, {
-            __argnames__ : {value: ["a", "b"]},
-            __module__ : {value: "random"}
-        });
-    
-        function uniform(a, b) {
-            return random() * (b - a) + a;
-        };
-        if (!uniform.__argnames__) Object.defineProperties(uniform, {
-            __argnames__ : {value: ["a", "b"]},
-            __module__ : {value: "random"}
-        });
-    
-        function choice(seq) {
-            if (seq.length > 0) {
-                return seq[ρσ_bound_index(Math.floor(random() * seq.length), seq)];
-            } else {
-                throw new IndexError;
-            }
-        };
-        if (!choice.__argnames__) Object.defineProperties(choice, {
-            __argnames__ : {value: ["seq"]},
-            __module__ : {value: "random"}
-        });
-    
-        function shuffle() {
-            var x = ( 0 === arguments.length-1 && arguments[arguments.length-1] !== null && typeof arguments[arguments.length-1] === "object" && arguments[arguments.length-1] [ρσ_kwargs_symbol] === true) ? undefined : arguments[0];
-            var random_f = (arguments[1] === undefined || ( 1 === arguments.length-1 && arguments[arguments.length-1] !== null && typeof arguments[arguments.length-1] === "object" && arguments[arguments.length-1] [ρσ_kwargs_symbol] === true)) ? shuffle.__defaults__.random_f : arguments[1];
-            var ρσ_kwargs_obj = arguments[arguments.length-1];
-            if (ρσ_kwargs_obj === null || typeof ρσ_kwargs_obj !== "object" || ρσ_kwargs_obj [ρσ_kwargs_symbol] !== true) ρσ_kwargs_obj = {};
-            if (Object.prototype.hasOwnProperty.call(ρσ_kwargs_obj, "random_f")){
-                random_f = ρσ_kwargs_obj.random_f;
-            }
-            var j, ρσ_unpack, i;
-            for (var ρσ_Index4 = 0; ρσ_Index4 < x.length; ρσ_Index4++) {
-                i = ρσ_Index4;
-                j = Math.floor(random_f() * (i + 1));
-                ρσ_unpack = [x[(typeof j === "number" && j < 0) ? x.length + j : j], x[(typeof i === "number" && i < 0) ? x.length + i : i]];
-                x[(typeof i === "number" && i < 0) ? x.length + i : i] = ρσ_unpack[0];
-                x[(typeof j === "number" && j < 0) ? x.length + j : j] = ρσ_unpack[1];
-            }
-            return x;
-        };
-        if (!shuffle.__defaults__) Object.defineProperties(shuffle, {
-            __defaults__ : {value: {random_f:random}},
-            __handles_kwarg_interpolation__ : {value: true},
-            __argnames__ : {value: ["x", "random_f"]},
-            __module__ : {value: "random"}
-        });
-    
-        function sample(population, k) {
-            var x, j, ρσ_unpack, i;
-            x = population.slice();
-            for (var ρσ_Index5 = population.length - 1; ρσ_Index5 > population.length - k - 1; ρσ_Index5-=1) {
-                i = ρσ_Index5;
-                j = Math.floor(random() * (i + 1));
-                ρσ_unpack = [x[(typeof j === "number" && j < 0) ? x.length + j : j], x[(typeof i === "number" && i < 0) ? x.length + i : i]];
-                x[(typeof i === "number" && i < 0) ? x.length + i : i] = ρσ_unpack[0];
-                x[(typeof j === "number" && j < 0) ? x.length + j : j] = ρσ_unpack[1];
-            }
-            return x.slice(population.length - k);
-        };
-        if (!sample.__argnames__) Object.defineProperties(sample, {
-            __argnames__ : {value: ["population", "k"]},
-            __module__ : {value: "random"}
-        });
-    
-        ρσ_modules.random.ρσ_seed_state = ρσ_seed_state;
-        ρσ_modules.random.ρσ_get_random_byte = ρσ_get_random_byte;
-        ρσ_modules.random.seed = seed;
-        ρσ_modules.random.random = random;
-        ρσ_modules.random.randrange = randrange;
-        ρσ_modules.random.randint = randint;
-        ρσ_modules.random.uniform = uniform;
-        ρσ_modules.random.choice = choice;
-        ρσ_modules.random.shuffle = shuffle;
-        ρσ_modules.random.sample = sample;
-    })();
-    async function __main__() {
-    "use strict";
-        var display = canvas;
-        var scene = canvas();
-    
-        var version, print, arange, __name__, type, ρσ_ls, elec_mass, prot_mass, elem_charge, coulombconst, a_0, v_light, delta_t, min_dist, time, graph_radBin, numRadHisto, total_r_samples, counter, particlelist, run_flag, electro_flag, magnet_flag, primescene, distgraph, r_histo, snapshot_rhisto, vrad, hydOrbTheory, r, i, _GS_1, p;
-        version = ρσ_list_decorate([ "3.1", "glowscript" ]);
-        Array.prototype['+'] = function(r) {return this.concat(r)}
-        Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
-        window.__GSlang = "vpython";
-        print = GSprint;
-        arange = range;
-        __name__ = "__main__";
-        type = pytype;
-        var strings = ρσ_modules.pythonize.strings;
-    
-        strings();
-        var random = ρσ_modules.random;
-    
-        "7";
-        elec_mass = 9.1093837015e-31;
-        "8";
-        prot_mass = 1.6726219e-27;
-        "9";
-        elem_charge = 1.602176634e-19;
-        "10";
-        coulombconst = 8987551792.3;
-        "11";
-        a_0 = 5.29177210903e-11;
-        "12";
-        v_light = 299792458;
-        "15";
-        delta_t = 1e-19;
-        "16";
-        min_dist = 1e-15;
-        "17";
-        time = 0;
-        "19";
-        graph_radBin = a_0["/"](10);
-        "20";
-        numRadHisto = 50;
-        "21";
-        total_r_samples = 1e3;
-        "22";
-        counter = 0;
-        "24";
-        function Particle() {;
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.1.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.1.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+var ρσ_modules = {};
+var electro_flag, selfinteractflag, coulombconst, run_flag;
+ρσ_modules.pythonize = {};
+ρσ_modules.random = {};
+
+(function(){
+    function strings() {
+        var string_funcs, exclude, name;
+        string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
+        if (!arguments.length) {
+            exclude = (function(){
+                var s = ρσ_set();
+                s.jsset.add("split");
+                s.jsset.add("replace");
+                return s;
+            })();
+        } else if (arguments[0]) {
+            exclude = Array.prototype.slice.call(arguments);
+        } else {
+            exclude = null;
         }
-        Particle.prototype.__init__ = async function __init__(velocity, mass, charge, position, color, radius) {
-            var self = this;
-            "27";
-            self.velocity = vector(velocity[0], velocity[1], velocity[2]);
-            "28";
-            self.position = vector(position[0], position[1], position[2]);
-            "29";
-            self.mass = mass;
-            "30";
-            self.charge = charge;
-            "31";
-            self.sphere = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: self.position, radius: radius, color: color})]);
+        if (exclude) {
+            string_funcs = string_funcs.difference(set(exclude));
+        }
+        var ρσ_Iter0 = string_funcs;
+        ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
+        for (var ρσ_Index0 of ρσ_Iter0) {
+            name = ρσ_Index0;
+            (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
+        }
+    };
+    if (!strings.__module__) Object.defineProperties(strings, {
+        __module__ : {value: "pythonize"}
+    });
+
+    ρσ_modules.pythonize.strings = strings;
+})();
+
+(function(){
+    var ρσ_seed_state, ρσ_get_random_byte;
+    ρσ_seed_state = (function(){
+        var ρσ_d = {};
+        ρσ_d["key"] = ρσ_list_decorate([]);
+        ρσ_d["key_i"] = 0;
+        ρσ_d["key_j"] = 0;
+        return ρσ_d;
+    }).call(this);
+    ρσ_get_random_byte = (function() {
+        var ρσ_anonfunc = function () {
+            var ρσ_unpack;
+            ρσ_seed_state.key_i = (ρσ_seed_state.key_i + 1) % 256;
+            ρσ_seed_state.key_j = (ρσ_seed_state.key_j + (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_i, ρσ_expr_temp)]) % 256;
+            ρσ_unpack = [(ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_j, ρσ_expr_temp)], 
+            (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_i, ρσ_expr_temp)]];
+            (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_i, ρσ_expr_temp)] = ρσ_unpack[0];
+            (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_j, ρσ_expr_temp)] = ρσ_unpack[1];
+            return (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(((ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_i, ρσ_expr_temp)] + (ρσ_expr_temp = ρσ_seed_state.key)[ρσ_bound_index(ρσ_seed_state.key_j, ρσ_expr_temp)]) % 256, ρσ_expr_temp)];
         };
-        if (!Particle.prototype.__init__.__argnames__) Object.defineProperties(Particle.prototype.__init__, {
-            __argnames__ : {value: ["velocity", "mass", "charge", "position", "color", "radius"]},
-            __module__ : {value: null}
+        if (!ρσ_anonfunc.__module__) Object.defineProperties(ρσ_anonfunc, {
+            __module__ : {value: "random"}
         });
-        Particle.__argnames__ = Particle.prototype.__init__.__argnames__;
-        Particle.__handles_kwarg_interpolation__ = Particle.prototype.__init__.__handles_kwarg_interpolation__;
-        Particle.prototype.updatePos = async function updatePos() {
-            var self = this;
-            "34";
-            self.position=self.position["+"](self.velocity["*"](delta_t));
-            "35";
-            self.sphere.pos = self.position;
-        };
-        if (!Particle.prototype.updatePos.__module__) Object.defineProperties(Particle.prototype.updatePos, {
-            __module__ : {value: null}
-        });
-        Particle.prototype.__repr__ = async function __repr__() {
-                    return "<"["+"](__name__)["+"](".")["+"](this.constructor.name)["+"](" #")["+"](this.ρσ_object_id)["+"](">");
-        };
-        Particle.prototype.__str__ = async function __str__() {
-            return (await this.__repr__());
-        };
-        Object.defineProperty(Particle.prototype, "__bases__", {value: []});
-        
-        
+        return ρσ_anonfunc;
+    })();
+    function seed() {
+        var x = (arguments[0] === undefined || ( 0 === arguments.length-1 && arguments[arguments.length-1] !== null && typeof arguments[arguments.length-1] === "object" && arguments[arguments.length-1] [ρσ_kwargs_symbol] === true)) ? seed.__defaults__.x : arguments[0];
+        var ρσ_kwargs_obj = arguments[arguments.length-1];
+        if (ρσ_kwargs_obj === null || typeof ρσ_kwargs_obj !== "object" || ρσ_kwargs_obj [ρσ_kwargs_symbol] !== true) ρσ_kwargs_obj = {};
+        if (Object.prototype.hasOwnProperty.call(ρσ_kwargs_obj, "x")){
+            x = ρσ_kwargs_obj.x;
+        }
+        var i, j, ρσ_unpack;
+        ρσ_seed_state.key_i = ρσ_seed_state.key_j = 0;
+        if (typeof x === "number") {
+            x = x.toString();
+        } else if (typeof x !== "string") {
+            throw new TypeError("unhashable type: '" + typeof x + "'");
+        }
+        for (var ρσ_Index1 = 0; ρσ_Index1 < 256; ρσ_Index1++) {
+            i = ρσ_Index1;
+            (ρσ_expr_temp = ρσ_seed_state.key)[(typeof i === "number" && i < 0) ? ρσ_expr_temp.length + i : i] = i;
+        }
+        j = 0;
+        for (var ρσ_Index2 = 0; ρσ_Index2 < 256; ρσ_Index2++) {
+            i = ρσ_Index2;
+            j = (j + (ρσ_expr_temp = ρσ_seed_state.key)[(typeof i === "number" && i < 0) ? ρσ_expr_temp.length + i : i] + x.charCodeAt(i % x.length)) % 256;
+            ρσ_unpack = [(ρσ_expr_temp = ρσ_seed_state.key)[(typeof j === "number" && j < 0) ? ρσ_expr_temp.length + j : j], 
+            (ρσ_expr_temp = ρσ_seed_state.key)[(typeof i === "number" && i < 0) ? ρσ_expr_temp.length + i : i]];
+            (ρσ_expr_temp = ρσ_seed_state.key)[(typeof i === "number" && i < 0) ? ρσ_expr_temp.length + i : i] = ρσ_unpack[0];
+            (ρσ_expr_temp = ρσ_seed_state.key)[(typeof j === "number" && j < 0) ? ρσ_expr_temp.length + j : j] = ρσ_unpack[1];
+        }
+    };
+    if (!seed.__defaults__) Object.defineProperties(seed, {
+        __defaults__ : {value: {x:(new Date).getTime()}},
+        __handles_kwarg_interpolation__ : {value: true},
+        __argnames__ : {value: ["x"]},
+        __module__ : {value: "random"}
+    });
+
+    seed();
+    function random() {
+        var n, m, i;
+        n = 0;
+        m = 1;
+        for (var ρσ_Index3 = 0; ρσ_Index3 < 8; ρσ_Index3++) {
+            i = ρσ_Index3;
+            n += ρσ_get_random_byte() * m;
+            m *= 256;
+        }
+        return n / 0x10000000000000000;
+    };
+    if (!random.__module__) Object.defineProperties(random, {
+        __module__ : {value: "random"}
+    });
+
+    function randrange() {
+        return choice(range.apply(this, arguments));
+    };
+    if (!randrange.__module__) Object.defineProperties(randrange, {
+        __module__ : {value: "random"}
+    });
+
+    function randint(a, b) {
+        return int(random() * (b - a + 1) + a);
+    };
+    if (!randint.__argnames__) Object.defineProperties(randint, {
+        __argnames__ : {value: ["a", "b"]},
+        __module__ : {value: "random"}
+    });
+
+    function uniform(a, b) {
+        return random() * (b - a) + a;
+    };
+    if (!uniform.__argnames__) Object.defineProperties(uniform, {
+        __argnames__ : {value: ["a", "b"]},
+        __module__ : {value: "random"}
+    });
+
+    function choice(seq) {
+        if (seq.length > 0) {
+            return seq[ρσ_bound_index(Math.floor(random() * seq.length), seq)];
+        } else {
+            throw new IndexError;
+        }
+    };
+    if (!choice.__argnames__) Object.defineProperties(choice, {
+        __argnames__ : {value: ["seq"]},
+        __module__ : {value: "random"}
+    });
+
+    function shuffle() {
+        var x = ( 0 === arguments.length-1 && arguments[arguments.length-1] !== null && typeof arguments[arguments.length-1] === "object" && arguments[arguments.length-1] [ρσ_kwargs_symbol] === true) ? undefined : arguments[0];
+        var random_f = (arguments[1] === undefined || ( 1 === arguments.length-1 && arguments[arguments.length-1] !== null && typeof arguments[arguments.length-1] === "object" && arguments[arguments.length-1] [ρσ_kwargs_symbol] === true)) ? shuffle.__defaults__.random_f : arguments[1];
+        var ρσ_kwargs_obj = arguments[arguments.length-1];
+        if (ρσ_kwargs_obj === null || typeof ρσ_kwargs_obj !== "object" || ρσ_kwargs_obj [ρσ_kwargs_symbol] !== true) ρσ_kwargs_obj = {};
+        if (Object.prototype.hasOwnProperty.call(ρσ_kwargs_obj, "random_f")){
+            random_f = ρσ_kwargs_obj.random_f;
+        }
+        var j, ρσ_unpack, i;
+        for (var ρσ_Index4 = 0; ρσ_Index4 < x.length; ρσ_Index4++) {
+            i = ρσ_Index4;
+            j = Math.floor(random_f() * (i + 1));
+            ρσ_unpack = [x[(typeof j === "number" && j < 0) ? x.length + j : j], x[(typeof i === "number" && i < 0) ? x.length + i : i]];
+            x[(typeof i === "number" && i < 0) ? x.length + i : i] = ρσ_unpack[0];
+            x[(typeof j === "number" && j < 0) ? x.length + j : j] = ρσ_unpack[1];
+        }
+        return x;
+    };
+    if (!shuffle.__defaults__) Object.defineProperties(shuffle, {
+        __defaults__ : {value: {random_f:random}},
+        __handles_kwarg_interpolation__ : {value: true},
+        __argnames__ : {value: ["x", "random_f"]},
+        __module__ : {value: "random"}
+    });
+
+    function sample(population, k) {
+        var x, j, ρσ_unpack, i;
+        x = population.slice();
+        for (var ρσ_Index5 = population.length - 1; ρσ_Index5 > population.length - k - 1; ρσ_Index5-=1) {
+            i = ρσ_Index5;
+            j = Math.floor(random() * (i + 1));
+            ρσ_unpack = [x[(typeof j === "number" && j < 0) ? x.length + j : j], x[(typeof i === "number" && i < 0) ? x.length + i : i]];
+            x[(typeof i === "number" && i < 0) ? x.length + i : i] = ρσ_unpack[0];
+            x[(typeof j === "number" && j < 0) ? x.length + j : j] = ρσ_unpack[1];
+        }
+        return x.slice(population.length - k);
+    };
+    if (!sample.__argnames__) Object.defineProperties(sample, {
+        __argnames__ : {value: ["population", "k"]},
+        __module__ : {value: "random"}
+    });
+
+    ρσ_modules.random.ρσ_seed_state = ρσ_seed_state;
+    ρσ_modules.random.ρσ_get_random_byte = ρσ_get_random_byte;
+    ρσ_modules.random.seed = seed;
+    ρσ_modules.random.random = random;
+    ρσ_modules.random.randrange = randrange;
+    ρσ_modules.random.randint = randint;
+    ρσ_modules.random.uniform = uniform;
+    ρσ_modules.random.choice = choice;
+    ρσ_modules.random.shuffle = shuffle;
+    ρσ_modules.random.sample = sample;
+})();
+async function __main__() {
+"use strict";
+    var display = canvas;
+    var scene = canvas();
+
+    var version, print, arange, __name__, type, ρσ_ls, h, hbar, elec_mass, prot_mass, elem_charge, coulombconst, a_0, v_light, pi, delta_t, min_dist, time, graph_radBin, numRadHisto, total_r_samples, counter, particlelist, run_flag, electro_flag, magnet_flag, primescene, slide, distgraph, r_histo, snapshot_rhisto, vrad, hydOrbTheory, r, i, _GS_1, p;
+    version = ρσ_list_decorate([ "3.1", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    var strings = ρσ_modules.pythonize.strings;
+
+    strings();
+    var random = ρσ_modules.random;
+
+    "7";
+    h = 6.62607015e-34;
+    "8";
+    hbar = 1.054571817e-34;
+    "9";
+    elec_mass = 9.1093837015e-31;
+    "10";
+    prot_mass = 1.6726219e-27;
+    "11";
+    elem_charge = 1.602176634e-19;
+    "12";
+    coulombconst = 8987551792.3;
+    "13";
+    a_0 = 5.29177210903e-11;
+    "14";
+    v_light = 299792458;
+    "15";
+    pi = 3.141592653589793;
+    "19";
+    delta_t = 1e-19;
+    "20";
+    min_dist = 1e-15;
+    "21";
+    time = 0;
+    "23";
+    graph_radBin = a_0["/"](10);
+    "24";
+    numRadHisto = 50;
+    "25";
+    total_r_samples = 1e3;
+    "26";
+    counter = 0;
+    "28";
+    function Particle() {;
+    }
+    Particle.prototype.__init__ = async function __init__(velocity, mass, charge, position, color, radius) {
+        var self = this;
+        "31";
+        self.velocity = vector(velocity[0], velocity[1], velocity[2]);
+        "32";
+        self.position = vector(position[0], position[1], position[2]);
+        "33";
+        self.mass = mass;
+        "34";
+        self.charge = charge;
+        "35";
+        self.sphere = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: self.position, radius: radius, color: color, make_trail: true, trail_type: "points", retain: 200, interval: 10})]);
+    };
+    if (!Particle.prototype.__init__.__argnames__) Object.defineProperties(Particle.prototype.__init__, {
+        __argnames__ : {value: ["velocity", "mass", "charge", "position", "color", "radius"]},
+        __module__ : {value: null}
+    });
+    Particle.__argnames__ = Particle.prototype.__init__.__argnames__;
+    Particle.__handles_kwarg_interpolation__ = Particle.prototype.__init__.__handles_kwarg_interpolation__;
+    Particle.prototype.updatePos = async function updatePos() {
+        var self = this;
+        "38";
+        self.position=self.position["+"](self.velocity["*"](delta_t));
+        "39";
+        self.sphere.pos = self.position;
+    };
+    if (!Particle.prototype.updatePos.__module__) Object.defineProperties(Particle.prototype.updatePos, {
+        __module__ : {value: null}
+    });
+    Particle.prototype.__repr__ = async function __repr__() {
+                return "<"["+"](__name__)["+"](".")["+"](this.constructor.name)["+"](" #")["+"](this.ρσ_object_id)["+"](">");
+    };
+    Particle.prototype.__str__ = async function __str__() {
+        return (await this.__repr__());
+    };
+    Object.defineProperty(Particle.prototype, "__bases__", {value: []});
     
-        "40";
-        particlelist = ρσ_list_decorate([]);
-        "43";
-        run_flag = true;
-        "44";
-        electro_flag = true;
-        "45";
-        magnet_flag = false;
-        "48";
-        async function electroCheck(self) {
-            "49";
-            "51";
-            if ((electro_flag === true || typeof electro_flag === "object" && ρσ_equals(electro_flag, true))) {
-                "52";
-                electro_flag = false;
-                "53";
-            } else {
-                "54";
-                electro_flag = true;
-            }
-        };
-        if (!electroCheck.__argnames__) Object.defineProperties(electroCheck, {
-            __argnames__ : {value: ["self"]},
-            __module__ : {value: null}
-        });
     
-        "68";
-        async function randSign() {
-            var ρσ_ls, test;
-            "69";
-            test = random.random();
-            "71";
-            if (test["<"](.5)) {
-                "72";
-                return 1;
-                "73";
-            } else {
-                "74";
-                return 1["-u"]();
-            }
-        };
-        if (!randSign.__module__) Object.defineProperties(randSign, {
-            __module__ : {value: null}
-        });
-    
-        "76";
-        async function genRandNormOrthVec(ref) {
-            var ρσ_ls, retvec, vecref, numofzeros, i;
+
+    "44";
+    particlelist = ρσ_list_decorate([]);
+    "47";
+    run_flag = true;
+    "48";
+    electro_flag = true;
+    "49";
+    magnet_flag = false;
+    "52";
+    async function electroCheck(self) {
+        "53";
+        "55";
+        if ((electro_flag === true || typeof electro_flag === "object" && ρσ_equals(electro_flag, true))) {
+            "56";
+            electro_flag = false;
+            "57";
+        } else {
+            "58";
+            electro_flag = true;
+        }
+    };
+    if (!electroCheck.__argnames__) Object.defineProperties(electroCheck, {
+        __argnames__ : {value: ["self"]},
+        __module__ : {value: null}
+    });
+
+    "72";
+    async function randSign() {
+        var ρσ_ls, test;
+        "73";
+        test = random.random();
+        "75";
+        if (test["<"](.5)) {
+            "76";
+            return 1;
             "77";
-            retvec = ρσ_list_decorate([ 0, 0, 0 ]);
+        } else {
             "78";
-            vecref = ρσ_list_decorate([ ref.x, ref.y, ref.z ]);
-            "80";
-            numofzeros = 0;
-            "84";
-            for (var ρσ_Index6 = 0; ρσ_Index6["<"](3); ρσ_Index6++) {
-                i = ρσ_Index6;
-                "85";
-                if ((vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i] === 0 || typeof vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i] === "object" && ρσ_equals(vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i], 0))) {
-                    "86";
-                    numofzeros=numofzeros["+"](1);
-                    "88";
-                }
-            }
-            if ((numofzeros === 0 || typeof numofzeros === "object" && ρσ_equals(numofzeros, 0))) {
-                "89";
-                retvec[0] = random.random()["*"]((await randSign()));
+            return 1["-u"]();
+        }
+    };
+    if (!randSign.__module__) Object.defineProperties(randSign, {
+        __module__ : {value: null}
+    });
+
+    "80";
+    async function genRandNormOrthVec(ref) {
+        var ρσ_ls, retvec, vecref, numofzeros, i;
+        "81";
+        retvec = ρσ_list_decorate([ 0, 0, 0 ]);
+        "82";
+        vecref = ρσ_list_decorate([ ref.x, ref.y, ref.z ]);
+        "84";
+        numofzeros = 0;
+        "88";
+        for (var ρσ_Index6 = 0; ρσ_Index6["<"](3); ρσ_Index6++) {
+            i = ρσ_Index6;
+            "89";
+            if ((vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i] === 0 || typeof vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i] === "object" && ρσ_equals(vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i], 0))) {
                 "90";
-                retvec[1] = random.random()["*"]((await randSign()));
-                "91";
-                retvec[2] = retvec[0]["-u"]()["*"](vecref[0])["-"](retvec[1]["*"](vecref[1]))["/"](vecref[2]);
+                numofzeros=numofzeros["+"](1);
                 "92";
-            } else if ((numofzeros === 1 || typeof numofzeros === "object" && ρσ_equals(numofzeros, 1))) {
-                "93";
-                retvec[0] = random.random()["*"]((await randSign()));
-                "95";
-                if ((vecref[1] === 0 || typeof vecref[1] === "object" && ρσ_equals(vecref[1], 0))) {
-                    "96";
-                    retvec[1] = random.random()["*"]((await randSign()));
-                    "97";
-                    retvec[2] = retvec[1]["-u"]()["*"](vecref[1])["/"](vecref[2]);
-                    "98";
-                } else {
-                    "99";
-                    retvec[2] = random.random()["*"]((await randSign()));
-                    "100";
-                    retvec[1] = retvec[2]["-u"]()["*"](vecref[2])["/"](vecref[1]);
-                    "101";
-                }
-            } else if ((numofzeros === 2 || typeof numofzeros === "object" && ρσ_equals(numofzeros, 2))) {
+            }
+        }
+        if ((numofzeros === 0 || typeof numofzeros === "object" && ρσ_equals(numofzeros, 0))) {
+            "93";
+            retvec[0] = random.random()["*"]((await randSign()));
+            "94";
+            retvec[1] = random.random()["*"]((await randSign()));
+            "95";
+            retvec[2] = retvec[0]["-u"]()["*"](vecref[0])["-"](retvec[1]["*"](vecref[1]))["/"](vecref[2]);
+            "96";
+        } else if ((numofzeros === 1 || typeof numofzeros === "object" && ρσ_equals(numofzeros, 1))) {
+            "97";
+            retvec[0] = random.random()["*"]((await randSign()));
+            "99";
+            if ((vecref[1] === 0 || typeof vecref[1] === "object" && ρσ_equals(vecref[1], 0))) {
+                "100";
+                retvec[1] = random.random()["*"]((await randSign()));
+                "101";
+                retvec[2] = retvec[1]["-u"]()["*"](vecref[1])["/"](vecref[2]);
                 "102";
-                for (var ρσ_Index7 = 0; ρσ_Index7["<"](3); ρσ_Index7++) {
-                    i = ρσ_Index7;
-                    "103";
-                    if ((vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i] === 0 || typeof vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i] === "object" && ρσ_equals(vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i], 0))) {
-                        "104";
-                        retvec[(typeof i === "number" && i["<"](0)) ? retvec.length["+"](i) : i] = random.random()["*"]((await randSign()));
-                        "105";
-                    } else {
-                        "106";
-                        retvec[(typeof i === "number" && i["<"](0)) ? retvec.length["+"](i) : i] = 0;
-                    }
-                }
-            }
-            "108";
-            return norm(vec(retvec[0], retvec[1], retvec[2]));
-        };
-        if (!genRandNormOrthVec.__argnames__) Object.defineProperties(genRandNormOrthVec, {
-            __argnames__ : {value: ["ref"]},
-            __module__ : {value: null}
-        });
-    
-        "112";
-        async function getDistance(pos_1, pos_2) {
-            "113";
-            return mag(pos_1["-"](pos_2));
-        };
-        if (!getDistance.__argnames__) Object.defineProperties(getDistance, {
-            __argnames__ : {value: ["pos_1", "pos_2"]},
-            __module__ : {value: null}
-        });
-    
-        "115";
-        async function getElectroForce(q1, q2, rad) {
-            "116";
-            return q1["*"](q2)["*"](coulombconst)["/"](Math.pow(rad, 2));
-        };
-        if (!getElectroForce.__argnames__) Object.defineProperties(getElectroForce, {
-            __argnames__ : {value: ["q1", "q2", "rad"]},
-            __module__ : {value: null}
-        });
-    
-        "139";
-        async function addForce(force, p1, p2) {
-            "140";
-            p1.velocity=p1.velocity["+"](norm(p1.position["-"](p2.position))["*"](force)["*"](delta_t)["/"](p1.mass));
-            "141";
-            p2.velocity=p2.velocity["+"](norm(p2.position["-"](p1.position))["*"](force)["*"](delta_t)["/"](p2.mass));
-        };
-        if (!addForce.__argnames__) Object.defineProperties(addForce, {
-            __argnames__ : {value: ["force", "p1", "p2"]},
-            __module__ : {value: null}
-        });
-    
-        "143";
-        async function applyForce(plist) {
-            var ρσ_ls, p2, p1;
-            "144";
-            "145";
-            "147";
-            var ρσ_Iter8 = range(len(plist));
-            ρσ_Iter8 = ((typeof ρσ_Iter8[Symbol.iterator] === "function") ? (ρσ_Iter8 instanceof Map ? ρσ_Iter8.keys() : ρσ_Iter8) : Object.keys(ρσ_Iter8));
-            for (var ρσ_Index8 of ρσ_Iter8) {
-                p1 = ρσ_Index8;
-                "148";
-                var ρσ_Iter9 = range(p1["+"](1), len(plist));
-                ρσ_Iter9 = ((typeof ρσ_Iter9[Symbol.iterator] === "function") ? (ρσ_Iter9 instanceof Map ? ρσ_Iter9.keys() : ρσ_Iter9) : Object.keys(ρσ_Iter9));
-                for (var ρσ_Index9 of ρσ_Iter9) {
-                    p2 = ρσ_Index9;
-                    "149";
-                    if (p2["<="](len(plist))) {
-                        "150";
-                        if ((electro_flag === true || typeof electro_flag === "object" && ρσ_equals(electro_flag, true))) {
-                            "151";
-                            (await addForce((await getElectroForce(plist[(typeof p1 === "number" && p1["<"](0)) ? plist.length["+"](p1) : p1].charge, plist[(typeof p2 === "number" && p2["<"](0)) ? plist.length["+"](p2) : p2].charge, (await getDistance(plist[(typeof p1 === "number" && p1["<"](0)) ? plist.length["+"](p1) : p1].position, plist[(typeof p2 === "number" && p2["<"](0)) ? plist.length["+"](p2) : p2].position)))), plist[(typeof p1 === "number" && p1["<"](0)) ? plist.length["+"](p1) : p1], plist[(typeof p2 === "number" && p2["<"](0)) ? plist.length["+"](p2) : p2]));
-                        }
-                    }
-                }
-            }
-        };
-        if (!applyForce.__argnames__) Object.defineProperties(applyForce, {
-            __argnames__ : {value: ["plist"]},
-            __module__ : {value: null}
-        });
-    
-        "159";
-        primescene = ρσ_interpolate_kwargs.call(this, canvas, [ρσ_desugar_kwargs({title: "<b>Atomic Physics Simulator<\/b>", width: 500, height: 500, center: vector(0, 0, 0), align: "none"})]);
-        "160";
-        primescene.userspin = false;
-        "161";
-        primescene.resizable = false;
-        "165";
-        async function resetBut() {
-            "166";
-            primescene.autoscale = false;
-            "167";
-            particlelist[0].position = vector(0, 0, 0);
-            "168";
-            particlelist[0].velocity = vector(0, 0, 0);
-            "169";
-            particlelist[1].position = vector(a_0, 0, 0);
-            "170";
-            particlelist[1].velocity = vector(0, 218e4, 0);
-            "171";
-            primescene.center = vector(0, 0, 0);
-            "172";
-            primescene.range = a_0["*"](1.1);
-            "173";
-            primescene.autoscale = true;
-        };
-        if (!resetBut.__module__) Object.defineProperties(resetBut, {
-            __module__ : {value: null}
-        });
-    
-        "175";
-        async function pauseBut(self) {
-            "176";
-            "178";
-            if ((run_flag === false || typeof run_flag === "object" && ρσ_equals(run_flag, false))) {
-                "179";
-                run_flag = true;
-                "180";
-                self.text = "Pause";
-                "181";
             } else {
-                "182";
-                run_flag = false;
-                "183";
-                self.text = "Run";
+                "103";
+                retvec[2] = random.random()["*"]((await randSign()));
+                "104";
+                retvec[1] = retvec[2]["-u"]()["*"](vecref[2])["/"](vecref[1]);
+                "105";
             }
-        };
-        if (!pauseBut.__argnames__) Object.defineProperties(pauseBut, {
-            __argnames__ : {value: ["self"]},
-            __module__ : {value: null}
-        });
-    
-        "186";
-        ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Pause", pos: primescene.caption_anchor, bind: pauseBut})]);
-        "187";
-        ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Reset", pos: primescene.caption_anchor, bind: resetBut})]);
-        "188";
-        ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({text: "Electrostatic Force", bind: electroCheck, checked: true, id: 0})]);
-        "193";
-        distgraph = ρσ_interpolate_kwargs.call(this, graph, [ρσ_desugar_kwargs({width: 500, height: 300, xmin: 0, ymin: 0, xmax: 5, ymax: 1, title: "probability", xtitle: "Radius (a0)", ytitle: "relative probability", align: "none"})]);
-        "196";
-        r_histo = list(range(numRadHisto));
-        "197";
-        snapshot_rhisto = list(range(total_r_samples));
-        "198";
-        vrad = ρσ_interpolate_kwargs.call(this, gvbars, [ρσ_desugar_kwargs({color: color.red, delta: .1})]);
-        "200";
-        hydOrbTheory = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({color: color.blue})]);
-        "201";
-        for (var ρσ_Index10 = 0; ρσ_Index10["<"](500); ρσ_Index10=ρσ_Index10["+"](1)) {
-            r = ρσ_Index10;
-            "202";
-            hydOrbTheory.plot(r["/"](100), 4["*"](Math.pow((r["/"](100)), 2))["*"](exp(2["-u"]()["*"](r["/"](100)))));
-        }
-        "204";
-        var ρσ_Iter11 = range(len(r_histo));
-        ρσ_Iter11 = ((typeof ρσ_Iter11[Symbol.iterator] === "function") ? (ρσ_Iter11 instanceof Map ? ρσ_Iter11.keys() : ρσ_Iter11) : Object.keys(ρσ_Iter11));
-        for (var ρσ_Index11 of ρσ_Iter11) {
-            i = ρσ_Index11;
-            "205";
-            r_histo[(typeof i === "number" && i["<"](0)) ? r_histo.length["+"](i) : i] = 0;
-        }
-        "207";
-        var ρσ_Iter12 = range(len(snapshot_rhisto));
-        ρσ_Iter12 = ((typeof ρσ_Iter12[Symbol.iterator] === "function") ? (ρσ_Iter12 instanceof Map ? ρσ_Iter12.keys() : ρσ_Iter12) : Object.keys(ρσ_Iter12));
-        for (var ρσ_Index12 of ρσ_Iter12) {
-            i = ρσ_Index12;
-            "208";
-            snapshot_rhisto[(typeof i === "number" && i["<"](0)) ? snapshot_rhisto.length["+"](i) : i] = 0;
-        }
-        "210";
-        async function snap_radius(dist) {
-            var ρσ_ls, bin;
-            "211";
-            bin = int(round(dist["/"](graph_radBin)));
-            "213";
-            if (bin["<"](50)) {
-                "214";
-                r_histo[(typeof bin === "number" && bin["<"](0)) ? r_histo.length["+"](bin) : bin]=r_histo[(typeof bin === "number" && bin["<"](0)) ? r_histo.length["+"](bin) : bin]["+"](10["/"](total_r_samples));
-                "215";
-                snapshot_rhisto.insert(0, bin);
-                "217";
-                if (snapshot_rhisto[ρσ_bound_index(total_r_samples["-"](1), snapshot_rhisto)][">"](0)) {
-                    "218";
-                    r_histo[ρσ_bound_index(snapshot_rhisto[ρσ_bound_index(total_r_samples["-"](1), snapshot_rhisto)], r_histo)]=r_histo[ρσ_bound_index(snapshot_rhisto[ρσ_bound_index(total_r_samples["-"](1), snapshot_rhisto)], r_histo)]["-"](10["/"](total_r_samples));
+        } else if ((numofzeros === 2 || typeof numofzeros === "object" && ρσ_equals(numofzeros, 2))) {
+            "106";
+            for (var ρσ_Index7 = 0; ρσ_Index7["<"](3); ρσ_Index7++) {
+                i = ρσ_Index7;
+                "107";
+                if ((vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i] === 0 || typeof vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i] === "object" && ρσ_equals(vecref[(typeof i === "number" && i["<"](0)) ? vecref.length["+"](i) : i], 0))) {
+                    "108";
+                    retvec[(typeof i === "number" && i["<"](0)) ? retvec.length["+"](i) : i] = random.random()["*"]((await randSign()));
+                    "109";
+                } else {
+                    "110";
+                    retvec[(typeof i === "number" && i["<"](0)) ? retvec.length["+"](i) : i] = 0;
                 }
-                "220";
-                snapshot_rhisto.pypop(total_r_samples["-"](1));
             }
-        };
-        if (!snap_radius.__argnames__) Object.defineProperties(snap_radius, {
-            __argnames__ : {value: ["dist"]},
-            __module__ : {value: null}
-        });
-    
-        "223";
-        async function graph_radius() {
-            var ρσ_ls, accum, r;
-            "225";
-            accum = ρσ_list_decorate([]);
-            "227";
-            for (var ρσ_Index13 = 0; ρσ_Index13["<"](numRadHisto); ρσ_Index13++) {
-                r = ρσ_Index13;
-                "228";
-                accum.append(ρσ_list_decorate([ r["/"](10), r_histo[(typeof r === "number" && r["<"](0)) ? r_histo.length["+"](r) : r] ]));
-            }
-            "231";
-            vrad.data = accum;
-        };
-        if (!graph_radius.__module__) Object.defineProperties(graph_radius, {
-            __module__ : {value: null}
-        });
-    
-        "236";
-        _GS_1 = new Particle;
-        (await _GS_1.__init__(ρσ_list_decorate([ 0, 0, 0 ]), prot_mass, elem_charge, ρσ_list_decorate([ 0, 0, 0 ]), color.purple, 1e-12));
-        particlelist.append(_GS_1);
-        "237";
-        _GS_1 = new Particle;
-        (await _GS_1.__init__(ρσ_list_decorate([ 0, 218e4, 0 ]), elec_mass, elem_charge["-u"](), ρσ_list_decorate([ a_0, 0, 0 ]), color.yellow, 1e-12));
-        particlelist.append(_GS_1);
-        "243";
-        while (true) {
-            "244";
-            (await rate(2e3));
-            "246";
-            if (run_flag) {
-                "248";
-                if ((electro_flag === true || typeof electro_flag === "object" && ρσ_equals(electro_flag, true))) {
-                    "249";
-                    (await applyForce(particlelist));
+        }
+        "112";
+        return norm(vec(retvec[0], retvec[1], retvec[2]));
+    };
+    if (!genRandNormOrthVec.__argnames__) Object.defineProperties(genRandNormOrthVec, {
+        __argnames__ : {value: ["ref"]},
+        __module__ : {value: null}
+    });
+
+    "116";
+    async function getDistance(pos_1, pos_2) {
+        "117";
+        return mag(pos_1["-"](pos_2));
+    };
+    if (!getDistance.__argnames__) Object.defineProperties(getDistance, {
+        __argnames__ : {value: ["pos_1", "pos_2"]},
+        __module__ : {value: null}
+    });
+
+    "119";
+    async function getElectroForce(q1, q2, rad) {
+        "120";
+        return q1["*"](q2)["*"](coulombconst)["/"](Math.pow(rad, 2));
+    };
+    if (!getElectroForce.__argnames__) Object.defineProperties(getElectroForce, {
+        __argnames__ : {value: ["q1", "q2", "rad"]},
+        __module__ : {value: null}
+    });
+
+    "143";
+    async function addForce(force, p1, p2) {
+        "144";
+        p1.velocity=p1.velocity["+"](norm(p1.position["-"](p2.position))["*"](force)["*"](delta_t)["/"](p1.mass));
+        "145";
+        p2.velocity=p2.velocity["+"](norm(p2.position["-"](p1.position))["*"](force)["*"](delta_t)["/"](p2.mass));
+    };
+    if (!addForce.__argnames__) Object.defineProperties(addForce, {
+        __argnames__ : {value: ["force", "p1", "p2"]},
+        __module__ : {value: null}
+    });
+
+    "147";
+    async function applyForce(plist) {
+        var ρσ_ls, p2, p1;
+        "148";
+        "149";
+        "151";
+        var ρσ_Iter8 = range(len(plist));
+        ρσ_Iter8 = ((typeof ρσ_Iter8[Symbol.iterator] === "function") ? (ρσ_Iter8 instanceof Map ? ρσ_Iter8.keys() : ρσ_Iter8) : Object.keys(ρσ_Iter8));
+        for (var ρσ_Index8 of ρσ_Iter8) {
+            p1 = ρσ_Index8;
+            "152";
+            var ρσ_Iter9 = range(p1["+"](1), len(plist));
+            ρσ_Iter9 = ((typeof ρσ_Iter9[Symbol.iterator] === "function") ? (ρσ_Iter9 instanceof Map ? ρσ_Iter9.keys() : ρσ_Iter9) : Object.keys(ρσ_Iter9));
+            for (var ρσ_Index9 of ρσ_Iter9) {
+                p2 = ρσ_Index9;
+                "153";
+                if (p2["<="](len(plist))) {
+                    "154";
+                    if ((electro_flag === true || typeof electro_flag === "object" && ρσ_equals(electro_flag, true))) {
+                        "155";
+                        (await addForce((await getElectroForce(plist[(typeof p1 === "number" && p1["<"](0)) ? plist.length["+"](p1) : p1].charge, plist[(typeof p2 === "number" && p2["<"](0)) ? plist.length["+"](p2) : p2].charge, (await getDistance(plist[(typeof p1 === "number" && p1["<"](0)) ? plist.length["+"](p1) : p1].position, plist[(typeof p2 === "number" && p2["<"](0)) ? plist.length["+"](p2) : p2].position)))), plist[(typeof p1 === "number" && p1["<"](0)) ? plist.length["+"](p1) : p1], plist[(typeof p2 === "number" && p2["<"](0)) ? plist.length["+"](p2) : p2]));
+                    }
                 }
-                "251";
-                var ρσ_Iter14 = range(len(particlelist));
-                ρσ_Iter14 = ((typeof ρσ_Iter14[Symbol.iterator] === "function") ? (ρσ_Iter14 instanceof Map ? ρσ_Iter14.keys() : ρσ_Iter14) : Object.keys(ρσ_Iter14));
-                for (var ρσ_Index14 of ρσ_Iter14) {
-                    p = ρσ_Index14;
-                    "252";
-                    (await particlelist[(typeof p === "number" && p["<"](0)) ? particlelist.length["+"](p) : p].updatePos());
-                    "258";
-                }
-                if (ρσ_equals(counter["%"](40), 0)) {
-                    "259";
-                    (await snap_radius((await getDistance(particlelist[1].position, particlelist[0].position))));
-                }
-                "261";
-                counter = counter["+"](1);
-                "263";
-                (await graph_radius());
-                "265";
-                time = time["+"](delta_t);
             }
         }
     };
-    if (!__main__.__module__) Object.defineProperties(__main__, {
+    if (!applyForce.__argnames__) Object.defineProperties(applyForce, {
+        __argnames__ : {value: ["plist"]},
         __module__ : {value: null}
     });
-    
-    ;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
-    // END JAVASCRIPT
-    
-    //--><!]]></script>
-    </div>
+
+    "174";
+    primescene = ρσ_interpolate_kwargs.call(this, canvas, [ρσ_desugar_kwargs({title: "<b>Atomic Physics Simulator<\/b>", width: 500, height: 500, center: vector(0, 0, 0), align: "none"})]);
+    "175";
+    primescene.userspin = false;
+    "176";
+    primescene.resizable = false;
+    "184";
+    async function resetBut() {
+        "185";
+        "186";
+        coulombconst = 8987551792.3;
+        "187";
+        primescene.autoscale = false;
+        "188";
+        particlelist[0].position = vector(0, 0, 0);
+        "189";
+        particlelist[0].velocity = vector(0, 0, 0);
+        "190";
+        particlelist[1].position = vector(a_0, 0, 0);
+        "191";
+        particlelist[1].velocity = vector(0, 218e4, 0);
+        "192";
+        primescene.center = vector(0, 0, 0);
+        "193";
+        primescene.range = a_0["*"](1.1);
+        "194";
+        primescene.autoscale = true;
+        "195";
+        slide.value = coulombconst;
+    };
+    if (!resetBut.__module__) Object.defineProperties(resetBut, {
+        __module__ : {value: null}
+    });
+
+    "198";
+    async function pauseBut(self) {
+        "199";
+        "201";
+        if ((run_flag === false || typeof run_flag === "object" && ρσ_equals(run_flag, false))) {
+            "202";
+            run_flag = true;
+            "203";
+            self.text = "Pause";
+            "204";
+        } else {
+            "205";
+            run_flag = false;
+            "206";
+            self.text = "Run";
+        }
+    };
+    if (!pauseBut.__argnames__) Object.defineProperties(pauseBut, {
+        __argnames__ : {value: ["self"]},
+        __module__ : {value: null}
+    });
+
+    "208";
+    async function coulombSlider(self) {
+        "209";
+        "210";
+        coulombconst = self.value;
+    };
+    if (!coulombSlider.__argnames__) Object.defineProperties(coulombSlider, {
+        __argnames__ : {value: ["self"]},
+        __module__ : {value: null}
+    });
+
+    "213";
+    ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Pause", pos: primescene.caption_anchor, bind: pauseBut})]);
+    "214";
+    ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Reset", pos: primescene.caption_anchor, bind: resetBut})]);
+    "215";
+    primescene.append_to_caption("\n");
+    "216";
+    slide = ρσ_interpolate_kwargs.call(this, slider, [ρσ_desugar_kwargs({value: coulombconst, pos: primescene.caption_anchor, min: 6e9, max: 8e10, bind: coulombSlider, top: 8, bottom: 8})]);
+    "217";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "Attractive Force", pos: primescene.caption_anchor})]);
+    "223";
+    distgraph = ρσ_interpolate_kwargs.call(this, graph, [ρσ_desugar_kwargs({width: 500, height: 300, xmin: 0, ymin: 0, xmax: 5, ymax: 1, title: "probability", xtitle: "Radius (a0)", ytitle: "relative probability", align: "none"})]);
+    "226";
+    r_histo = list(range(numRadHisto));
+    "227";
+    snapshot_rhisto = list(range(total_r_samples));
+    "228";
+    vrad = ρσ_interpolate_kwargs.call(this, gvbars, [ρσ_desugar_kwargs({color: color.red, delta: .1})]);
+    "230";
+    hydOrbTheory = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({color: color.blue})]);
+    "231";
+    for (var ρσ_Index10 = 0; ρσ_Index10["<"](500); ρσ_Index10=ρσ_Index10["+"](1)) {
+        r = ρσ_Index10;
+        "232";
+        hydOrbTheory.plot(r["/"](100), 4["*"](Math.pow((r["/"](100)), 2))["*"](exp(2["-u"]()["*"](r["/"](100)))));
+    }
+    "234";
+    var ρσ_Iter11 = range(len(r_histo));
+    ρσ_Iter11 = ((typeof ρσ_Iter11[Symbol.iterator] === "function") ? (ρσ_Iter11 instanceof Map ? ρσ_Iter11.keys() : ρσ_Iter11) : Object.keys(ρσ_Iter11));
+    for (var ρσ_Index11 of ρσ_Iter11) {
+        i = ρσ_Index11;
+        "235";
+        r_histo[(typeof i === "number" && i["<"](0)) ? r_histo.length["+"](i) : i] = 0;
+    }
+    "237";
+    var ρσ_Iter12 = range(len(snapshot_rhisto));
+    ρσ_Iter12 = ((typeof ρσ_Iter12[Symbol.iterator] === "function") ? (ρσ_Iter12 instanceof Map ? ρσ_Iter12.keys() : ρσ_Iter12) : Object.keys(ρσ_Iter12));
+    for (var ρσ_Index12 of ρσ_Iter12) {
+        i = ρσ_Index12;
+        "238";
+        snapshot_rhisto[(typeof i === "number" && i["<"](0)) ? snapshot_rhisto.length["+"](i) : i] = 0;
+    }
+    "240";
+    async function snap_radius(dist) {
+        var ρσ_ls, bin;
+        "241";
+        bin = int(round(dist["/"](graph_radBin)));
+        "243";
+        if (bin["<"](50)) {
+            "244";
+            r_histo[(typeof bin === "number" && bin["<"](0)) ? r_histo.length["+"](bin) : bin]=r_histo[(typeof bin === "number" && bin["<"](0)) ? r_histo.length["+"](bin) : bin]["+"](10["/"](total_r_samples));
+            "245";
+            snapshot_rhisto.insert(0, bin);
+            "247";
+            if (snapshot_rhisto[ρσ_bound_index(total_r_samples["-"](1), snapshot_rhisto)][">"](0)) {
+                "248";
+                r_histo[ρσ_bound_index(snapshot_rhisto[ρσ_bound_index(total_r_samples["-"](1), snapshot_rhisto)], r_histo)]=r_histo[ρσ_bound_index(snapshot_rhisto[ρσ_bound_index(total_r_samples["-"](1), snapshot_rhisto)], r_histo)]["-"](10["/"](total_r_samples));
+            }
+            "250";
+            snapshot_rhisto.pypop(total_r_samples["-"](1));
+        }
+    };
+    if (!snap_radius.__argnames__) Object.defineProperties(snap_radius, {
+        __argnames__ : {value: ["dist"]},
+        __module__ : {value: null}
+    });
+
+    "253";
+    async function graph_radius() {
+        var ρσ_ls, accum, r;
+        "255";
+        accum = ρσ_list_decorate([]);
+        "257";
+        for (var ρσ_Index13 = 0; ρσ_Index13["<"](numRadHisto); ρσ_Index13++) {
+            r = ρσ_Index13;
+            "258";
+            accum.append(ρσ_list_decorate([ r["/"](10), r_histo[(typeof r === "number" && r["<"](0)) ? r_histo.length["+"](r) : r] ]));
+        }
+        "261";
+        vrad.data = accum;
+    };
+    if (!graph_radius.__module__) Object.defineProperties(graph_radius, {
+        __module__ : {value: null}
+    });
+
+    "266";
+    _GS_1 = new Particle;
+    (await _GS_1.__init__(ρσ_list_decorate([ 0, 0, 0 ]), prot_mass, elem_charge, ρσ_list_decorate([ 0, 0, 0 ]), color.purple, 1e-12));
+    particlelist.append(_GS_1);
+    "267";
+    _GS_1 = new Particle;
+    (await _GS_1.__init__(ρσ_list_decorate([ 0, 218e4, 0 ]), elec_mass, elem_charge["-u"](), ρσ_list_decorate([ a_0, 0, 0 ]), color.yellow, 1e-12));
+    particlelist.append(_GS_1);
+    "273";
+    while (true) {
+        "274";
+        (await rate(2e3));
+        "276";
+        if (run_flag) {
+            "278";
+            if ((electro_flag === true || typeof electro_flag === "object" && ρσ_equals(electro_flag, true))) {
+                "279";
+                (await applyForce(particlelist));
+            }
+            "281";
+            var ρσ_Iter14 = range(len(particlelist));
+            ρσ_Iter14 = ((typeof ρσ_Iter14[Symbol.iterator] === "function") ? (ρσ_Iter14 instanceof Map ? ρσ_Iter14.keys() : ρσ_Iter14) : Object.keys(ρσ_Iter14));
+            for (var ρσ_Index14 of ρσ_Iter14) {
+                p = ρσ_Index14;
+                "282";
+                (await particlelist[(typeof p === "number" && p["<"](0)) ? particlelist.length["+"](p) : p].updatePos());
+                "288";
+            }
+            if (ρσ_equals(counter["%"](20), 0)) {
+                "289";
+                (await snap_radius((await getDistance(particlelist[1].position, particlelist[0].position))));
+            }
+            "291";
+            counter = counter["+"](1);
+            "293";
+            (await graph_radius());
+            "295";
+            time = time["+"](delta_t);
+        }
+    }
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: null}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>
