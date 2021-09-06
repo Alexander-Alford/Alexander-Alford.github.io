@@ -142,7 +142,7 @@ a{
  margin: 25px;
 }
 
-#game_proj, #atom_sim, #fordington_proj, #projects, #aboutme{
+#game_proj, #atom_sim, #fordington_proj, #projects, #aboutme, #tortfolio{
   position: absolute;
   top: -1000vh;
   left: -1000vw;
@@ -272,6 +272,11 @@ max-width: 540px;
   max-width: 100%;
 }
 
+#tort_proj{
+  padding: 17px;
+  border-radius: 5px;
+}
+
 /*Standard monitor size and above*/
 @media screen and (min-width: 800px){
   #aboutme{
@@ -321,6 +326,10 @@ max-width: 540px;
     .game_show_cont > p{
     clear: none;
     }  
+}
+
+#tortfolio{
+  max-width: 400px;
 }
 
 @media screen and (max-width: 600px){

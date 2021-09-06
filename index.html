@@ -42,7 +42,7 @@
     <div id="proj_cont">
 
        <div class="panel">
-          <img class="proj_image" src="images/Fordington_250px.png" alt="">
+          <img class="proj_image" src="images/Fordington_250px.png" alt="...">
             <div class="proj_piece">
               <b>Mock Retailer Website</b>
               <p>A mock online retailer website that specializes in selling animals and animal products.</p>
@@ -50,7 +50,15 @@
           <button class="Button" onclick="openAndClose('fordington_proj', 'projects')">Read More</button>
        </div>
        <div class="panel">
-        <img class="proj_image" src="images/AtomSim_1.png" alt="">
+        <img class="proj_image" src="images/torty.png" alt="...">
+         <div class="proj_piece">
+           <b>Tortfolio</b>
+           <p>Tortfolio is a financial planning tool for tax-efficient investing.</p>
+         </div> 
+        <button class="Button" onclick="openAndClose('tortfolio', 'projects')">Read More</button>
+      </div>
+       <div class="panel">
+        <img class="proj_image" src="images/AtomSim_1.png" alt="...">
           <div class="proj_piece">
             <b>Atomic Simulation</b>
             <p>A scientific modeling program for particle physics made in Python using VPython.</p>
@@ -58,13 +66,14 @@
         <button class="Button" onclick="openAndClose('atom_sim', 'projects')">Read More</button>
       </div> 
 	    <div class="panel">
-          <img class="proj_image" src="images/Game_250px.png" alt="">
+          <img class="proj_image" src="images/Game_250px.png" alt="...">
             <div class="proj_piece">
               <b>Game Engine</b>
               <p>A 2D platforming game engine with custom assets. Built from scratch in C using SDL2.</p>
             </div>         
           <button class="Button" onclick="openAndClose('game_proj', 'projects')">Read More</button>
        </div>
+       
        
     </div>
     <button class="Button back-but" id="gobackbutton_2" onclick="openAndClose('greet_box', 'projects')">Back</button>
@@ -133,57 +142,62 @@
   </div>
 
   <div id="fordington_proj">
-
-	<div class="ford-container panel" id="ford-mongo">
-    <img src="images/MongoDB_logo.png" class="ford-image" />
-      <p>This web app uses MongoDB Atlas to store and provide its product data. 
-      By using an access key to the data cluster, the server can access the document collection for the prop products and perform read operations on them.
-	    The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
-      Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
-      Server routing and the RESTful api is controlledusing Express functionality. 
-      The client can post a request to the server to load filtered response data from the database based on given criteria.
-
-      
-      </p>
-    <img src="images/Express_logo.png" class="ford-image" />
-	</div> 
-	<div class="ford-container panel" id="ford-main">
-    <img src="images/Fordington_Full.png" class="ford-image-main" />
-    <div style="margin: 20px 0px">  
+	  <div class="ford-container panel" id="ford-mongo">
+      <img src="images/MongoDB_logo.png" class="ford-image" />
+        <p>This web app uses MongoDB Atlas to store and provide its product data. 
+        By using an access key to the data cluster, the server can access the document collection for the prop products and perform read operations on them.
+	      The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
+        Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
+        Server routing and the RESTful api is controlledusing Express functionality. 
+        The client can post a request to the server to load filtered response data from the database based on given criteria.
+        </p>
+      <img src="images/Express_logo.png" class="ford-image" />
+	  </div> 
+	  <div class="ford-container panel" id="ford-main">
+      <img src="images/Fordington_Full.png" class="ford-image-main" />
+      <div style="margin: 20px 0px">  
+        <p>
+        Fordington is an imaginary online retailer that sells animals and animal products. The purpose of this project was
+        to experiment, develop, and deploy a web app that uses React and MongoDB to create a client-server model that allows the user
+        to interact with a cloud database in ways that mimic popular online retailers like Amazon. Data for the website was
+        generated and is accessed with MongoDB Atlas while content is rendered with individual react components that respond
+        to state changes. I used Heroku to deploy the app as a live demo that anybody can try.
+        </p>
+        <br /> 
+        <p>The demo provides a functional product
+        page allowing the user to inspect items, add them to their carts, go to checkout, modify their order, and then send it out.
+        In addition, the user can query for specific kinds of items and adjust how many items are displayed. A nonfunctional sign in and register 
+        page are provided to complete the environment.
+        </p>
+      </div>
+      <div style="display: flex">
+      <button class="Button" style="flex-basis: 50%" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
+      <a href="https://fordington.herokuapp.com" style="display: flex; flex-basis: 50%" target="_blank"><button class="Button" style="flex-grow: 10">Live Demo</button></a>
+      </div>
+	  </div>
+	  <div class="ford-container panel" id="ford-react">
+      <img src="images/React_logo.png" class="ford-image" />
       <p>
-      Fordington is an imaginary online retailer that sells animals and animal products. The purpose of this project was
-      to experiment, develop, and deploy a web app that uses React and MongoDB to create a client-server model that allows the user
-      to interact with a cloud database in ways that mimic popular online retailers like Amazon. Data for the website was
-      generated and is accessed with MongoDB Atlas while content is rendered with individual react components that respond
-      to state changes. I used Heroku to deploy the app as a live demo that anybody can try.
+	    The client side of this web app is rendered dynamically with React.
+	    The website is composed of nested react components that use a mixture of hooks, props, and pure javascript for interactivity.
+	    Data from the api endpoint is loaded for the home page by use of a state variable whose hook sets the state and re-renders every time it's called. 
+      JSX allows for easy incorporation of javascript functionality into html giving an interactive user interface for the user's cart that allows items to be added
+      and removed while the page is visibly updated.
+      Bootstrap 5 is used to style the website along with custom edits. The Bootstrap classes provide styling that adjusts
+      with screen dimensions for platform independent websites.
       </p>
-      <br /> 
-      <p>The demo provides a functional product
-      page allowing the user to inspect items, add them to their carts, go to checkout, modify their order, and then send it out.
-      In addition, the user can query for specific kinds of items and adjust how many items are displayed. A nonfunctional sign in and register 
-      page are provided to complete the environment.
-      </p>
+    <img src="images/Bootstrap_logo.png" class="ford-image" />
     </div>
-    <div style="display: flex">
-    <button class="Button" style="flex-basis: 50%" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
-    <a href="https://fordington.herokuapp.com" style="display: flex; flex-basis: 50%" target="_blank"><button class="Button" style="flex-grow: 10">Live Demo</button></a>
-    </div>
-	</div>
-	<div class="ford-container panel" id="ford-react">
-    <img src="images/React_logo.png" class="ford-image" />
-    <p>
-	  The client side of this web app is rendered dynamically with React.
-	  The website is composed of nested react components that use a mixture of hooks, props, and pure javascript for interactivity.
-	  Data from the api endpoint is loaded for the home page by use of a state variable whose hook sets the state and re-renders every time it's called. 
-    JSX allows for easy incorporation of javascript functionality into html giving an interactive user interface for the user's cart that allows items to be added
-    and removed while the page is visibly updated.
-    Bootstrap 5 is used to style the website along with custom edits. The Bootstrap classes provide styling that adjusts
-    with screen dimensions for platform independent websites.
-    </p>
-  <img src="images/Bootstrap_logo.png" class="ford-image" />
   </div>
-  
-  
+
+  <div id="tortfolio">
+    <div id="tort_proj" class="panel">
+      <img src="images/tortuise.png" style="max-width: 100%" alt="..." />
+      Tortfolio is a portfolio balancing and investing tool created to allow the user to plan how to plan their investing
+      so that they can pay the lowest amount of taxes. This project uses Bootstrap for styling and <br />
+      <a href="https://tortfolio.org" target="_blank"><button class="Button back-but" style="margin-top: 20px">Try It</button></a>
+      <button class="Button back-but" onclick="openAndClose('projects', 'tortfolio')">Back</button>
+    </div>
   </div>
 
 </div>
