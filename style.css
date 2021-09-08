@@ -275,6 +275,13 @@ max-width: 540px;
 #tort_proj{
   padding: 17px;
   border-radius: 5px;
+  margin: 8px 0px;
+  font-size: 22px;
+}
+
+#tort_proj > p{
+  text-align: left;
+  text-indent: 40px;
 }
 
 /*Standard monitor size and above*/
@@ -329,7 +336,7 @@ max-width: 540px;
 }
 
 #tortfolio{
-  max-width: 400px;
+  max-width: 600px;
 }
 
 @media screen and (max-width: 600px){
