@@ -24,12 +24,16 @@ function atomClose(){
     {
     clearElem('atom_embed');
     }
-  document.getElementById('atom_but').innerHTML = "Try It";
-  document.getElementById('atom_but').setAttribute("onclick", "atomOpen();");
+  
+ // document.getElementById('atom_but').innerHTML = "Try It";
+ // document.getElementById('atom_but').setAttribute("onclick", "atomOpen();");
 }
 
 function atomOpen(){
   embedHtml('atom.html', 600, 600, 'atom_embed');
-  document.getElementById('atom_but').innerHTML = "Close";
-  document.getElementById('atom_but').setAttribute("onclick", "atomClose();");
+  //document.getElementById('atom_but').innerHTML = "Close";
+  //document.getElementById('atom_but').setAttribute("onclick", "atomClose();");
 }
+
+
+openAndClose("greet_box", "greet_box");

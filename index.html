@@ -5,12 +5,18 @@
   <meta charset="UTF-8">
   <title>Alexander Alford</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
+
+
+  <link rel="preload" href="./images/background.jpg" as="image"> 
+  <link rel="preload" href="./style.css" as="style"> 
+
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 <!-- partial:index.partial.html -->
+
 <div id="Master">
   <div id="greet_box">
   <b id="Name">Alexander Alford</b><br>
@@ -60,15 +66,15 @@
        <div class="panel">
         <img class="proj_image" src="images/AtomSim_1.png" alt="...">
           <div class="proj_piece">
-            <b>Atomic Simulation</b>
+            <b>Atom Physics Simulator</b>
             <p>A scientific modeling program for particle physics made in Python using VPython.</p>
           </div>
-        <button class="Button" onclick="openAndClose('atom_sim', 'projects')">Read More</button>
+        <button class="Button" onclick="openAndClose('atom_sim', 'projects'); atomOpen();">Read More</button>
       </div> 
 	    <div class="panel">
           <img class="proj_image" src="images/Game_250px.png" alt="...">
             <div class="proj_piece">
-              <b>Game Engine</b>
+              <b>Robo Wars: A 2D Game Engine</b>
               <p>A 2D platforming game engine with custom assets. Built from scratch in C using SDL2.</p>
             </div>         
           <button class="Button" onclick="openAndClose('game_proj', 'projects')">Read More</button>
@@ -82,12 +88,12 @@
   <div id="game_proj">
     <div id="game_grid_cont">
       <div class="game_show_cont panel" id="game_header">
-        <h1>A 2D Game Engine</h1>
+        <h1>Robo Wars: A 2D Game Engine</h1>
         <p>This project was one of my first major software development projects. 
           The goal of the project was to improve my general programming skill and gain a better understanding of the C language.</p>
       </div>
       <div class="game_show_cont panel">
-        <img src="images/game_2.png" class="img_game_l" alt="">
+        <img src="images/game_2.gif" style=" width: 300px;" class="img_game_l" alt="">
           <h1>Collision Detection and Resolution</h1>
           <br>
           <p>One of the first parts of the engine developed was the collision detection and resolution system.
@@ -105,7 +111,7 @@
         </p>
       </div>
       <div class="game_show_cont panel">
-        <img src="images/game_3.png" class="img_game_l" alt="">
+        <img src="images/game_3.gif" class="img_game_l" alt="">
         <h1>Object System</h1>
         <br>
         <p>The object system allows for the creation of objects that can interact with platforms and other objects according to AI or user input. 
@@ -113,7 +119,7 @@
         </p>
       </div>
       <div class="game_show_cont panel">
-        <img src="images/game_4.png" alt="" class="img_game_r">
+        <img src="images/game_4.gif" class="img_game_r" alt="">
         <h1>Sounds and Timing</h1>
         <br>
         <p>One of the later elements added was a sound system that can play queued sounds in addition to background music. 
@@ -127,6 +133,7 @@
 
   <div id="atom_sim">
     <div id="atom_summary" class="panel">
+      <h3>Atom Physics Simulator</h3>
       <p>This program is an atomic physics simulator designed to simulate sub-atomic particles and the forces that they interact with by using VPython's API.
       The VPython module provides a simple implementation of 3D graphics, vector math, and graphing capabilities that can easily be implemented.
       GlowScript is a javascript api based off of VPython that, with the help of the RapydScript transpiler, allows the Python script to run in the browser.</p>
@@ -136,7 +143,7 @@
       While running, the average electron orbital radius is graphed in real time and the electrostatic force can be changed at any time by the user to alter the orbit.</p>
       <img style="max-width:100%" src="images/AtomSim_2.png" alt="">
       <button class="Button back-but" style="margin-top: 20px" onclick="atomClose(); openAndClose('projects', 'atom_sim');">Back</button>
-      <button class="Button back-but" id="atom_but" style="margin-top: 20px" onclick="atomOpen()">Try It</button>
+      <!--<button class="Button back-but" id="atom_but" style="margin-top: 20px" onclick="atomOpen()">Try It</button>-->
     </div>
     <div id="atom_embed"></div>
   </div>

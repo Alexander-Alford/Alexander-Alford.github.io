@@ -10,6 +10,7 @@
   --panel_text: white;
 }
 
+
 body{
   background-image: url(images/background.jpg);
   background-size: cover;
@@ -142,7 +143,7 @@ a{
  margin: 25px;
 }
 
-#game_proj, #atom_sim, #fordington_proj, #projects, #aboutme, #tortfolio{
+#game_proj, #atom_sim, #fordington_proj, #projects, #aboutme, #tortfolio, #greet_box{
   position: absolute;
   top: -1000vh;
   left: -1000vw;
@@ -184,7 +185,6 @@ a{
 }
 
 #atom_summary{
-text-indent: 8%;
 text-align: center;
 line-height: 27px;
 font-size: 20px;
@@ -196,6 +196,7 @@ border-radius: 5px;
 }
 #atom_summary > p{
   text-align: left;
+  text-indent: 8%;
 }
 
 #atom_sim{
@@ -272,12 +273,21 @@ max-width: 540px;
   max-width: 100%;
 }
 
+#tortfolio{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3px 3px;
+  max-width: 1000px;
+}
+
+
 #tort_proj{
   padding: 17px;
   border-radius: 5px;
   margin: 8px 0px;
   font-size: 22px;
 }
+
 
 #tort_proj > p{
   text-align: left;
@@ -333,11 +343,12 @@ max-width: 540px;
     .game_show_cont > p{
     clear: none;
     }  
+
+    #tortfolio{
+      grid-template-columns: 1fr;
+    }
 }
 
-#tortfolio{
-  max-width: 600px;
-}
 
 @media screen and (max-width: 600px){
    #aboutme{
