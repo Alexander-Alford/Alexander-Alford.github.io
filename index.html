@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" class="hidden-scroll">
 
 <head>
   <meta charset="UTF-8">
@@ -7,17 +7,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
 
-
-  <link rel="preload" href="./images/background.jpg" as="image"> 
-  <link rel="preload" href="./style.css" as="style"> 
-
   <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-<!-- partial:index.partial.html -->
+<body >
 
-<div id="Master">
+<div id="Master" >
   <div id="greet_box">
   <b id="Name">Alexander Alford</b><br>
     Web Development and Design
@@ -48,7 +43,7 @@
     <div id="proj_cont">
 
        <div class="panel">
-          <img class="proj_image" style="object-fit: cover" src="images/Fordington_Full.png" alt="...">
+          <img class="proj_image" style="object-fit: contain" src="images/shiba.png" alt="...">
             <div class="proj_piece">
               <b>ecommerceproject.tech</b>
               <p>A mock online retailer website that specializes in selling animals and animal products.</p>
@@ -179,7 +174,7 @@
       </div>
       <div style="display: flex">
       <button class="Button" style="flex-basis: 50%" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
-      <a href="http://ecommerceproject.tech" style="display: flex; flex-basis: 50%" target="_blank"><button class="Button" style="flex-grow: 10">Live Demo</button></a>
+      <a href="https://ecommerceproject.tech" style="display: flex; flex-basis: 50%" target="_blank"><button class="Button" style="flex-grow: 10">Live Demo</button></a>
       </div>
 	  </div>
 	  <div class="ford-container panel" id="ford-react">
@@ -199,17 +194,18 @@
 
   <div id="tortfolio">
     <div id="tort_proj" class="panel">
-      <img src="images/TortfolioScreen.png" style="max-width: 100%" alt="..." />
+      <img src="images/TortfolioAllocation.jpg" style="max-width: 100%; height: 205px;" alt="..." />
+      <p>First, the user provides their current 401k, IRA, and taxable portfolios in terms of the amount of money invested in bonds, stocks, and international stocks respectively.
+      They then provide their desired asset allocation, their monthly investment amount, and details about their 401k and their IRA.
+      Finally, the user can calculate their most tax efficient year long investment strategy.</p>
+    </div>
+    <div id="tort_proj" class="panel">
+      <img src="images/torty.png" style="height: 200px" alt="..." />
+      <h2>Tortfolio.org</h2>
       Tortfolio is a portfolio balancing and investing tool created to allow the user to plan how to plan their investing
       so that they can pay the lowest amount of taxes. This project uses Bootstrap for styling and chart.js for graphing<br />
       <a href="https://tortfolio.org" target="_blank"><button class="Button back-but" style="margin-top: 20px">Try It</button></a>
       <button class="Button back-but" onclick="openAndClose('projects', 'tortfolio')">Back</button>
-    </div>
-    <div id="tort_proj" class="panel">
-      <img src="images/TortfolioAllocation.jpg" style="max-width: 100%" alt="..." />
-      <p>First, the user provides their current 401k, IRA, and taxable portfolios in terms of the amount of money invested in bonds, stocks, and international stocks respectively.
-      They then provide their desired asset allocation, their monthly investment amount, and details about their 401k and their IRA.
-      Finally, the user can calculate their most tax efficient year long investment strategy.</p>
     </div>
     <div id="tort_proj" class="panel">
       <img src="images/TortfolioGraph.jpg" style="max-width: 100%" alt="..." />

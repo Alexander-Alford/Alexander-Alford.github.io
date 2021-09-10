@@ -1,8 +1,12 @@
 function openAndClose(open, close){
-  document.getElementById(close).style.opacity = 0;
-  document.getElementById(close).style.position = "absolute";
-  document.getElementById(open).style.position = "static";
-  document.getElementById(open).style.opacity = 1;  
+  oElem = document.getElementById(open);
+  cElem = document.getElementById(close);
+
+  cElem.style.opacity = 0;
+  cElem.style.position = "absolute";
+  cElem.style.transition = "opacity 1s";
+  oElem.style.position = "static";
+  oElem.style.opacity = 1;  
 }
 
 function embedHtml(html, width, height, target){
@@ -36,4 +40,6 @@ function atomOpen(){
 }
 
 
-openAndClose("greet_box", "greet_box");
+
+
+openAndClose("greet_box", "aboutme");
