@@ -92,7 +92,7 @@ a{
   position: absolute;
   top: -1000vh;
   left: -1000vw;
-  transition: opacity 2s;
+  transition: opacity 4s;
   opacity: 0;
 }
 
@@ -211,7 +211,7 @@ border-radius: 5px;
 }
 
 #atom_sim{
-  padding-top: 20px;
+  padding-top: 10px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -288,19 +288,27 @@ max-width: 540px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 3px 3px;
-  max-width: 1200px;
+  max-width: 1300px;
 }
 
 
-#tort_proj{
+.tort_proj{
   padding: 17px;
   border-radius: 5px;
   margin: 8px 0px;
   font-size: 22px;
+  position: relative;
 }
 
+.tort_proj{
+  top: 50px;
+}
 
-#tort_proj > p{
+.tort_proj:nth-child(2){
+  top: -50px;
+}
+
+.tort_proj > p{
   text-align: left;
   text-indent: 40px;
 }
@@ -361,6 +369,10 @@ max-width: 540px;
 
     #tortfolio{
       grid-template-columns: 1fr;
+    }
+
+    .tort_proj{
+      position: static;
     }
 }
 
