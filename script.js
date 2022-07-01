@@ -40,6 +40,13 @@ function atomOpen(){
 }
 
 
+//Event listener setup.
+document.getElementById("but_1").onclick = function () {openAndClose('aboutme', 'greet_box')};
+document.getElementById("but_2").onclick = function () {window.open('Resume.pdf', '_blank')};
+document.getElementById("but_4").onclick = function () {window.open('https://github.com/Alexander-Alford', '_blank')};
+document.getElementById("but_5").onclick = function () {window.open('https://www.linkedin.com/in/alexanderralford/', '_blank')};
+document.getElementById("but_3").onclick = function () {openAndClose('projects', 'greet_box')};
+document.getElementById("but_6").onclick = function () {openAndClose('projects', 'greet_box')};
 
 
 openAndClose("greet_box", "aboutme");

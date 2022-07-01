@@ -1,235 +1,270 @@
 <!DOCTYPE html>
 <html lang="en" class="hidden-scroll">
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/x-icon" href="./images/icon.ico" />
-  <title>Alexander Alford</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-
-<div id="Master">
-  <div id="greet_box">
-  <b id="Name">Alexander Alford</b><br>
-    Web Development and Design
-    <div id="greet_buttons">
-      <button class="Button greet-but" id="but_1" onclick="openAndClose('aboutme', 'greet_box')">About Me</button>
-      <button class="Button greet-but" id="but_3" onclick="openAndClose('projects', 'greet_box')">Projects</button>
-      <button class="Button greet-but" id="but_6" onclick="openAndClose('projects', 'greet_box')">Experience</button>
-      <a class="greet-but" href="Resume.pdf" target="_blank"><button class="Button greet-but" id="but_2" >Resume</button></a>
-      <a class="greet-but" href="https://github.com/Alexander-Alford" target="_blank"><button class="Button greet-but" id="but_4">Github</button></a>
-      <a class="greet-but" href="https://www.linkedin.com/in/alexanderralford/" target="_blank"><button class="Button greet-but" id="but_5">LinkedIn</button></a>
-    </div>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./images/icon.ico" />
+    <title>Alexander Alford</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
   
-  <div id="aboutme" class="panel">
-    <b>About Me</b><br><br>
-    <p>My name is Alexander and I am a web developer and programmer open to new work, preferably remote. 
-      I began developing software as a hobby while I was pursuing my Bachelor's degree at UCSD. 
-      What started off as a simple passion project became a fascination for how software is made and shared.</p>
-    <p>Since then, I have grown into web development where I get to work with some of the most cutting-edge technology available.
-      I see programming as a way to explore a language's potential, to solve problems simple and complex, and to harness the power of a computer. 
-      Thank you for stopping by, and if you're interested, feel free to reach out and contact me below.</p><br>
-    <b>Contact</b><br>
-    alexalford@runbox.ch<br>
-    (949)202-9536<br>
-    <button class="Button back-but" id="gobackbutton_1" onclick="openAndClose('greet_box', 'aboutme')">Back</button>
-  </div>
+    <link rel="stylesheet" href="./style.css">
+  </head>
 
-  <div id="experience">
-    <div>
+  <body>
+  
+    <!-- Greeter section. Links every other section. -->
+    <div id="greet_box">
+    <b id="Name">Alexander Alford</b><br>
+      Web Development and Design
+      <div id="greet_buttons">
+        <button class="Button greet-but" id="but_1">
+          <span class="icon-spacer">
+            About Me
+            <img src="images/user-solid.svg" class="icon-main-but"></img>
+          </span>
+        </button>
+        <button class="Button greet-but" id="but_3">
+          <span class="icon-spacer">
+            Projects
+            <img src="images/diagram-project-solid.svg" class="icon-main-but"></img>
+          </span>
+        </button>
+        <button class="Button greet-but" id="but_6">
+          <span class="icon-spacer">
+            Experience
+            <img src="images/folder-open-solid.svg" class="icon-main-but"></img>
+          </span>
+        </button>
+        <button class="Button greet-but" id="but_2">
+          <span class="icon-spacer">
+            Resume
+            <img src="images/file-solid.svg" class="icon-main-but"></img>
+          </span>
+        </button>
+        <button class="Button greet-but" id="but_4">
+          <span class="icon-spacer">
+            Github
+            <img src="images/github-brands.svg" class="icon-main-but"></img>
+          </span>
+        </button>
+        <button class="Button   greet-but" id="but_5">
+          <span class="icon-spacer">
+            LinkedIn
+            <img src="images/linkedin-brands.svg" class="icon-main-but"></img>
+          </span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- About me section. A short summary of myself and my programming experience/goals. -->
+    <div id="aboutme" class="panel">
+      <b>About Me</b><br><br>
+      <p>My name is Alexander and I am a web developer and programmer open to new work, preferably remote. 
+        I began developing software as a hobby while I was pursuing my Bachelor's degree at UCSD. 
+        What started off as a simple passion project became a fascination for how software is made and shared.</p>
+      <p>Since then, I have grown into web development where I get to work with some of the most cutting-edge technology  available.
+        I see programming as a way to explore a language's potential, to solve problems simple and complex, and to harness  the power of a computer. 
+        Thank you for stopping by, and if you're interested, feel free to reach out and contact me below.</p><br>
+      <b>Contact</b><br>
+      alexalford@runbox.ch<br>
+      (949)202-9536<br>
+      <button class="Button back-but" id="gobackbutton_1" onclick="openAndClose('greet_box', 'aboutme')">Back</button>
+    </div>
+  
+    <!-- Experience section. Lists and describes my professional experience. -->
+    <div id="experience">
       <div>
-        National University
+        <div>
+          National University
+        </div>
       </div>
     </div>
-  </div>
-
-  <div id="projects">
-    <div id="proj_cont">
-
-       <div class="panel">
-          <img class="proj_image" style="object-fit: contain" src="images/store.png" alt="...">
+  
+    <!-- Projects section. Lists personal projects with demos. -->
+    <div id="projects">
+      <div id="proj_cont">
+  
+         <div class="panel">
+            <img class="proj_image" style="object-fit: contain" src="images/store.png" alt="...">
+              <div class="proj_piece">
+                <b>ecommerceproject.tech</b>
+                <p>A mock online retailer website that specializes in selling animals and animal products.</p>
+              </div>         
+            <button class="Button" onclick="openAndClose('fordington_proj', 'projects')">Read More</button>
+         </div>
+         <div class="panel">
+          <img class="proj_image" src="images/torty.png" alt="...">
+           <div class="proj_piece">
+             <b>Tortfolio.org</b>
+             <p>Tortfolio is a financial planning tool for tax-efficient investing.</p>
+           </div> 
+          <button class="Button" onclick="openAndClose('tortfolio', 'projects')">Read More</button>
+        </div>
+         <div class="panel">
+          <img class="proj_image" src="images/AtomSim_1.png" alt="...">
             <div class="proj_piece">
-              <b>ecommerceproject.tech</b>
-              <p>A mock online retailer website that specializes in selling animals and animal products.</p>
-            </div>         
-          <button class="Button" onclick="openAndClose('fordington_proj', 'projects')">Read More</button>
-       </div>
-       <div class="panel">
-        <img class="proj_image" src="images/torty.png" alt="...">
-         <div class="proj_piece">
-           <b>Tortfolio.org</b>
-           <p>Tortfolio is a financial planning tool for tax-efficient investing.</p>
-         </div> 
-        <button class="Button" onclick="openAndClose('tortfolio', 'projects')">Read More</button>
+              <b>Atom Physics Simulator</b>
+              <p>A scientific modeling program for particle physics made in Python using VPython.</p>
+            </div>
+          <button class="Button" onclick="openAndClose('atom_sim', 'projects'); atomOpen();">Read More</button>
+        </div> 
+  	    <div class="panel">
+            <img class="proj_image" src="images/Game_250px.gif" alt="...">
+              <div class="proj_piece">
+                <b>Robo Wars: A 2D Game Engine</b>
+                <p>A 2D platforming game engine with custom assets. Built from scratch in C using SDL2.</p>
+              </div>         
+            <button class="Button" onclick="openAndClose('game_proj', 'projects')">Read More</button>
+         </div>
+         
       </div>
-       <div class="panel">
-        <img class="proj_image" src="images/AtomSim_1.png" alt="...">
-          <div class="proj_piece">
-            <b>Atom Physics Simulator</b>
-            <p>A scientific modeling program for particle physics made in Python using VPython.</p>
-          </div>
-        <button class="Button" onclick="openAndClose('atom_sim', 'projects'); atomOpen();">Read More</button>
-      </div> 
-	    <div class="panel">
-          <img class="proj_image" src="images/Game_250px.gif" alt="...">
-            <div class="proj_piece">
-              <b>Robo Wars: A 2D Game Engine</b>
-              <p>A 2D platforming game engine with custom assets. Built from scratch in C using SDL2.</p>
-            </div>         
-          <button class="Button" onclick="openAndClose('game_proj', 'projects')">Read More</button>
-       </div>
-       
-       
+      
+      <button class="Button back-but" id="gobackbutton_2" onclick="openAndClose('greet_box', 'projects')">Back</button>
     </div>
-    <button class="Button back-but" id="gobackbutton_2" onclick="openAndClose('greet_box', 'projects')">Back</button>
-  </div>
 
-  <div id="game_proj">
-    <div id="game_grid_cont">
-      <div class="game_show_cont panel" id="game_header">
-        <h1>Robo Wars: A 2D Game Engine</h1>
-        <p>This project was one of my first major software development projects. 
-          The goal of the project was to improve my general programming skill and gain a better understanding of the C language.</p>
-      </div>
-      <div class="game_show_cont panel">
-        <img src="images/game_2.gif" style=" width: 300px;" class="img_game_l" alt="">
-          <h1>Collision Detection and Resolution</h1>
+    <!-- Game project section. -->
+    <div id="game_proj">
+      <div id="game_grid_cont">
+        <div class="game_show_cont panel" id="game_header">
+          <h1>Robo Wars: A 2D Game Engine</h1>
+          <p>This project was one of my first major software development projects. 
+            The goal of the project was to improve my general programming skill and gain a better understanding of the C  language.</p>
+        </div>
+        <div class="game_show_cont panel">
+          <img src="images/game_2.gif" style=" width: 300px;" class="img_game_l" alt="">
+            <h1>Collision Detection and Resolution</h1>
+            <br>
+            <p>One of the first parts of the engine developed was the collision detection and resolution system.
+            This system allowed moving objects to collied with terrain and be ejected reliably and efficiently.
+            Over time the system algorithms was revised several times to more accurately resolve collisions and to detect   non-rectangular collisions. 
+            </p>
+        </div>
+        <div class="game_show_cont panel">
+          <img src="images/game_1.png" alt="" class="img_game_r">
+          <h1>Tiling and Graphics</h1>
           <br>
-          <p>One of the first parts of the engine developed was the collision detection and resolution system.
-          This system allowed moving objects to collied with terrain and be ejected reliably and efficiently.
-          Over time the system algorithms was revised several times to more accurately resolve collisions and to detect non-rectangular collisions. 
+          <p>Alongside the collision detection and resolution, a grid-based tiling system was developed to create the   platforms in the game engine.
+             These tiles were drawn with hardware accelerated rendering of select portions of source images.
+             Grid based tiling allows for platforms that are highly optimized in memory and performance.
           </p>
+        </div>
+        <div class="game_show_cont panel">
+          <img src="images/game_3.gif" class="img_game_l" alt="">
+          <h1>Object System</h1>
+          <br>
+          <p>The object system allows for the creation of objects that can interact with platforms and other objects  according to AI or user input. 
+            Objects can store data that is unique to each individual member as well as data that is shared among all of the   instances of a kind of object.
+          </p>
+        </div>
+        <div class="game_show_cont panel">
+          <img src="images/game_4.gif" class="img_game_r" alt="">
+          <h1>Sounds and Timing</h1>
+          <br>
+          <p>One of the later elements added was a sound system that can play queued sounds in addition to background music. 
+            Each queued sound is given a specific channel that it can play on so that sounds can overlap.
+            A timing system was also added to control framerate as well as the speed at which the game played.
+          </p>
+        </div>
       </div>
-      <div class="game_show_cont panel">
-        <img src="images/game_1.png" alt="" class="img_game_r">
-        <h1>Tiling and Graphics</h1>
-        <br>
-        <p>Alongside the collision detection and resolution, a grid-based tiling system was developed to create the platforms in the game engine.
-           These tiles were drawn with hardware accelerated rendering of select portions of source images.
-           Grid based tiling allows for platforms that are highly optimized in memory and performance.
-        </p>
-      </div>
-      <div class="game_show_cont panel">
-        <img src="images/game_3.gif" class="img_game_l" alt="">
-        <h1>Object System</h1>
-        <br>
-        <p>The object system allows for the creation of objects that can interact with platforms and other objects according to AI or user input. 
-          Objects can store data that is unique to each individual member as well as data that is shared among all of the instances of a kind of object.
-        </p>
-      </div>
-      <div class="game_show_cont panel">
-        <img src="images/game_4.gif" class="img_game_r" alt="">
-        <h1>Sounds and Timing</h1>
-        <br>
-        <p>One of the later elements added was a sound system that can play queued sounds in addition to background music. 
-          Each queued sound is given a specific channel that it can play on so that sounds can overlap.
-          A timing system was also added to control framerate as well as the speed at which the game played.
-        </p>
-      </div>
+      <button class="Button back-but" onclick="openAndClose('projects', 'game_proj')">Back</button>
     </div>
-    <button class="Button back-but" onclick="openAndClose('projects', 'game_proj')">Back</button>
-  </div>
-
-  <div id="atom_sim">
-    <div id="atom_summary" class="panel">
-      <h3>Atom Physics Simulator</h3>
-      <br>
-      <p>This program is an atomic physics simulator designed to simulate sub-atomic particles and the forces that they interact with by using VPython's API.
-      The VPython module provides a simple implementation of 3D graphics, vector math, and graphing capabilities that can easily be implemented.
-      GlowScript is a javascript api based off of VPython that, with the help of the RapydScript transpiler, allows the Python script to run in the browser.</p>
-      <br>
-      <p>This simulation can be paused and reset to its initial state at any time. 
-      Scrolling can be used to zoom in and out on the canvas, while holding shift and dragging with your mouse can pan it.
-      While running, the average electron orbital radius is graphed in real time and the electrostatic force can be changed at any time by the user to alter the orbit.</p>
-      <img style="max-width:100%" src="images/AtomSim_2.png" alt="">
-      <button class="Button back-but" style="margin-top: 20px" onclick="atomClose(); openAndClose('projects', 'atom_sim');">Back</button>
-      <!--<button class="Button back-but" id="atom_but" style="margin-top: 20px" onclick="atomOpen()">Try It</button>-->
+  
+    <!-- Atom project section. -->
+    <div id="atom_sim">
+      <div id="atom_summary" class="panel">
+        <h3>Atom Physics Simulator</h3>
+        <br>
+        <p>This program is an atomic physics simulator designed to simulate sub-atomic particles and the forces that they interact with by using VPython's API.
+        The VPython module provides a simple implementation of 3D graphics, vector math, and graphing capabilities that can easily be implemented.
+        GlowScript is a javascript api based off of VPython that, with the help of the RapydScript transpiler, allows the Python script to run in the browser.</p>
+        <br>
+        <p>This simulation can be paused and reset to its initial state at any time. 
+        Scrolling can be used to zoom in and out on the canvas, while holding shift and dragging with your mouse can pan it.
+        While running, the average electron orbital radius is graphed in real time and the electrostatic force can be changed at any time by the user to alter the orbit.</p>
+        <img style="max-width:100%" src="images/AtomSim_2.png" alt="">
+        <button class="Button back-but" style="margin-top: 20px" onclick="atomClose(); openAndClose('projects', 'atom_sim');">  Back</button>
+        <!--<button class="Button back-but" id="atom_but" style="margin-top: 20px" onclick="atomOpen()">Try It</button>-->
+      </div>
+      <div id="atom_embed"></div>
     </div>
-    <div id="atom_embed"></div>
-  </div>
 
-  <div id="fordington_proj">
-	  <div class="ford-container panel" id="ford-mongo">
-      <img src="images/MongoDB_logo.png" class="ford-image" />
-        <p>This web app uses MongoDB Atlas to store and provide its product data. 
-        By using an access key to the data cluster, the server can access the document collection for the prop products and perform read operations on them.
-	      The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
-        Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
-        Server routing and the RESTful api is controlledusing Express functionality. 
-        The client can post a request to the server to load filtered response data from the database based on given criteria.
-        </p>
-      <img src="images/Express_logo.png" class="ford-image" />
-	  </div> 
-	  <div class="ford-container panel" id="ford-main">
-      <img src="images/Fordington_Full.png" class="ford-image-main" />
-      <div style="margin: 20px 0px">  
+    <!-- PetShop project section. -->
+    <div id="fordington_proj">
+  	  <div class="ford-container panel" id="ford-mongo">
+        <img src="images/MongoDB_logo.png" class="ford-image" />
+          <p>This web app uses MongoDB Atlas to store and provide its product data. 
+          By using an access key to the data cluster, the server can access the document collection for the prop products and perform read operations on them.
+  	      The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
+          Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
+          Server routing and the RESTful api is controlledusing Express functionality. 
+          The client can post a request to the server to load filtered response data from the database based on given criteria.
+          </p>
+        <img src="images/Express_logo.png" class="ford-image" />
+  	  </div> 
+  	  <div class="ford-container panel" id="ford-main">
+        <img src="images/Fordington_Full.png" class="ford-image-main" />
+        <div style="margin: 20px 0px">  
+          <p>
+          This mock website is an imaginary online retailer that sells animals and animal products. The purpose of this project was
+          to experiment, develop, and deploy a web app that uses React and MongoDB to create a client-server model that allows the user
+          to interact with a cloud database in ways that mimic popular online retailers like Amazon. Data for the website was
+          generated and is accessed with MongoDB Atlas while content is rendered with individual react components that respond
+          to state changes. I used Heroku to deploy the app as a live demo that anybody can try.
+          </p>
+          <br /> 
+          <p>The demo provides a functional product
+          page allowing the user to inspect items, add them to their carts, go to checkout, modify their order, and then send it out.
+          In addition, the user can query for specific kinds of items and adjust how many items are displayed. A nonfunctional sign in and register 
+          page are provided to complete the environment.
+          </p>
+        </div>
+        <div style="display: flex">
+        <button class="Button" style="flex-basis: 50%" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
+        <a href="https://ecommerceproject.tech" style="display: flex; flex-basis: 50%" target="_blank"><button class="Button" style="flex-grow: 10">Live Demo</button></a>
+        </div>
+  	  </div>
+  	  <div class="ford-container panel" id="ford-react">
+        <img src="images/React_logo.png" class="ford-image" />
         <p>
-        This mock website is an imaginary online retailer that sells animals and animal products. The purpose of this project was
-        to experiment, develop, and deploy a web app that uses React and MongoDB to create a client-server model that allows the user
-        to interact with a cloud database in ways that mimic popular online retailers like Amazon. Data for the website was
-        generated and is accessed with MongoDB Atlas while content is rendered with individual react components that respond
-        to state changes. I used Heroku to deploy the app as a live demo that anybody can try.
+  	    The client side of this web app is rendered dynamically with React.
+  	    The website is composed of nested react components that use a mixture of hooks, props, and pure javascript for interactivity.
+  	    Data from the api endpoint is loaded for the home page by use of a state variable whose hook sets the state and re-renders every time it's called. 
+        JSX allows for easy incorporation of javascript functionality into html giving an interactive user interface for the user's cart that allows items to be added
+        and removed while the page is visibly updated.
+        Bootstrap 5 is used to style the website along with custom edits. The Bootstrap classes provide styling that adjusts
+        with screen dimensions for platform independent websites.
         </p>
-        <br /> 
-        <p>The demo provides a functional product
-        page allowing the user to inspect items, add them to their carts, go to checkout, modify their order, and then send it out.
-        In addition, the user can query for specific kinds of items and adjust how many items are displayed. A nonfunctional sign in and register 
-        page are provided to complete the environment.
-        </p>
+      <img src="images/Bootstrap_logo.png" class="ford-image" />
       </div>
-      <div style="display: flex">
-      <button class="Button" style="flex-basis: 50%" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
-      <a href="https://ecommerceproject.tech" style="display: flex; flex-basis: 50%" target="_blank"><button class="Button" style="flex-grow: 10">Live Demo</button></a>
+    </div>
+
+    <!-- Tortfolio project section. -->
+    <div id="tortfolio">
+      <div  class="panel tort_proj">
+        <img src="images/TortfolioAllocation.jpg" style="max-width: 100%; height: 205px;" alt="..." />
+        <p>First, the user provides their current 401k, IRA, and taxable portfolios in terms of the amount of money invested in bonds, stocks, and international stocks respectively.
+        They then provide their desired asset allocation, their monthly investment amount, and details about their 401k and their IRA.
+        Finally, the user can calculate their most tax efficient year long investment strategy.</p>
       </div>
-	  </div>
-	  <div class="ford-container panel" id="ford-react">
-      <img src="images/React_logo.png" class="ford-image" />
-      <p>
-	    The client side of this web app is rendered dynamically with React.
-	    The website is composed of nested react components that use a mixture of hooks, props, and pure javascript for interactivity.
-	    Data from the api endpoint is loaded for the home page by use of a state variable whose hook sets the state and re-renders every time it's called. 
-      JSX allows for easy incorporation of javascript functionality into html giving an interactive user interface for the user's cart that allows items to be added
-      and removed while the page is visibly updated.
-      Bootstrap 5 is used to style the website along with custom edits. The Bootstrap classes provide styling that adjusts
-      with screen dimensions for platform independent websites.
-      </p>
-    <img src="images/Bootstrap_logo.png" class="ford-image" />
-    </div>
-  </div>
-
-  <div id="tortfolio">
-    <div  class="panel tort_proj">
-      <img src="images/TortfolioAllocation.jpg" style="max-width: 100%; height: 205px;" alt="..." />
-      <p>First, the user provides their current 401k, IRA, and taxable portfolios in terms of the amount of money invested in bonds, stocks, and international stocks respectively.
-      They then provide their desired asset allocation, their monthly investment amount, and details about their 401k and their IRA.
-      Finally, the user can calculate their most tax efficient year long investment strategy.</p>
-    </div>
-    <div class="panel tort_proj">
-      <img src="images/tortpromo.png" style="max-width: 100%" alt="..." />
-      <h2>Tortfolio.org</h2>
-      Tortfolio is a portfolio balancing and investing tool created to allow the user to plan how to plan their investing
-      so that they can pay the lowest amount of taxes. This project uses Bootstrap for styling and chart.js for graphing<br />
-      <a href="https://tortfolio.org" target="_blank"><button class="Button back-but" style="margin-top: 20px">Try It</button></a>
-      <button class="Button back-but" onclick="openAndClose('projects', 'tortfolio')">Back</button>
-    </div>
-    <div class="panel tort_proj">
-      <img src="images/TortfolioGraph.jpg" style="max-width: 100%" alt="..." />
-      <p>Once the investment strategy is calculated the user can then view their recommended investments into each portfolio for each month of the year.
-      Their investments are divided based on their desired split between bonds and stocks with slight changes to maximize tax reduction.
-      A graph is given to show the total investments across all possible venues for each month.</p>
-    </div>
-  </div>
-
-</div>
-
-<!-- Basic JS for screen changes. -->
-  <script  src="./script.js"></script>
-
-</body>
+      <div class="panel tort_proj">
+        <img src="images/tortpromo.png" style="max-width: 100%" alt="..." />
+        <h2>Tortfolio.org</h2>
+        Tortfolio is a portfolio balancing and investing tool created to allow the user to plan how to plan their investing
+        so that they can pay the lowest amount of taxes. This project uses Bootstrap for styling and chart.js for graphing<br />
+        <a href="https://tortfolio.org" target="_blank"><button class="Button back-but" style="margin-top: 20px">Try It</button></a>
+        <button class="Button back-but" onclick="openAndClose('projects', 'tortfolio')">Back</button>
+      </div>
+      <div class="panel tort_proj">
+        <img src="images/TortfolioGraph.jpg" style="max-width: 100%" alt="..." />
+        <p>Once the investment strategy is calculated the user can then view their recommended investments into each portfolio for each month of the year.
+        Their investments are divided based on their desired split between bonds and stocks with slight changes to maximize tax reduction.
+        A graph is given to show the total investments across all possible venues for each month.</p>
+      </div>
+    </div> 
+  
+  <!-- JS for screen changes. -->
+    <script  src="./script.js"></script>
+  
+  </body>
 </html>
