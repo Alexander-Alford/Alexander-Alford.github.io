@@ -18,42 +18,42 @@
     <b id="Name">Alexander Alford</b><br>
       Web Development and Design
       <div id="greet_buttons">
-        <button class="Button greet-but" id="but_1">
+        <button class="Button greet-but" id="but_about">
           <span class="icon-spacer">
             About Me
             <img src="images/user-solid.svg" class="icon-main-but"></img>
           </span>
         </button>
-        <button class="Button greet-but" id="but_3">
+        <button class="Button greet-but" id="but_proj">
           <span class="icon-spacer">
             Projects
             <img src="images/diagram-project-solid.svg" class="icon-main-but"></img>
           </span>
         </button>
-        <button class="Button greet-but" id="but_6">
+        <button class="Button greet-but" id="but_exper">
           <span class="icon-spacer">
             Experience
             <img src="images/folder-open-solid.svg" class="icon-main-but"></img>
           </span>
         </button>
-        <button class="Button greet-but" id="but_2">
+        <a class="Button greet-but" id="but_res" href="Resume.pdf" target="_blank" rel="noopener noreferrer">
           <span class="icon-spacer">
             Resume
             <img src="images/file-solid.svg" class="icon-main-but"></img>
           </span>
-        </button>
-        <button class="Button greet-but" id="but_4">
+        </a>
+        <a class="Button greet-but" id="but_git" href="https://github.com/Alexander-Alford" target="_blank" rel="noopener noreferrer">
           <span class="icon-spacer">
             Github
             <img src="images/github-brands.svg" class="icon-main-but"></img>
           </span>
-        </button>
-        <button class="Button   greet-but" id="but_5">
+        </a>
+        <a class="Button greet-but" id="but_linkin" href="https://www.linkedin.com/in/alexanderralford/" target="_blank" rel="noopener noreferrer">
           <span class="icon-spacer">
             LinkedIn
             <img src="images/linkedin-brands.svg" class="icon-main-but"></img>
           </span>
-        </button>
+        </a>
       </div>
     </div>
     
@@ -69,7 +69,7 @@
       <b>Contact</b><br>
       alexalford@runbox.ch<br>
       (949)202-9536<br>
-      <button class="Button back-but" id="gobackbutton_1" onclick="openAndClose('greet_box', 'aboutme')">Back</button>
+      <button class="Button back-but" id="goback_about" onclick="openAndClose('greet_box', 'aboutme')">Back</button>
     </div>
   
     <!-- Experience section. Lists and describes my professional experience. -->
@@ -84,43 +84,45 @@
     <!-- Projects section. Lists personal projects with demos. -->
     <div id="projects">
       <div id="proj_cont">
-  
+        <!-- ecommerce website -->
          <div class="panel">
             <img class="proj_image" style="object-fit: contain" src="images/store.png" alt="...">
               <div class="proj_piece">
                 <b>ecommerceproject.tech</b>
                 <p>A mock online retailer website that specializes in selling animals and animal products.</p>
               </div>         
-            <button class="Button" onclick="openAndClose('fordington_proj', 'projects')">Read More</button>
+            <button class="Button" id="but_ecomproj" onclick="openAndClose('fordington_proj', 'projects')">Read More</button>
          </div>
+         <!-- Tortfolio -->
          <div class="panel">
           <img class="proj_image" src="images/torty.png" alt="...">
            <div class="proj_piece">
              <b>Tortfolio.org</b>
              <p>Tortfolio is a financial planning tool for tax-efficient investing.</p>
            </div> 
-          <button class="Button" onclick="openAndClose('tortfolio', 'projects')">Read More</button>
+          <button class="Button" id="but_tortproj" onclick="openAndClose('tortfolio', 'projects')">Read More</button>
         </div>
+        <!-- Atomic Simulator -->
          <div class="panel">
           <img class="proj_image" src="images/AtomSim_1.png" alt="...">
             <div class="proj_piece">
               <b>Atom Physics Simulator</b>
               <p>A scientific modeling program for particle physics made in Python using VPython.</p>
             </div>
-          <button class="Button" onclick="openAndClose('atom_sim', 'projects'); atomOpen();">Read More</button>
+          <button class="Button" id="but_atomproj" onclick="openAndClose('atom_sim', 'projects'); atomOpen();">Read More</button>
         </div> 
+        <!-- Game Project -->
   	    <div class="panel">
             <img class="proj_image" src="images/Game_250px.gif" alt="...">
               <div class="proj_piece">
                 <b>Robo Wars: A 2D Game Engine</b>
                 <p>A 2D platforming game engine with custom assets. Built from scratch in C using SDL2.</p>
               </div>         
-            <button class="Button" onclick="openAndClose('game_proj', 'projects')">Read More</button>
+            <button class="Button" id="but_gameproj" onclick="openAndClose('game_proj', 'projects')">Read More</button>
          </div>
-         
       </div>
       
-      <button class="Button back-but" id="gobackbutton_2" onclick="openAndClose('greet_box', 'projects')">Back</button>
+      <button class="Button back-but" id="goback_proj" onclick="openAndClose('greet_box', 'projects')">Back</button>
     </div>
 
     <!-- Game project section. -->
@@ -167,7 +169,7 @@
           </p>
         </div>
       </div>
-      <button class="Button back-but" onclick="openAndClose('projects', 'game_proj')">Back</button>
+      <button class="Button back-but" id="goback_gameproj" onclick="openAndClose('projects', 'game_proj')">Back</button>
     </div>
   
     <!-- Atom project section. -->
@@ -183,7 +185,7 @@
         Scrolling can be used to zoom in and out on the canvas, while holding shift and dragging with your mouse can pan it.
         While running, the average electron orbital radius is graphed in real time and the electrostatic force can be changed at any time by the user to alter the orbit.</p>
         <img style="max-width:100%" src="images/AtomSim_2.png" alt="">
-        <button class="Button back-but" style="margin-top: 20px" onclick="atomClose(); openAndClose('projects', 'atom_sim');">  Back</button>
+        <button class="Button back-but" style="margin-top: 20px" id="goback_atomproj" onclick="atomClose(); openAndClose('projects', 'atom_sim');">Back</button>
         <!--<button class="Button back-but" id="atom_but" style="margin-top: 20px" onclick="atomOpen()">Try It</button>-->
       </div>
       <div id="atom_embed"></div>
@@ -220,7 +222,7 @@
           </p>
         </div>
         <div style="display: flex">
-        <button class="Button" style="flex-basis: 50%" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
+        <button class="Button" style="flex-basis: 50%" id="goback_ecomproj" onclick="openAndClose('projects', 'fordington_proj')">Back</button>
         <a href="https://ecommerceproject.tech" style="display: flex; flex-basis: 50%" target="_blank"><button class="Button" style="flex-grow: 10">Live Demo</button></a>
         </div>
   	  </div>
@@ -253,7 +255,7 @@
         Tortfolio is a portfolio balancing and investing tool created to allow the user to plan how to plan their investing
         so that they can pay the lowest amount of taxes. This project uses Bootstrap for styling and chart.js for graphing<br />
         <a href="https://tortfolio.org" target="_blank"><button class="Button back-but" style="margin-top: 20px">Try It</button></a>
-        <button class="Button back-but" onclick="openAndClose('projects', 'tortfolio')">Back</button>
+        <button class="Button back-but" id="goback_tortproj" onclick="openAndClose('projects', 'tortfolio')">Back</button>
       </div>
       <div class="panel tort_proj">
         <img src="images/TortfolioGraph.jpg" style="max-width: 100%" alt="..." />
