@@ -189,7 +189,7 @@ svg{
  margin: 25px;
 }
 
-#game_proj, #atom_sim, #fordington_proj, #projects, #aboutme, #tortfolio{
+#game_proj, #atom_sim, #ecomproj, #projects, #aboutme, #tortfolio{
   position: absolute;
   top: -1000vh;
   left: -1000vw;
@@ -279,7 +279,7 @@ max-width: 540px;
   grid-area: main;
 }
 
-#fordington_proj{
+#ecomproj{
   max-width: 1600px;
   margin: auto;
   text-indent: 50px;
@@ -385,7 +385,7 @@ max-width: 540px;
     width: 85%;
     } 
 
-  #fordington_proj{
+  #ecomproj{
   grid-template-areas: 
   "main"
   "mongo"
