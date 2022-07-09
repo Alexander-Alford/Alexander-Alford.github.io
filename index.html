@@ -39,19 +39,19 @@
         <a class="Button greet-but" id="but_res" href="Resume.pdf" target="_blank" rel="noopener noreferrer">
           <span class="icon-spacer">
             Resume
-            <img src="images/file-solid.svg" class="icon-main-but"></img>
+            <img src="images/file-solid.svg" class="icon-main-but" alt="resume logo"></img>
           </span>
         </a>
         <a class="Button greet-but" id="but_git" href="https://github.com/Alexander-Alford" target="_blank" rel="noopener noreferrer">
           <span class="icon-spacer">
             Github
-            <img src="images/github-brands.svg" class="icon-main-but"></img>
+            <img src="images/github-brands.svg" class="icon-main-but" alt="Github logo"></img>
           </span>
         </a>
         <a class="Button greet-but" id="but_linkin" href="https://www.linkedin.com/in/alexanderralford/" target="_blank" rel="noopener noreferrer">
           <span class="icon-spacer">
             LinkedIn
-            <img src="images/linkedin-brands.svg" class="icon-main-but"></img>
+            <img src="images/linkedin-brands.svg" class="icon-main-but" alt="LinkedIn logo"></img>
           </span>
         </a>
       </div>
@@ -100,7 +100,7 @@
               <b>Atom Physics Simulator</b>
               <p>A scientific modeling program for particle physics made in Python using VPython.</p>
             </div>
-          <button class="Button" id="but_atomproj" onclick="openAndClose('atom_sim', 'projects'); atomOpen();">Read More</button>
+          <button class="Button" id="but_atomproj">Read More</button>
         </div> 
         <!-- Game Project -->
   	    <div class="panel">
@@ -109,17 +109,16 @@
                 <b>Robo Wars: A 2D Game Engine</b>
                 <p>A 2D platforming game engine with custom assets. Built from scratch in C using SDL2.</p>
               </div>         
-            <button class="Button" id="but_gameproj" onclick="openAndClose('game_proj', 'projects')">Read More</button>
+            <button class="Button" id="but_gameproj">Read More</button>
          </div>
       </div>
-      
-      <button class="Button back-but" id="goback_proj">Back</button>
+      <button class="Button back-but" id="goback_proj" style="margin-bottom: 15px;">Back</button>
     </div>
 
     <!-- PetShop project section. -->
     <div id="ecomproj">
       <div class="ford-container panel" id="ford-mongo">
-        <img src="images/MongoDB_logo.png" class="ford-image" />
+        <img src="images/MongoDB_logo.png" class="ford-image" alt="mongodb logo"/>
           <p>This web app uses MongoDB Atlas to store and provide its product data. 
           By using an access key to the data cluster, the server can access the document collection for the prop products and perform read operations on them.
           The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
@@ -127,10 +126,10 @@
           Server routing and the RESTful api is controlledusing Express functionality. 
           The client can post a request to the server to load filtered response data from the database based on given criteria.
           </p>
-        <img src="images/Express_logo.png" class="ford-image" />
+        <img src="images/Express_logo.png" class="ford-image" alt="expree logo"/>
       </div> 
       <div class="ford-container panel" id="ford-main">
-        <img src="images/Fordington_Full.png" class="ford-image-main" />
+        <img src="images/Fordington_Full.png" class="ford-image-main" alt="petShop website screenshot"/>
         <div style="margin: 20px 0px">  
           <p>
           This mock website is an imaginary online retailer that sells animals and animal products. The purpose of this project was
@@ -152,7 +151,7 @@
         </div>
       </div>
       <div class="ford-container panel" id="ford-react">
-        <img src="images/React_logo.png" class="ford-image" />
+        <img src="images/React_logo.png" class="ford-image" alt="react logo"/>
         <p>
         The client side of this web app is rendered dynamically with React.
         The website is composed of nested react components that use a mixture of hooks, props, and pure javascript for interactivity.
@@ -162,7 +161,7 @@
         Bootstrap 5 is used to style the website along with custom edits. The Bootstrap classes provide styling that adjusts
         with screen dimensions for platform independent websites.
         </p>
-      <img src="images/Bootstrap_logo.png" class="ford-image" />
+      <img src="images/Bootstrap_logo.png" class="ford-image" alt="bootstrap logo"/>
       </div>
     </div>
 
@@ -184,7 +183,7 @@
             </p>
         </div>
         <div class="game_show_cont panel">
-          <img src="images/game_1.png" alt="" class="img_game_r">
+          <img src="images/game_1.png" alt="" class="img_game_r" alt="">
           <h1>Tiling and Graphics</h1>
           <br>
           <p>Alongside the collision detection and resolution, a grid-based tiling system was developed to create the   platforms in the game engine.
@@ -225,9 +224,8 @@
         <p>This simulation can be paused and reset to its initial state at any time. 
         Scrolling can be used to zoom in and out on the canvas, while holding shift and dragging with your mouse can pan it.
         While running, the average electron orbital radius is graphed in real time and the electrostatic force can be changed at any time by the user to alter the orbit.</p>
-        <img style="max-width:100%" src="images/AtomSim_2.png" alt="">
-        <button class="Button back-but" style="margin-top: 20px" id="goback_atomproj" onclick="atomClose(); openAndClose('projects', 'atom_sim');">Back</button>
-        <!--<button class="Button back-but" id="atom_but" style="margin-top: 20px" onclick="atomOpen()">Try It</button>-->
+        <img style="max-width:100%" src="images/AtomSim_2.png" alt="atomic simulator screenshot">
+        <button class="Button back-but" style="margin-top: 20px" id="goback_atomproj">Back</button> 
       </div>
       <div id="atom_embed"></div>
     </div>
@@ -260,11 +258,14 @@
 
       <!-- Experience section. Lists and describes my professional experience. -->
     <div id="experience">
-      <div>
-        <div>
-          National University
-        </div>
-      </div>
+      
+        <button id="" class="panel Button experience-box">
+          <img src="images/National_University_logo.svg" class="experience-image" alt="National University logo" />
+          <h3>National University</h3>
+        </button>
+
+        <button class="Button" id="goback_experience">Back</button>
+    
     </div>
   
   <!-- JS for screen changes. -->

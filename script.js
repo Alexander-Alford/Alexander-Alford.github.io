@@ -5,6 +5,7 @@ var gameprojButtons = ["goback_gameproj"];
 var ecomprojButtons = ["goback_ecomproj", "ecom-proj-link"];
 var turtprojButtons = ["tort-proj-link", "goback_tortproj"];
 var atomprojButtons = ["goback_atomproj"];
+var experienceButtons = [];
 
 var currentSection = "greet_box"
 

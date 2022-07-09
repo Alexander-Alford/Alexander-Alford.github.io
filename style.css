@@ -148,11 +148,6 @@ svg{
 #aboutme > b{
   font-size: 30px;
 }
-#gobackbutton_1{
-  margin: 0px auto;
-  position: relative;
-  top: 115px;
-}
 
 #projects{
   margin: 0px auto 0px auto;
@@ -352,9 +347,20 @@ max-width: 540px;
   position: absolute;
   left: -1000vw;
   top: -1000vh;
+  width: 100vw;
 }
 
-
+.experience-box{
+  display: flex;
+  width: 336px;
+  flex-direction: column;
+  padding:  16px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+}
+.experience-image{
+  padding-bottom: 10px;
+}
 
 
 /*Standard monitor size and above*/
