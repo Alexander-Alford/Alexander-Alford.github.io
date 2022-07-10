@@ -5,7 +5,7 @@ var gameprojButtons = ["goback_gameproj"];
 var ecomprojButtons = ["goback_ecomproj", "ecom-proj-link"];
 var turtprojButtons = ["tort-proj-link", "goback_tortproj"];
 var atomprojButtons = ["goback_atomproj"];
-var experienceButtons = [];
+var experienceButtons = ["national-university-but", "goback_experience"];
 
 var currentSection = "greet_box"
 
@@ -123,7 +123,7 @@ function disableFocusForAll(){
   //Home
 document.getElementById(homeButtons[0]).onclick = function () { openSec("aboutme", aboutButtons); };
 document.getElementById(homeButtons[1]).onclick = function () { openSec("projects", projButtons); };
-document.getElementById(homeButtons[2]).onclick = function () { openSec("experience", []); };
+document.getElementById(homeButtons[2]).onclick = function () { openSec("experience", experienceButtons); };
   //About Me
 document.getElementById(aboutButtons[0]).onclick = function () { openSec("greet_box", homeButtons); };
   //Projects
@@ -140,6 +140,10 @@ document.getElementById(turtprojButtons[1]).onclick = function () { openSec("pro
 document.getElementById(gameprojButtons[0]).onclick = function () { openSec("projects", projButtons); };
   //Atom project 
 document.getElementById(atomprojButtons[0]).onclick = function () { openSec("projects", projButtons); atomClose(); };
+  //Experience
+document.getElementById(experienceButtons[1]).onclick = function () { openSec("greet_box", homeButtons); };
+  //National University experience
+document.getElementById(experienceButtons[0]).onclick = function () { openSec("national-university-exp", []); };  
 
 
 openSec("greet_box", homeButtons);
