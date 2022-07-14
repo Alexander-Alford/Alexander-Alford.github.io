@@ -7,7 +7,6 @@
     <title>Alexander Alford</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
-  
     <link rel="stylesheet" href="./style.css">
   </head>
 
@@ -59,16 +58,23 @@
     
     <!-- About me section. A short summary of myself and my programming experience/goals. -->
     <div id="aboutme" class="panel">
-      <b>About Me</b><br><br>
-      <p>My name is Alexander and I am a web developer and programmer open to new work, preferably remote. 
+      <b>About Me</b>
+      <br/><br/>
+      <p>
+        My name is Alexander and I am a web developer and programmer open to new work, preferably remote. 
         I began developing software as a hobby while I was pursuing my Bachelor's degree at UCSD. 
-        What started off as a simple passion project became a fascination for how software is made and shared.</p>
-      <p>Since then, I have grown into web development where I get to work with some of the most cutting-edge technology  available.
-        I see programming as a way to explore a language's potential, to solve problems simple and complex, and to harness  the power of a computer. 
-        Thank you for stopping by, and if you're interested, feel free to reach out and contact me below.</p><br>
-      <b>Contact</b><br>
-      alexalford@runbox.ch<br>
-      (949)202-9536<br>
+        What started off as a simple passion project became a fascination for how software is made and shared.
+      </p>
+      <p>
+        Since then, I have grown into web development where I get to work with some of the most cutting-edge
+        technology  available. I see programming as a way to explore a language's potential, to solve problems 
+        simple and complex, and to harness  the power of a computer. Thank you for stopping by, and if you're 
+        interested, feel free to reach out and contact me below.
+      </p>
+      <br/>
+      <b>Contact</b><br/>
+      alexalford@runbox.ch<br/>
+      (949)202-9536<br/>
       <button class="Button back-but" id="goback_about">Back</button>
     </div>
   
@@ -119,12 +125,15 @@
     <div id="ecomproj">
       <div class="ford-container panel" id="ford-mongo">
         <img src="images/MongoDB_logo.png" class="ford-image" alt="mongodb logo"/>
-          <p>This web app uses MongoDB Atlas to store and provide its product data. 
-          By using an access key to the data cluster, the server can access the document collection for the prop products and perform read operations on them.
-          The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
-          Once the data is loaded, it is sent to an api endpoint that the client-side application pulls from.
-          Server routing and the RESTful api is controlledusing Express functionality. 
-          The client can post a request to the server to load filtered response data from the database based on given criteria.
+          <p>
+            This web app uses MongoDB Atlas to store and provide its product data. 
+            By using an access key to the data cluster, the server can access the document 
+            collection for the prop products and perform read operations on them.
+            The data is loaded server-side with the help of Mongoose to simplify MongoDB driver details.
+            Once the data is loaded, it is sent to an api endpoint that the client-side application 
+            pulls from. Server routing and the RESTful api is controlledusing Express functionality. 
+            The client can post a request to the server to load filtered response data from the 
+            database based on given criteria.
           </p>
         <img src="images/Express_logo.png" class="ford-image" alt="expree logo"/>
       </div> 
@@ -132,17 +141,21 @@
         <img src="images/Fordington_Full.png" class="ford-image-main" alt="petShop website screenshot"/>
         <div style="margin: 20px 0px">  
           <p>
-          This mock website is an imaginary online retailer that sells animals and animal products. The purpose of this project was
-          to experiment, develop, and deploy a web app that uses React and MongoDB to create a client-server model that allows the user
-          to interact with a cloud database in ways that mimic popular online retailers like Amazon. Data for the website was
-          generated and is accessed with MongoDB Atlas while content is rendered with individual react components that respond
-          to state changes. I used Heroku to deploy the app as a live demo that anybody can try.
+            This mock website is an imaginary online retailer that sells animals and animal 
+            products. The purpose of this project was to experiment, develop, and deploy a web 
+            app that uses React and MongoDB to create a client-server model that allows the user
+            to interact with a cloud database in ways that mimic popular online retailers like 
+            Amazon. Data for the website was generated and is accessed with MongoDB Atlas while 
+            content is rendered with individual react components that respond to state changes. 
+            I used Heroku to deploy the app as a live demo that anybody can try.
           </p>
-          <br /> 
-          <p>The demo provides a functional product
-          page allowing the user to inspect items, add them to their carts, go to checkout, modify their order, and then send it out.
-          In addition, the user can query for specific kinds of items and adjust how many items are displayed. A nonfunctional sign in and register 
-          page are provided to complete the environment.
+          <br/> 
+          <p>
+            The demo provides a functional product page allowing the user to inspect items, add 
+            them to their carts, go to checkout, modify their order, and then send it out.
+            In addition, the user can query for specific kinds of items and adjust how many items 
+            are displayed. A nonfunctional sign in and register page are provided to complete the 
+            environment.
           </p>
         </div>
         <div style="display: flex">
@@ -153,13 +166,15 @@
       <div class="ford-container panel" id="ford-react">
         <img src="images/React_logo.png" class="ford-image" alt="react logo"/>
         <p>
-        The client side of this web app is rendered dynamically with React.
-        The website is composed of nested react components that use a mixture of hooks, props, and pure javascript for interactivity.
-        Data from the api endpoint is loaded for the home page by use of a state variable whose hook sets the state and re-renders every time it's called. 
-        JSX allows for easy incorporation of javascript functionality into html giving an interactive user interface for the user's cart that allows items to be added
-        and removed while the page is visibly updated.
-        Bootstrap 5 is used to style the website along with custom edits. The Bootstrap classes provide styling that adjusts
-        with screen dimensions for platform independent websites.
+          The client side of this web app is rendered dynamically with React.The website is 
+          composed of nested react components that use a mixture of hooks, props, and pure 
+          javascript for interactivity. Data from the api endpoint is loaded for the home 
+          page by use of a state variable whose hook sets the state and re-renders every time 
+          it's called. JSX allows for easy incorporation of javascript functionality into html 
+          giving an interactive user interface for the user's cart that allows items to be added
+          and removed while the page is visibly updated. Bootstrap 5 is used to style the website 
+          along with custom edits. The Bootstrap classes provide styling that adjusts with screen 
+          dimensions for platform independent websites.
         </p>
       <img src="images/Bootstrap_logo.png" class="ford-image" alt="bootstrap logo"/>
       </div>
@@ -170,42 +185,55 @@
       <div id="game_grid_cont">
         <div class="game_show_cont panel" id="game_header">
           <h1>Robo Wars: A 2D Game Engine</h1>
-          <p>This project was one of my first major software development projects. 
-            The goal of the project was to improve my general programming skill and gain a better understanding of the C  language.</p>
+          <p>
+            This project was one of my first major software development projects. The goal of 
+            the project was to improve my general programming skill and gain a better understanding 
+            of the C language.
+          </p>
         </div>
         <div class="game_show_cont panel">
           <img src="images/game_2.gif" style="width: 300px;" class="img_game_l" alt="">
             <h1>Collision Detection and Resolution</h1>
             <br>
-            <p>One of the first parts of the engine developed was the collision detection and resolution system.
-            This system allowed moving objects to collied with terrain and be ejected reliably and efficiently.
-            Over time the system algorithms was revised several times to more accurately resolve collisions and to detect   non-rectangular collisions. 
+            <p>
+              One of the first parts of the engine developed was the collision detection and 
+              resolution system. This system allowed moving objects to collied with terrain 
+              and be ejected reliably and efficiently. Over time the system algorithms was 
+              revised several times to more accurately resolve collisions and to detect 
+              non-rectangular collisions. 
             </p>
         </div>
         <div class="game_show_cont panel">
           <img src="images/game_1.png" alt="" class="img_game_r" alt="">
           <h1>Tiling and Graphics</h1>
           <br>
-          <p>Alongside the collision detection and resolution, a grid-based tiling system was developed to create the   platforms in the game engine.
-             These tiles were drawn with hardware accelerated rendering of select portions of source images.
-             Grid based tiling allows for platforms that are highly optimized in memory and performance.
+          <p>
+            Alongside the collision detection and resolution, a grid-based tiling system was 
+            developed to create the platforms in the game engine. These tiles were drawn with 
+            hardware accelerated rendering of select portions of source images. Grid based tiling 
+            allows for platforms that are highly optimized in memory and performance.
           </p>
         </div>
         <div class="game_show_cont panel">
           <img src="images/game_3.gif" class="img_game_l" alt="">
           <h1>Object System</h1>
           <br>
-          <p>The object system allows for the creation of objects that can interact with platforms and other objects  according to AI or user input. 
-            Objects can store data that is unique to each individual member as well as data that is shared among all of the   instances of a kind of object.
+          <p>
+            The object system allows for the creation of objects that can interact with platforms 
+            and other objects according to AI or user input. Objects can store data that is unique 
+            to each individual member as well as data that is shared among all of the instances of a 
+            kind of object.
           </p>
         </div>
         <div class="game_show_cont panel">
           <img src="images/game_4.gif" class="img_game_r" alt="">
           <h1>Sounds and Timing</h1>
           <br>
-          <p>One of the later elements added was a sound system that can play queued sounds in addition to background music. 
-            Each queued sound is given a specific channel that it can play on so that sounds can overlap.
-            A timing system was also added to control framerate as well as the speed at which the game played.
+          <p>
+            One of the later elements added was a sound system that can play queued sounds in addition 
+            to background music. Each queued sound is given a specific channel that it can play on so 
+            that sounds can overlap. A timing system was also added to control framerate as well as the 
+            speed at which the game played.
           </p>
         </div>
       </div>
@@ -217,13 +245,20 @@
       <div id="atom_summary" class="panel">
         <h3>Atom Physics Simulator</h3>
         <br>
-        <p>This program is an atomic physics simulator designed to simulate sub-atomic particles and the forces that they interact with by using VPython's API.
-        The VPython module provides a simple implementation of 3D graphics, vector math, and graphing capabilities that can easily be implemented.
-        GlowScript is a javascript api based off of VPython that, with the help of the RapydScript transpiler, allows the Python script to run in the browser.</p>
+        <p>
+          This program is an atomic physics simulator designed to simulate sub-atomic particles and the 
+          forces that they interact with by using VPython's API. The VPython module provides a simple 
+          implementation of 3D graphics, vector math, and graphing capabilities that can easily be 
+          implemented. GlowScript is a javascript api based off of VPython that, with the help of the 
+          RapydScript transpiler, allows the Python script to run in the browser.
+        </p>
         <br>
-        <p>This simulation can be paused and reset to its initial state at any time. 
-        Scrolling can be used to zoom in and out on the canvas, while holding shift and dragging with your mouse can pan it.
-        While running, the average electron orbital radius is graphed in real time and the electrostatic force can be changed at any time by the user to alter the orbit.</p>
+        <p>
+          This simulation can be paused and reset to its initial state at any time. Scrolling can be 
+          used to zoom in and out on the canvas, while holding shift and dragging with your mouse can 
+          pan it. While running, the average electron orbital radius is graphed in real time and the 
+          electrostatic force can be changed at any time by the user to alter the orbit.
+        </p>
         <img style="max-width:100%" src="images/AtomSim_2.png" alt="atomic simulator screenshot">
         <button class="Button back-but" style="margin-top: 20px" id="goback_atomproj">Back</button> 
       </div>
@@ -236,23 +271,33 @@
     <div id="tortfolio">
       <div  class="panel tort_proj">
         <img src="images/TortfolioAllocation.jpg" style="max-width: 100%; height: 205px;" alt="..." />
-        <p>First, the user provides their current 401k, IRA, and taxable portfolios in terms of the amount of money invested in bonds, stocks, and international stocks respectively.
-        They then provide their desired asset allocation, their monthly investment amount, and details about their 401k and their IRA.
-        Finally, the user can calculate their most tax efficient year long investment strategy.</p>
+        <p>
+          First, the user provides their current 401k, IRA, and taxable portfolios in terms of 
+          the amount of money invested in bonds, stocks, and international stocks respectively.
+          They then provide their desired asset allocation, their monthly investment amount, and 
+          details about their 401k and their IRA. Finally, the user can calculate their most tax 
+          efficient year long investment strategy.
+        </p>
       </div>
       <div class="panel tort_proj">
         <img src="images/tortpromo.png" style="max-width: 100%" alt="..." />
         <h2>Tortfolio.org</h2>
-        Tortfolio is a portfolio balancing and investing tool created to allow the user to plan how to plan their investing
-        so that they can pay the lowest amount of taxes. This project uses Bootstrap for styling and chart.js for graphing<br />
+        Tortfolio is a portfolio balancing and investing tool created to allow the user to plan 
+        how to plan their investing so that they can pay the lowest amount of taxes. This project 
+        uses Bootstrap for styling and chart.js for graphing
+        <br/>
         <a id="tort-proj-link" href="https://tortfolio.org" target="_blank" class="Button back-but">Try It</a>
         <button class="Button back-but" id="goback_tortproj">Back</button>
       </div>
       <div class="panel tort_proj">
         <img src="images/TortfolioGraph.jpg" style="max-width: 100%" alt="..." />
-        <p>Once the investment strategy is calculated the user can then view their recommended investments into each portfolio for each month of the year.
-        Their investments are divided based on their desired split between bonds and stocks with slight changes to maximize tax reduction.
-        A graph is given to show the total investments across all possible venues for each month.</p>
+        <p>
+          Once the investment strategy is calculated the user can then view their recommended 
+          investments into each portfolio for each month of the year. Their investments are 
+          divided based on their desired split between bonds and stocks with slight changes to 
+          maximize tax reduction. A graph is given to show the total investments across all 
+          possible venues for each month.
+        </p>
       </div>
     </div> 
 
@@ -270,13 +315,30 @@
 
     <!-- National University Experience. -->
     <div id="national-university-exp">
-      <div class="panel">
-      National University is my current job and my first professional role as a web developer. 
-      As a web developer and designer, I'm tasked with managing mostly frontend content as well as working with
-      other team members to properly connect the backend. I work in a small team of about 8 other developers
-      whom I coordinate with on how the workload will be divided. The majority of my work involves patching issues in
-      National University sites including restyling pages, ensuring that they are screen reader and keyboard compatible, 
+      <div id="nat-univ-overview" class="panel">
+        <p>
+          National University is my current job and my first professional role as a web 
+          developer. As a web developer and designer, I'm tasked with managing mostly 
+          frontend content as well as working with other team members to properly connect 
+          the backend. I work in a small team of about 8 other developers whom I coordinate 
+          with on how the workload will be divided. The majority of my work involves patching 
+          issues in National University sites including restyling pages, ensuring that they 
+          are screen reader and keyboard compatible, and fixing compatability bugs. On 
+          occasion, I am given larger projects that I will work on with another web developer
+          who can help with backend work and other server/security issues that I can't directly 
+          work on.
+        </p>
+        <p>
+          Since I've began, I've updated several websites, fixed dozens of bugs, and have helped 
+          complete a few of the University's larger projects. I've learned so much about designing 
+          for web accessability, debugging obscure device specific bugs, and refactoring older
+          code to help clean it up and keep it up to date. My team has been both incredibly supportive 
+          when I need help and unrestrained in giving me good challenges that have improved my 
+          knowledge and allowed me to significantly contribute to accomplishing goals. I believe 
+          this was the perfect entry level role for me to learn and grow as a developer. 
+        </p>
       </div>
+      <button id="goback-nat-uni" class="Button">Back</button>
     </div>
   
   <!-- JS for screen changes, button setup, tabbing focus locking. -->
