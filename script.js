@@ -43,17 +43,26 @@ document.addEventListener('keydown', function(e) {
 
   //If shift + tab is pressed.
   if (e.shiftKey) { 
+    console.log("Last focused element: " + document.activeElement.id)
     if (document.activeElement.id === currentButtonList[0]) {
       document.getElementById(currentButtonList[0]).blur();
+      console.log("New focused element: " + document.activeElement.id)
+      e.preventDefault();
+    }
+    else if(document.activeElement.id === ""){
+      document.getElementById(currentButtonList[currentButtonList.length - 1]).focus();
       e.preventDefault();
     }
   } 
   //If tab key alone is pressed.
   else {
-      console.log(document.activeElement.id, currentButtonList, currentButtonList.length) ;
     if (document.activeElement.id === currentButtonList[currentButtonList.length - 1]) { 
       console.log("blur")
       document.getElementById(currentButtonList[currentButtonList.length - 1]).blur();
+      e.preventDefault();
+    }
+    else if(document.activeElement.id === ""){
+      document.getElementById(currentButtonList[0]).focus();
       e.preventDefault();
     }
   }
