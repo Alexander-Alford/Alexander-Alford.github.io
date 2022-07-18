@@ -98,7 +98,7 @@ svg{
   display: flex; 
   align-items: center; 
   justify-content: space-evenly;
-  transform: skew(-0deg);
+  transform: skew(-30deg);
 }
 
 
@@ -114,12 +114,12 @@ svg{
   position: relative;
   width: 140px;
   padding: 11px 0px;
-  transform:  skew(0deg);
-  transition: transform 0.2s;
+  transform:  skew(30deg);
+  transition: transform 0.2s, border 0.5s, background 0.5s, outline 0.5s, outline-offset 0.25s;
 }
 .greet-but:focus{
-  transform: translateX(115px) skew(0deg);
-  transition: transform 0.2s;
+  transform: translateX(115px) skew(30deg);
+  transition: transform 0.2s, border 0.5s, background 0.5s, outline 0.5s, outline-offset 0.25s;
 }
 .greet-but:after{
   content: "";
