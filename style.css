@@ -98,6 +98,7 @@ svg{
   display: flex; 
   align-items: center; 
   justify-content: space-evenly;
+  transform: skew(-0deg);
 }
 
 
@@ -109,16 +110,46 @@ svg{
 
 .greet-but{
   /* display:  flex; */
+  margin: 2px 0px;
+  position: relative;
   width: 140px;
   padding: 11px 0px;
+  transform:  skew(0deg);
+  transition: transform 0.2s;
 }
+.greet-but:focus{
+  transform: translateX(115px) skew(0deg);
+  transition: transform 0.2s;
+}
+.greet-but:after{
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  outline: red 0px solid;
+}
+.greet-but:active:after{
+  top: -2px;
+  left: -117px;
+  bottom: 0px;
+  width: 252px;
+  height: 48px;
+}
+
 
 #Name{
   font-size: 40px;
 }
 
 #greet_buttons{
-  margin: 50px 0px;
+  margin: 15px 0px;
+  display: flex;
+  position: relative;
+  left: -320px;
+  flex-direction: column;
+  align-items: center;
 }
 
 #greet_box{
@@ -368,7 +399,7 @@ font-size: 22px;
 }
 
 #nat-univ-overview{
-  padding: 16px;
+  padding: 18px;
 }
 #nat-univ-overview > p{
   text-indent: 40px;
