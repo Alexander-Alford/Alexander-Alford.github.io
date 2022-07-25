@@ -146,15 +146,15 @@ svg{
 #greet_buttons{
   margin: 15px 0px;
   display: flex;
-  position: relative;
-  left: -320px;
+  width: 400px;
   flex-direction: column;
-  align-items: center;
 }
 
 #greet_box{
+  display: flex;
+  flex-direction: row-reverse;
   margin: 0px auto;
-  /*top: -1000px;*/
+  align-items: center;
   position: absolute;
   top: -1000vh;
   left: -1000vw;
@@ -394,8 +394,34 @@ max-width: 540px;
 }
 
 #national-university-exp{
-width: 700px;
+width: 900px;
+height: 700px;
 font-size: 22px;
+display: grid;
+grid-column-gap: 10px;
+grid-row-gap: 10px;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr auto;
+grid-template-areas: "main main main aside1"
+                     "main main main aside2"
+                     "main main main aside3"
+                     ".    .    but  .";
+}
+
+.test1{
+  grid-area: main;
+}
+.test2{
+  grid-area: aside1;
+}
+.test3{
+  grid-area: aside2;
+}
+.test4{
+  grid-area: aside3;
+}
+.test5{
+  grid-area: but;
 }
 
 #nat-univ-overview{

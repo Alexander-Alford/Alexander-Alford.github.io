@@ -8,53 +8,55 @@
     <title>Alexander Alford</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
   </head>
 
   <body>
   
     <!-- Greeter section. Links every other section. -->
     <div id="greet_box">
-      <h1 style="font-size: 40px">Alexander Alford</h1>
-      <h2 style="font-size: 30px">Web Development & Design</h2>
-      <div id="greet_buttons">
+      <header style="position: relative; top: -50px;">
+        <h1 style="font-size: 40px">Alexander Alford</h1>
+        <h2 style="font-size: 30px">Web Development & Design</h2>
+      </header>
+      <nav id="greet_buttons">
         <button class="Button greet-but" id="but_about" style="left: 0px">
           <span class="icon-spacer">
             About Me
             <img src="images/user-solid.svg" class="icon-main-but" alt="..."></img>
           </span>
         </button>
-        <button class="Button greet-but" id="but_proj" style="left: 35px">
+        <button class="Button greet-but" id="but_proj" style="left: 32px">
           <span class="icon-spacer">
             Projects
             <img src="images/diagram-project-solid.svg" class="icon-main-but" alt="..."></img>
           </span>
         </button>
-        <button class="Button greet-but" id="but_exper" style="left: 70px">
+        <button class="Button greet-but" id="but_exper" style="left: 64px">
           <span class="icon-spacer">
             Experience
             <img src="images/folder-open-solid.svg" class="icon-main-but" alt="..."></img>
           </span>
         </button>
-        <a class="Button greet-but" id="but_res" href="Resume.pdf" target="_blank" rel="noopener noreferrer" style="left: 105px">
+        <a class="Button greet-but" id="but_res" href="Resume.pdf" target="_blank" rel="noopener noreferrer" style="left: 96px">
           <span class="icon-spacer">
             Resume
             <img src="images/file-solid.svg" class="icon-main-but" alt="resume logo"></img>
           </span>
         </a>
-        <a class="Button greet-but" id="but_git" href="https://github.com/Alexander-Alford" target="_blank" rel="noopener noreferrer" style="left: 140px">
+        <a class="Button greet-but" id="but_git" href="https://github.com/Alexander-Alford" target="_blank" rel="noopener noreferrer" style="left: 128px">
           <span class="icon-spacer">
             Github
             <img src="images/github-brands.svg" class="icon-main-but" alt="Github logo"></img>
           </span>
         </a>
-        <a class="Button greet-but" id="but_linkin" href="https://www.linkedin.com/in/alexanderralford/" target="_blank" rel="noopener noreferrer" style="left: 175px">
+        <a class="Button greet-but" id="but_linkin" href="https://www.linkedin.com/in/alexanderralford/" target="_blank" rel="noopener noreferrer" style="left: 160px">
           <span class="icon-spacer">
             LinkedIn
             <img src="images/linkedin-brands.svg" class="icon-main-but" alt="LinkedIn logo"></img>
           </span>
         </a>
-      </div>
+      </nav>
     </div>
     
     <!-- About me section. A short summary of myself and my programming experience/goals. -->
@@ -315,15 +317,15 @@
     </div>
 
     <!-- National University Experience. -->
-    <div id="national-university-exp">
-      <div id="nat-univ-overview" class="panel">
+    <article id="national-university-exp">
+      <section id="nat-univ-overview" class="panel test1">
         <p>
-          National University is my current job and my first professional role as a web 
-          developer. As a web developer and designer, I'm tasked with managing mostly 
-          frontend content as well as working with other team members to properly connect 
-          the backend. I work in a small team of about 8 other developers whom I coordinate 
-          with on how the workload will be divided. The majority of my work involves patching 
-          issues in National University sites including restyling pages, ensuring that they 
+          Web Designer and Developer II at National University is my current occupation and my 
+          first professional role as a web developer. As a web developer and designer, I'm 
+          tasked with managing mostly frontend content as well as working with other team members 
+          to properly connect the backend. I work in a small team of about 8 other developers whom 
+          I coordinate with on how the workload will be divided. The majority of my work involves 
+          patching issues in <abbr title="National University">NU</abbr> sites including restyling pages, ensuring that they 
           are screen reader and keyboard compatible, and fixing compatability bugs. On 
           occasion, I am given larger projects that I will work on with another web developer
           who can help with backend work and other server/security issues that I can't directly 
@@ -338,9 +340,28 @@
           knowledge and allowed me to significantly contribute to accomplishing goals. I believe 
           this was the perfect entry level role for me to learn and grow as a developer. 
         </p>
-      </div>
-      <button id="goback-nat-uni" class="Button">Back</button>
-    </div>
+      </section>
+      <aside class="panel test2">
+        <a href="https://nuteacheraward.org/default.cfm" rel="noopener noreferrer" target="_blank">Teacher Awards</a>
+        <p>
+          I spent a good deal of time updateing content on this site.
+          From restyling portions of pages, to minimizing image file sizes, 
+          efficiency and accessibility were essential for this project.
+        </p>
+      </aside>
+      <aside class="panel test3">
+        <a href="https://www.nuvhs.org/">Virtual High School</a>
+        <p>
+          The majority of my work on this site was bugfixes ranging from 
+          getting non-functional elements to work properly to ensuring the
+          pages were mobile and screen reader ready.
+        </p>
+      </aside>
+      <aside class="panel test4">
+        Test3
+      </aside>
+      <button id="goback-nat-uni" class="Button test5">Back</button>
+    </article>
   
   <!-- JS for screen changes, button setup, tabbing focus locking. -->
     <script  src="./script.js"></script>
