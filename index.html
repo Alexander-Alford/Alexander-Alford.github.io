@@ -15,56 +15,55 @@
   
     <!-- Greeter section. Links every other section. -->
     <div id="greet_box">
-      <header style="position: relative; top: -50px;">
+      <header style="position: relative; top: -50px; margin: 0px 28px;">
         <h1 style="font-size: 40px">Alexander Alford</h1>
         <h2 style="font-size: 30px">Web Development & Design</h2>
       </header>
-      <nav id="greet_buttons">
+      <nav id="greet_buttons" aria-label="links">
         <button class="Button greet-but" id="but_about" style="left: 0px">
           <span class="icon-spacer">
             About Me
-            <img src="images/user-solid.svg" class="icon-main-but" alt="..."></img>
+            <img src="images/user-solid.svg" class="icon-main-but" alt="...">
           </span>
         </button>
         <button class="Button greet-but" id="but_proj" style="left: 32px">
           <span class="icon-spacer">
             Projects
-            <img src="images/diagram-project-solid.svg" class="icon-main-but" alt="..."></img>
+            <img src="images/diagram-project-solid.svg" class="icon-main-but" alt="...">
           </span>
         </button>
         <button class="Button greet-but" id="but_exper" style="left: 64px">
           <span class="icon-spacer">
             Experience
-            <img src="images/folder-open-solid.svg" class="icon-main-but" alt="..."></img>
+            <img src="images/folder-open-solid.svg" class="icon-main-but" alt="...">
           </span>
         </button>
         <a class="Button greet-but" id="but_res" href="Resume.pdf" target="_blank" rel="noopener noreferrer" style="left: 96px">
           <span class="icon-spacer">
             Resume
-            <img src="images/file-solid.svg" class="icon-main-but" alt="resume logo"></img>
+            <img src="images/file-solid.svg" class="icon-main-but" alt="resume logo">
           </span>
         </a>
         <a class="Button greet-but" id="but_git" href="https://github.com/Alexander-Alford" target="_blank" rel="noopener noreferrer" style="left: 128px">
           <span class="icon-spacer">
             Github
-            <img src="images/github-brands.svg" class="icon-main-but" alt="Github logo"></img>
+            <img src="images/github-brands.svg" class="icon-main-but" alt="Github logo">
           </span>
         </a>
         <a class="Button greet-but" id="but_linkin" href="https://www.linkedin.com/in/alexanderralford/" target="_blank" rel="noopener noreferrer" style="left: 160px">
           <span class="icon-spacer">
             LinkedIn
-            <img src="images/linkedin-brands.svg" class="icon-main-but" alt="LinkedIn logo"></img>
+            <img src="images/linkedin-brands.svg" class="icon-main-but" alt="LinkedIn logo">
           </span>
         </a>
       </nav>
     </div>
     
     <!-- About me section. A short summary of myself and my programming experience/goals. -->
-    <div id="aboutme" class="panel">
-      <b>About Me</b>
-      <br/><br/>
+    <article id="aboutme" class="panel">
+      <h2 style="margin-bottom: 20px;">About Me</h2>
       <p>
-        My name is Alexander and I am a web developer and programmer open to new work, preferably remote. 
+        My name is Alexander, and I am a web developer and designer open to new work, preferably remote. 
         I began developing software as a hobby while I was pursuing my Bachelor's degree at UCSD. 
         What started off as a simple passion project became a fascination for how software is made and shared.
       </p>
@@ -74,15 +73,14 @@
         simple and complex, and to harness  the power of a computer. Thank you for stopping by, and if you're 
         interested, feel free to reach out and contact me below.
       </p>
-      <br/>
       <b>Contact</b><br/>
       alexalford@runbox.ch<br/>
       (949)202-9536<br/>
       <button class="Button back-but" id="goback_about">Back</button>
-    </div>
+    </article>
   
     <!-- Projects section. Lists personal projects with demos. -->
-    <div id="projects">
+    <nav id="projects" aria-label="projects">
       <div id="proj_cont">
         <!-- ecommerce website -->
          <div class="panel">
@@ -122,11 +120,11 @@
          </div>
       </div>
       <button class="Button back-but" id="goback_proj" style="margin-bottom: 15px;">Back</button>
-    </div>
+    </nav>
 
     <!-- PetShop project section. -->
-    <div id="ecomproj">
-      <div class="ford-container panel" id="ford-mongo">
+    <article id="ecomproj">
+      <section class="ford-container panel" id="ford-mongo">
         <img src="images/MongoDB_logo.png" class="ford-image" alt="mongodb logo"/>
           <p>
             This web app uses MongoDB Atlas to store and provide its product data. 
@@ -139,8 +137,8 @@
             database based on given criteria.
           </p>
         <img src="images/Express_logo.png" class="ford-image" alt="expree logo"/>
-      </div> 
-      <div class="ford-container panel" id="ford-main">
+      </section> 
+      <section class="ford-container panel" id="ford-main">
         <img src="images/Fordington_Full.png" class="ford-image-main" alt="petShop website screenshot"/>
         <div style="margin: 20px 0px">  
           <p>
@@ -152,7 +150,6 @@
             content is rendered with individual react components that respond to state changes. 
             I used Heroku to deploy the app as a live demo that anybody can try.
           </p>
-          <br/> 
           <p>
             The demo provides a functional product page allowing the user to inspect items, add 
             them to their carts, go to checkout, modify their order, and then send it out.
@@ -165,8 +162,8 @@
           <button class="Button" style="flex-basis: 50%" id="goback_ecomproj">Back</button>
           <a id="ecom-proj-link" href="https://ecommerceproject.tech" rel="noopener noreferrer" class="Button" style="text-indent: 0px; text-align: center; flex-basis: 50%;" target="_blank">Live Demo</a>
         </div>
-      </div>
-      <div class="ford-container panel" id="ford-react">
+      </section>
+      <section class="ford-container panel" id="ford-react">
         <img src="images/React_logo.png" class="ford-image" alt="react logo"/>
         <p>
           The client side of this web app is rendered dynamically with React.The website is 
@@ -179,25 +176,24 @@
           along with custom edits. The Bootstrap classes provide styling that adjusts with screen 
           dimensions for platform independent websites.
         </p>
-      <img src="images/Bootstrap_logo.png" class="ford-image" alt="bootstrap logo"/>
-      </div>
-    </div>
+        <img src="images/Bootstrap_logo.png" class="ford-image" alt="bootstrap logo"/>
+      </section>
+    </article>
 
     <!-- Game project section. -->
-    <div id="game_proj">
+    <article id="game_proj">
       <div id="game_grid_cont">
         <div class="game_show_cont panel" id="game_header">
-          <h1>Robo Wars: A 2D Game Engine</h1>
+          <h2>Robo Wars: A 2D Game Engine</h2>
           <p>
             This project was one of my first major software development projects. The goal of 
             the project was to improve my general programming skill and gain a better understanding 
             of the C language.
           </p>
         </div>
-        <div class="game_show_cont panel">
-          <img src="images/game_2.gif" style="width: 300px;" class="img_game_l" alt="">
-            <h1>Collision Detection and Resolution</h1>
-            <br>
+        <section class="game_show_cont panel">
+          <img src="images/game_2.gif" style="width: 300px;" class="img_game_l" alt="...">
+            <h3>Collision Detection and Resolution</h3>
             <p>
               One of the first parts of the engine developed was the collision detection and 
               resolution system. This system allowed moving objects to collied with terrain 
@@ -205,49 +201,45 @@
               revised several times to more accurately resolve collisions and to detect 
               non-rectangular collisions. 
             </p>
-        </div>
-        <div class="game_show_cont panel">
-          <img src="images/game_1.png" alt="" class="img_game_r" alt="">
-          <h1>Tiling and Graphics</h1>
-          <br>
+        </section>
+        <section class="game_show_cont panel">
+          <img src="images/game_1.png" class="img_game_r" alt="...">
+          <h3>Tiling and Graphics</h3>
           <p>
             Alongside the collision detection and resolution, a grid-based tiling system was 
             developed to create the platforms in the game engine. These tiles were drawn with 
             hardware accelerated rendering of select portions of source images. Grid based tiling 
             allows for platforms that are highly optimized in memory and performance.
           </p>
-        </div>
-        <div class="game_show_cont panel">
-          <img src="images/game_3.gif" class="img_game_l" alt="">
-          <h1>Object System</h1>
-          <br>
+        </section>
+        <section class="game_show_cont panel">
+          <img src="images/game_3.gif" class="img_game_l" alt="...">
+          <h3>Object System</h3>
           <p>
             The object system allows for the creation of objects that can interact with platforms 
             and other objects according to AI or user input. Objects can store data that is unique 
             to each individual member as well as data that is shared among all of the instances of a 
             kind of object.
           </p>
-        </div>
-        <div class="game_show_cont panel">
-          <img src="images/game_4.gif" class="img_game_r" alt="">
-          <h1>Sounds and Timing</h1>
-          <br>
+        </section>
+        <section class="game_show_cont panel">
+          <img src="images/game_4.gif" class="img_game_r" alt="...">
+          <h3>Sounds and Timing</h3>
           <p>
             One of the later elements added was a sound system that can play queued sounds in addition 
             to background music. Each queued sound is given a specific channel that it can play on so 
             that sounds can overlap. A timing system was also added to control framerate as well as the 
             speed at which the game played.
           </p>
-        </div>
+        </section>
       </div>
       <button class="Button back-but" id="goback_gameproj">Back</button>
-    </div>
+    </article>
   
     <!-- Atom project section. -->
-    <div id="atom_sim">
-      <div id="atom_summary" class="panel">
-        <h3>Atom Physics Simulator</h3>
-        <br>
+    <article id="atom_sim">
+      <section id="atom_summary" class="panel">
+        <h2>Atom Physics Simulator</h2>
         <p>
           This program is an atomic physics simulator designed to simulate sub-atomic particles and the 
           forces that they interact with by using VPython's API. The VPython module provides a simple 
@@ -255,7 +247,6 @@
           implemented. GlowScript is a javascript api based off of VPython that, with the help of the 
           RapydScript transpiler, allows the Python script to run in the browser.
         </p>
-        <br>
         <p>
           This simulation can be paused and reset to its initial state at any time. Scrolling can be 
           used to zoom in and out on the canvas, while holding shift and dragging with your mouse can 
@@ -264,15 +255,13 @@
         </p>
         <img style="max-width:100%" src="images/AtomSim_2.png" alt="atomic simulator screenshot">
         <button class="Button back-but" style="margin-top: 20px" id="goback_atomproj">Back</button> 
-      </div>
+      </section>
       <div id="atom_embed"></div>
-    </div>
-
-    
+    </article>
 
     <!-- Tortfolio project section. -->
-    <div id="tortfolio">
-      <div  class="panel tort_proj">
+    <article id="tortfolio">
+      <section  class="panel tort_proj">
         <img src="images/TortfolioAllocation.jpg" style="max-width: 100%; height: 205px;" alt="..." />
         <p>
           First, the user provides their current 401k, IRA, and taxable portfolios in terms of 
@@ -281,18 +270,17 @@
           details about their 401k and their IRA. Finally, the user can calculate their most tax 
           efficient year long investment strategy.
         </p>
-      </div>
-      <div class="panel tort_proj">
+      </section>
+      <section class="panel tort_proj">
         <img src="images/tortpromo.png" style="max-width: 100%" alt="..." />
         <h2>Tortfolio.org</h2>
         Tortfolio is a portfolio balancing and investing tool created to allow the user to plan 
         how to plan their investing so that they can pay the lowest amount of taxes. This project 
         uses Bootstrap for styling and chart.js for graphing
-        <br/>
         <a id="tort-proj-link" href="https://tortfolio.org" target="_blank" class="Button back-but">Try It</a>
         <button class="Button back-but" id="goback_tortproj">Back</button>
-      </div>
-      <div class="panel tort_proj">
+      </section>
+      <section class="panel tort_proj">
         <img src="images/TortfolioGraph.jpg" style="max-width: 100%" alt="..." />
         <p>
           Once the investment strategy is calculated the user can then view their recommended 
@@ -301,20 +289,21 @@
           maximize tax reduction. A graph is given to show the total investments across all 
           possible venues for each month.
         </p>
-      </div>
-    </div> 
+      </section>
+    </article> 
 
     <!-- Experience section. Lists and describes my professional experience. -->
-    <div id="experience">
-        <button id="national-university-but" class="panel Button experience-box">
-          <img src="images/National_University_logo.svg" class="experience-image" alt="National University logo" />
-          <h3>National University</h3>
-          <h4>Web Designer and Developer II</h4>
-          <h5>January 2022 - Present</h5>
-        </button>
+    <nav id="experience" aria-label="experience">
+      <!-- National University -->
+      <button id="national-university-but" class="panel Button experience-box">
+        <img src="images/National_University_logo.svg" class="experience-image" alt="National University logo" />
+        <h3>National University</h3>
+        <h4>Web Designer and Developer II</h4>
+        <h5>January 2022 - Present</h5>
+      </button>
 
-        <button class="Button" id="goback_experience" style="width: 336px;">Back</button>
-    </div>
+      <button class="Button" id="goback_experience" style="width: 336px;">Back</button>
+    </nav>
 
     <!-- National University Experience. -->
     <article id="national-university-exp">
@@ -341,25 +330,25 @@
           this was the perfect entry level role for me to learn and grow as a developer. 
         </p>
       </section>
-      <aside class="panel test2">
+      <div class="panel test2">
         <a href="https://nuteacheraward.org/default.cfm" rel="noopener noreferrer" target="_blank">Teacher Awards</a>
         <p>
-          I spent a good deal of time updateing content on this site.
+          I spent a good deal of time updating content on this site.
           From restyling portions of pages, to minimizing image file sizes, 
           efficiency and accessibility were essential for this project.
         </p>
-      </aside>
-      <aside class="panel test3">
+      </div>
+      <div class="panel test3">
         <a href="https://www.nuvhs.org/">Virtual High School</a>
         <p>
           The majority of my work on this site was bugfixes ranging from 
           getting non-functional elements to work properly to ensuring the
           pages were mobile and screen reader ready.
         </p>
-      </aside>
-      <aside class="panel test4">
+      </div>
+      <div class="panel test4">
         Test3
-      </aside>
+      </div>
       <button id="goback-nat-uni" class="Button test5">Back</button>
     </article>
   

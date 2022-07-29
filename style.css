@@ -17,11 +17,15 @@
   --panel_border: 2px solid rgba(87, 83, 83, 0.9);
   --panel_text: white;
 }
-body{
+html{
   background-image: url(images/background.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+body{
+
+  
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -146,7 +150,7 @@ svg{
 #greet_buttons{
   margin: 15px 0px;
   display: flex;
-  width: 400px;
+  width: 300px;
   flex-direction: column;
 }
 
