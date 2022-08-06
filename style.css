@@ -16,9 +16,11 @@
   --panel_back: rgba(18, 19, 36, 0.9);
   --panel_border: 2px solid rgba(87, 83, 83, 0.9);
   --panel_text: white;
+  --link-color:  #735fd5;
+  --link-highlight: #ab46ff;
 }
 html{
-  background-image: url(images/background.jpg);
+  background-image: url(images/background3.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -39,10 +41,12 @@ body{
 a{
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;
+  color:  var(--link-color);
 }
 
-a:focus{
+a:focus, a:hover{
   outline: none;
+  color: var(--link-highlight);
 }
 
 svg{
@@ -80,6 +84,7 @@ svg{
 }
 .Button:hover {
   border: 2px solid rgba(255,255,255,0.6);
+  color: white;
   background: rgba(0,0,0,0.6);
 }
 .Button:active {
@@ -88,8 +93,10 @@ svg{
 }
 .Button:focus {
   outline: 3px rgba(255,255,255, 0.8) solid;
+  color: white;
   outline-offset: -5px;
 }
+/**********************/
 
 .icon-main-but{
   width: 18px;
@@ -106,7 +113,7 @@ svg{
 }
 
 
-/**********************/
+
 
 .back-but{
   width: 200px;
@@ -157,9 +164,12 @@ svg{
 #greet_box{
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
   margin: 0px auto;
   align-items: center;
+  justify-content: center;
   position: absolute;
+  color: white;
   top: -1000vh;
   left: -1000vw;
   transition: opacity 4s;
@@ -225,6 +235,7 @@ svg{
   left: -1000vw;
   transition: opacity 1s;
   opacity: 0;
+  visibility: hidden;
 }
 
 #game_header{
@@ -398,18 +409,26 @@ max-width: 540px;
 }
 
 #national-university-exp{
-width: 900px;
+width: 960px;
 height: 700px;
 font-size: 22px;
 display: grid;
 grid-column-gap: 10px;
 grid-row-gap: 10px;
 grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr auto;
+grid-template-rows: 215px 215px 1fr 1fr auto;
 grid-template-areas: "main main main aside1"
                      "main main main aside2"
-                     "main main main aside3"
+                     "main main main ."
+                     "main main main ."
                      ".    .    but  .";
+}
+#national-university-exp > div > p{
+  font-size: 17px;
+}
+#national-university-exp > div > a{
+  display: block;
+  margin: 12px 0px;
 }
 
 .test1{
@@ -420,9 +439,6 @@ grid-template-areas: "main main main aside1"
 }
 .test3{
   grid-area: aside2;
-}
-.test4{
-  grid-area: aside3;
 }
 .test5{
   grid-area: but;

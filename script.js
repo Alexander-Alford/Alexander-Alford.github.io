@@ -6,7 +6,7 @@ var ecomprojButtons = ["goback_ecomproj", "ecom-proj-link"];
 var turtprojButtons = ["tort-proj-link", "goback_tortproj"];
 var atomprojButtons = ["goback_atomproj"];
 var experienceButtons = ["national-university-but", "goback_experience"];
-var natUniButtons = ["goback-nat-uni"];
+var natUniButtons = ["nat-uni-link1", "nat-uni-link2", "goback-nat-uni"];
 
 var currentSection = "greet_box"
 
@@ -77,8 +77,10 @@ function openSec(open, butList){
   cElem.style.opacity = 0;
   cElem.style.position = "absolute";
   cElem.style.transition = "opacity 1s";
+  cElem.style.visibility = "hidden";
   oElem.style.position = "static";
   oElem.style.opacity = 1;
+  oElem.style.visibility = "visible";
 
   currentSection = open;  
   disableFocusForAll();
@@ -156,7 +158,7 @@ document.getElementById(atomprojButtons[0]).onclick = function () { openSec("pro
 document.getElementById(experienceButtons[0]).onclick = function () { openSec("national-university-exp", natUniButtons); };  
 document.getElementById(experienceButtons[1]).onclick = function () { openSec("greet_box", homeButtons); };
   //National University experience
-document.getElementById(natUniButtons[0]).onclick = function () { openSec("experience", experienceButtons); };  
+document.getElementById(natUniButtons[2]).onclick = function () { openSec("experience", experienceButtons); };  
 
 
 
