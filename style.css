@@ -419,9 +419,9 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-rows: 215px 215px 1fr 1fr auto;
 grid-template-areas: "main main main aside1"
                      "main main main aside2"
-                     "main main main ."
-                     "main main main ."
-                     ".    .    but  .";
+                     "main main main aside3"
+ 
+                     ".    .    .    but";
 }
 #national-university-exp > div > p{
   font-size: 17px;
@@ -439,6 +439,9 @@ grid-template-areas: "main main main aside1"
 }
 .test3{
   grid-area: aside2;
+}
+.test4{
+  grid-area: aside3;
 }
 .test5{
   grid-area: but;
