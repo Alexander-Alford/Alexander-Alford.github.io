@@ -4,8 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An experienced and capable web developer and designer. From maintenance to bug fixes, there is nothing I'm not prepared for.">
     <link rel="icon" type="image/x-icon" href="./images/icon.ico" />
-    <title>Alexander Alford</title>
+    <link rel="canonical" href="http://www.alexalford.net" />
+    <title>Alexander Alford - Web Developer & Designer</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style.css">
@@ -23,21 +25,21 @@
         <button class="Button greet-but" id="but_about" style="left: 0px">
           <span class="icon-spacer">
             About Me
-            <img src="images/user-solid.svg" class="icon-main-but" alt="...">
+            <img src="images/user-solid.svg" class="icon-main-but" alt="">
           </span>
         </button>
         <button class="Button greet-but" id="but_proj" style="left: 32px">
           <span class="icon-spacer">
             Projects
-            <img src="images/diagram-project-solid.svg" class="icon-main-but" alt="...">
+            <img src="images/diagram-project-solid.svg" class="icon-main-but" alt="">
           </span>
         </button>
-        <button class="Button greet-but" id="but_exper" style="left: 64px">
+        <a class="Button greet-but" id="but_exper" style="left: 64px">
           <span class="icon-spacer">
             Experience
-            <img src="images/folder-open-solid.svg" class="icon-main-but" alt="...">
+            <img src="images/folder-open-solid.svg" class="icon-main-but" alt="">
           </span>
-        </button>
+        </a>
         <a class="Button greet-but" id="but_res" href="Resume.pdf" target="_blank" rel="noopener noreferrer" style="left: 96px">
           <span class="icon-spacer">
             Resume
@@ -87,16 +89,16 @@
       <div id="proj_cont">
         <!-- ecommerce website -->
          <div class="panel">
-            <img class="proj_image" style="object-fit: contain" src="images/store.png" alt="...">
-              <div class="proj_piece">
-                <b>ecommerceproject.tech</b>
-                <p>A mock online retailer website that specializes in selling animals and animal products.</p>
-              </div>         
-            <button class="Button" id="but_ecomproj">Read More</button>
+            <img class="proj_image" style="object-fit: contain" src="images/store.png" loading="lazy" alt="petshop promo">
+            <div class="proj_piece">
+              <b>ecommerceproject.tech</b>
+              <p>A mock online retailer website that specializes in selling animals and animal products.</p>
+            </div>   
+          <button class="Button" id="but_ecomproj">Read More</button>
          </div>
          <!-- Tortfolio -->
          <div class="panel">
-          <img class="proj_image" src="images/torty.png" alt="...">
+          <img class="proj_image" src="images/torty.png" loading="lazy" alt="tortfolio logo">
            <div class="proj_piece">
              <b>Tortfolio.org</b>
              <p>Tortfolio is a financial planning tool for tax-efficient investing.</p>
@@ -105,7 +107,7 @@
         </div>
         <!-- Atomic Simulator -->
          <div class="panel">
-          <img class="proj_image" src="images/AtomSim_1.png" alt="...">
+          <img class="proj_image" src="images/AtomSim_1.png" loading="lazy" alt="atom simulator promo">
             <div class="proj_piece">
               <b>Atom Physics Simulator</b>
               <p>A scientific modeling program for particle physics made in Python using VPython.</p>
@@ -114,7 +116,7 @@
         </div> 
         <!-- Game Project -->
   	    <div class="panel">
-            <img class="proj_image" src="images/Game_250px.gif" alt="...">
+            <img class="proj_image" src="images/Game_250px.gif" loading="lazy" alt="game promo">
               <div class="proj_piece">
                 <b>Robo Wars: A 2D Game Engine</b>
                 <p>A 2D platforming game engine with custom assets. Built from scratch in C using SDL2.</p>
@@ -128,7 +130,7 @@
     <!-- PetShop project section. -->
     <article id="ecomproj">
       <section class="ford-container panel" id="ford-mongo">
-        <img src="images/MongoDB_logo.png" class="ford-image" alt="mongodb logo"/>
+        <img src="images/MongoDB_logo.png" class="ford-image" loading="lazy" alt="mongodb logo"/>
           <p>
             This web app uses MongoDB Atlas to store and provide its product data. 
             By using an access key to the data cluster, the server can access the document 
@@ -139,13 +141,14 @@
             The client can post a request to the server to load filtered response data from the 
             database based on given criteria.
           </p>
-        <img src="images/Express_logo.png" class="ford-image" alt="expree logo"/>
+        <img src="images/Express_logo.png" class="ford-image" loading="lazy" alt="expree logo"/>
       </section> 
       <section class="ford-container panel" id="ford-main">
-        <img src="images/Fordington_Full.png" class="ford-image-main" alt="petShop website screenshot"/>
-        <div style="margin: 20px 0px">  
+        <img src="images/Fordington_Full.png" class="ford-image-main" loading="lazy" alt="petShop website screenshot"/>
+        <div style="margin: 20px 0px">
+          <h2 style="text-align: center; text-indent: 0px;">PetShop</h2>  
           <p>
-            This mock website is an imaginary online retailer that sells animals and animal 
+            PetShop an imaginary online retailer that sells animals and animal 
             products. The purpose of this project was to experiment, develop, and deploy a web 
             app that uses React and MongoDB to create a client-server model that allows the user
             to interact with a cloud database in ways that mimic popular online retailers like 
@@ -167,7 +170,7 @@
         </div>
       </section>
       <section class="ford-container panel" id="ford-react">
-        <img src="images/React_logo.png" class="ford-image" alt="react logo"/>
+        <img src="images/React_logo.png" class="ford-image" loading="lazy" alt="react logo"/>
         <p>
           The client side of this web app is rendered dynamically with React.The website is 
           composed of nested react components that use a mixture of hooks, props, and pure 
@@ -179,7 +182,7 @@
           along with custom edits. The Bootstrap classes provide styling that adjusts with screen 
           dimensions for platform independent websites.
         </p>
-        <img src="images/Bootstrap_logo.png" class="ford-image" alt="bootstrap logo"/>
+        <img src="images/Bootstrap_logo.png" class="ford-image" loading="lazy" alt="bootstrap logo"/>
       </section>
     </article>
 
@@ -195,7 +198,7 @@
           </p>
         </div>
         <section class="game_show_cont panel">
-          <img src="images/game_2.gif" style="width: 300px;" class="img_game_l" alt="...">
+          <img src="images/game_2.gif" style="width: 300px;" class="img_game_l" loading="lazy" alt="collision demo">
             <h3>Collision Detection and Resolution</h3>
             <p>
               One of the first parts of the engine developed was the collision detection and 
@@ -206,7 +209,7 @@
             </p>
         </section>
         <section class="game_show_cont panel">
-          <img src="images/game_1.png" class="img_game_r" alt="...">
+          <img src="images/game_1.png" class="img_game_r" loading="lazy" alt="tiling and rendering demo">
           <h3>Tiling and Graphics</h3>
           <p>
             Alongside the collision detection and resolution, a grid-based tiling system was 
@@ -216,7 +219,7 @@
           </p>
         </section>
         <section class="game_show_cont panel">
-          <img src="images/game_3.gif" class="img_game_l" alt="...">
+          <img src="images/game_3.gif" class="img_game_l" loading="lazy" alt="tiling, enemies, and sprites demo">
           <h3>Object System</h3>
           <p>
             The object system allows for the creation of objects that can interact with platforms 
@@ -226,7 +229,7 @@
           </p>
         </section>
         <section class="game_show_cont panel">
-          <img src="images/game_4.gif" class="img_game_r" alt="...">
+          <img src="images/game_4.gif" class="img_game_r" loading="lazy" alt="final update demo">
           <h3>Sounds and Timing</h3>
           <p>
             One of the later elements added was a sound system that can play queued sounds in addition 
@@ -256,7 +259,7 @@
           pan it. While running, the average electron orbital radius is graphed in real time and the 
           electrostatic force can be changed at any time by the user to alter the orbit.
         </p>
-        <img style="max-width:100%" src="images/AtomSim_2.png" alt="atomic simulator screenshot">
+        <img style="max-width:100%" src="images/AtomSim_2.png" loading="lazy" alt="atomic simulator screenshot">
         <button class="Button back-but" style="margin-top: 20px" id="goback_atomproj">Back</button> 
       </section>
       <div id="atom_embed"></div>
@@ -265,7 +268,7 @@
     <!-- Tortfolio project section. -->
     <article id="tortfolio">
       <section  class="panel tort_proj">
-        <img src="images/TortfolioAllocation.jpg" style="max-width: 100%; height: 205px;" alt="..." />
+        <img src="images/TortfolioAllocation.jpg" loading="lazy" style="max-width: 100%; height: 205px;" alt="tortfolio investment tables" />
         <p>
           First, the user provides their current 401k, IRA, and taxable portfolios in terms of 
           the amount of money invested in bonds, stocks, and international stocks respectively.
@@ -275,7 +278,7 @@
         </p>
       </section>
       <section class="panel tort_proj">
-        <img src="images/tortpromo.png" style="max-width: 100%" alt="..." />
+        <img src="images/tortpromo.png" loading="lazy" style="max-width: 100%" alt="tortfolio promo" />
         <h2>Tortfolio.org</h2>
         Tortfolio is a portfolio balancing and investing tool created to allow the user to plan 
         how to plan their investing so that they can pay the lowest amount of taxes. This project 
@@ -286,7 +289,7 @@
         </div>  
       </section>
       <section class="panel tort_proj">
-        <img src="images/TortfolioGraph.jpg" style="max-width: 100%" alt="..." />
+        <img src="images/TortfolioGraph.jpg" loading="lazy" style="max-width: 100%" alt="tortfolio graph" />
         <p>
           Once the investment strategy is calculated the user can then view their recommended 
           investments into each portfolio for each month of the year. Their investments are 
@@ -301,7 +304,7 @@
     <nav id="experience" aria-label="experience">
       <!-- National University -->
       <button id="national-university-but" class="panel Button experience-box">
-        <img src="images/National_University_logo.svg" class="experience-image" alt="National University logo" />
+        <img src="images/National_University_logo.svg" loading="lazy" class="experience-image" alt="National University logo" />
         <h3>National University</h3>
         <h4>Web Designer and Developer II</h4>
         <h5>January 2022 - Present</h5>
@@ -335,7 +338,7 @@
           this was the perfect entry level role for me to learn and grow as a developer. 
         </p>
       </section>
-      <div class="panel test2">
+      <div class="panel test3">
         <a href="https://nuteacheraward.org/default.cfm" rel="noopener noreferrer" target="_blank" id="nat-uni-link1">Teacher Awards</a>
         <p>
           I spent a good deal of time updating content on this site.
@@ -343,7 +346,7 @@
           efficiency and accessibility were essential for this project.
         </p>
       </div>
-      <div class="panel test3">
+      <div class="panel test4">
         <a href="https://www.nuvhs.org/" id="nat-uni-link2" rel="noopener noreferrer" target="_blank">Virtual High School</a>
         <p>
           The majority of my work on this site was bugfixes ranging from 
@@ -351,8 +354,8 @@
           pages were mobile and screen reader ready.
         </p>
       </div>
-      <div class="panel test4">
-        <img src="images/national_university_logo_2.jpg" style="width: 100%; height: 100%">
+      <div class="panel test2">
+        <img src="images/national_university_logo_2.jpg" loading="lazy" style="width: 100%; height: 100%" alt="NU new logo">
       </div>
       <button id="goback-nat-uni" class="Button test5">Back</button>
     </article>
