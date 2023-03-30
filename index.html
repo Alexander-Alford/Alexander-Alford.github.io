@@ -16,43 +16,43 @@
   <body>
   
     <!-- Greeter section. Links every other section. -->
-    <div id="greet_box">
+    <div id="home">
       <header style="position: relative; top: -70px; margin: 0px 28px;">
         <h1 style="font-size: 40px">Alexander Alford</h1>
         <h2 style="font-size: 30px">Web Development & Design</h2>
       </header>
       <nav id="greet_buttons" aria-label="links">
-        <button class="Button greet-but" id="but_about" style="left: 0px">
+        <a class="Button greet-but" id="but_about" href="#aboutme" draggable="false" style="left: 0px">
           <span class="icon-spacer">
             About Me
             <img src="images/user-solid.svg" class="icon-main-but" alt="">
           </span>
-        </button>
-        <button class="Button greet-but" id="but_proj" style="left: 32px">
+        </a>
+        <a class="Button greet-but" id="but_proj" href="#projects" draggable="false" style="left: 32px">
           <span class="icon-spacer">
             Projects
             <img src="images/diagram-project-solid.svg" class="icon-main-but" alt="">
           </span>
-        </button>
-        <a class="Button greet-but" id="but_exper" style="left: 64px">
+        </a>
+        <a class="Button greet-but" id="but_exper" href="#experience" draggable="false" style="left: 64px">
           <span class="icon-spacer">
             Experience
             <img src="images/folder-open-solid.svg" class="icon-main-but" alt="">
           </span>
         </a>
-        <a class="Button greet-but" id="but_res" href="Resume.pdf" target="_blank" rel="noopener noreferrer" style="left: 96px">
+        <a class="Button greet-but" id="but_res" href="Resume.pdf" draggable="false" target="_blank" rel="noopener noreferrer" style="left: 96px">
           <span class="icon-spacer">
             Resume
             <img src="images/file-solid.svg" class="icon-main-but" alt="resume logo">
           </span>
         </a>
-        <a class="Button greet-but" id="but_git" href="https://github.com/Alexander-Alford" target="_blank" rel="noopener noreferrer" style="left: 128px">
+        <a class="Button greet-but" id="but_git" href="https://github.com/Alexander-Alford" draggable="false" target="_blank" rel="noopener noreferrer" style="left: 128px">
           <span class="icon-spacer">
             Github
             <img src="images/github-brands.svg" class="icon-main-but" alt="Github logo">
           </span>
         </a>
-        <a class="Button greet-but" id="but_linkin" href="https://www.linkedin.com/in/alexanderralford/" target="_blank" rel="noopener noreferrer" style="left: 160px">
+        <a class="Button greet-but" id="but_linkin" href="https://www.linkedin.com/in/alexanderralford/" draggable="false" target="_blank" rel="noopener noreferrer" style="left: 160px">
           <span class="icon-spacer">
             LinkedIn
             <img src="images/linkedin-brands.svg" class="icon-main-but" alt="LinkedIn logo">
@@ -81,7 +81,7 @@
         alexalford@runbox.ch<br/>
         (949)202-9536<br/>
       </div>
-      <button class="Button back-but" id="goback_about">Back</button>
+      <a class="Button back-but" id="goback_about" href="#home" draggable="false">Back</a>
     </article>
   
     <!-- Projects section. Lists personal projects with demos. -->
@@ -124,7 +124,7 @@
             <button class="Button" id="but_gameproj">Read More</button>
          </div>
       </div>
-      <button class="Button back-but" id="goback_proj" style="margin-bottom: 15px;">Back</button>
+      <a class="Button back-but" id="goback_proj" href="#home" draggable="false" style="margin-bottom: 15px;">Back</a>
     </nav>
 
     <!-- PetShop project section. -->
@@ -310,7 +310,7 @@
         <h5>January 2022 - Present</h5>
       </button>
 
-      <button class="Button" id="goback_experience" style="width: 336px;">Back</button>
+      <a class="Button" id="goback_experience" href="#home" draggable="false" style="width: 336px;">Back</a>
     </nav>
 
     <!-- National University Experience. -->

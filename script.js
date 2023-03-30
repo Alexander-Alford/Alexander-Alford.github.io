@@ -8,7 +8,7 @@ var atomprojButtons = ["goback_atomproj"];
 var experienceButtons = ["national-university-but", "goback_experience"];
 var natUniButtons = ["nat-uni-link1", "nat-uni-link2", "goback-nat-uni"];
 
-var currentSection = "greet_box"
+var currentSection = "home"
 
 //var firstFocusableElement = homeButtons[0];
 //var lastFocusableElement = homeButtons[5];
@@ -139,13 +139,13 @@ document.getElementById(homeButtons[0]).onclick = function () { openSec("aboutme
 document.getElementById(homeButtons[1]).onclick = function () { openSec("projects", projButtons); };
 document.getElementById(homeButtons[2]).onclick = function () { openSec("experience", experienceButtons); };
   //About Me
-document.getElementById(aboutButtons[0]).onclick = function () { openSec("greet_box", homeButtons); };
+document.getElementById(aboutButtons[0]).onclick = function () { openSec("home", homeButtons); };
   //Projects
 document.getElementById(projButtons[0]).onclick = function () { openSec("ecomproj", ecomprojButtons); };
 document.getElementById(projButtons[1]).onclick = function () { openSec("tortfolio", turtprojButtons); };
 document.getElementById(projButtons[2]).onclick = function () { openSec("atom_sim", atomprojButtons); atomOpen(); };
 document.getElementById(projButtons[3]).onclick = function () { openSec("game_proj", gameprojButtons); };
-document.getElementById(projButtons[4]).onclick = function () { openSec("greet_box", homeButtons); };
+document.getElementById(projButtons[4]).onclick = function () { openSec("home", homeButtons); };
   //PetShop project 
 document.getElementById(ecomprojButtons[0]).onclick = function () { openSec("projects", projButtons); };
   //Tortfolio project 
@@ -156,10 +156,10 @@ document.getElementById(gameprojButtons[0]).onclick = function () { openSec("pro
 document.getElementById(atomprojButtons[0]).onclick = function () { openSec("projects", projButtons); atomClose(); };
   //Experience
 document.getElementById(experienceButtons[0]).onclick = function () { openSec("national-university-exp", natUniButtons); };  
-document.getElementById(experienceButtons[1]).onclick = function () { openSec("greet_box", homeButtons); };
+document.getElementById(experienceButtons[1]).onclick = function () { openSec("home", homeButtons); };
   //National University experience
 document.getElementById(natUniButtons[2]).onclick = function () { openSec("experience", experienceButtons); };  
 
 
 
-openSec("greet_box", homeButtons);
+openSec("home", homeButtons);
