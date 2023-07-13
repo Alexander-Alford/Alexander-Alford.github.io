@@ -165,7 +165,7 @@
         </div>
         <div style="display: flex">
           <button class="Button" style="flex-basis: 50%" id="goback_ecomproj">Back</button>
-          <a id="ecom-proj-link" href="https://ecommerceproject.tech" rel="noopener noreferrer" class="Button" style="text-indent: 0px; text-align: center; flex-basis: 50%;" target="_blank">Live Demo</a>
+          <a id="ecom-proj-link" class="Button" style="text-indent: 0px; text-align: center; flex-basis: 50%;" disabled><s>Live Demo</s></a>
         </div>
       </section>
       <section class="ford-container panel" id="ford-react">
@@ -301,13 +301,24 @@
 
     <!-- Experience section. Lists and describes my professional experience. -->
     <nav id="experience" aria-label="experience">
-      <!-- National University -->
-      <button id="national-university-but" class="panel Button experience-box">
-        <img src="images/National_University_logo.svg" loading="lazy" class="experience-image" alt="National University logo" />
-        <h3>National University</h3>
-        <h4>Web Designer and Developer II</h4>
-        <h5>January 2022 - Present</h5>
-      </button>
+      
+      <div class="experience-job-nav">
+        <!-- National University -->
+        <button id="national-university-but" class="panel Button experience-box">
+            <img src="images/National_University_logo.svg" loading="lazy" class="experience-image" alt="National University logo" />
+            <h3>National University</h3>
+            <h4>Web Designer and Developer II</h4>
+            <h5>January 2022 - Present</h5>
+          </button>
+        
+        <!-- SERVE Inc. -->
+        <button id="serve-but" class="panel Button experience-box">
+          <img src="images/Serve_logo.png" loading="lazy" class="experience-image" alt="Serve logo" />
+          <h3>SERVE, Inc.</h3>
+          <h4>Web Master</h4>
+          <h5>February 2023 - Present</h5>
+        </button>
+      </div>
 
       <a class="Button" id="goback_experience" href="#home" draggable="false" style="width: 336px;">Back</a>
     </nav>
@@ -357,6 +368,11 @@
         </p>
       </div>
       <button id="goback-nat-uni" class="Button">Back</button>
+    </article>
+
+    <!-- SERVE Experience. -->
+    <article id="serve-exp">
+      <button id="goback-serve" class="Button">Back</button>
     </article>
   
   <!-- JS for screen changes, button setup, tabbing focus locking. -->
