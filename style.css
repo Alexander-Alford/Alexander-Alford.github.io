@@ -414,6 +414,7 @@ max-width: 540px;
 }
 .experience-image{
   padding-bottom: 10px;
+  width: 100%;
 }
 .experience-job-nav{
   display: flex;
